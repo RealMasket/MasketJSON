@@ -1,5 +1,5 @@
 """Snapshot both compiler builds and freeze code/data identities before timing."""
-import argparse,json,shutil,subprocess
+import argparse,json,shutil,subprocess,re
 from pathlib import Path
 from datetime import datetime,timezone
 from common import sha,normalized,tools,POLICIES
@@ -20,12 +20,18 @@ for compiler,build in (('msvc',a.msvc_build),('clang',a.clang_build)):
     for line in (build/'CMakeCache.txt').read_text().splitlines():
         if line and not line.startswith(('#','//')) and '=' in line and ':' in line.split('=',1)[0]:
             key,value=line.split('=',1);cache[key.split(':',1)[0]]=value
+    compiler_settings=next((build/'CMakeFiles').glob('*/CMakeCXXCompiler.cmake')).read_text()
+    if 'CMAKE_CXX_COMPILER' not in cache:
+        cache['CMAKE_CXX_COMPILER']=re.search(r'set\(CMAKE_CXX_COMPILER "([^"]+)"\)',compiler_settings).group(1)
+    runtime=re.search(r'set\(CMAKE_MSVC_RUNTIME_LIBRARY_DEFAULT "([^"]+)"\)',compiler_settings)
+    cache['CMAKE_MSVC_RUNTIME_LIBRARY_DEFAULT']=runtime.group(1) if runtime else None
+    assert not any(flag in (cache['CMAKE_CXX_FLAGS']+' '+cache['CMAKE_CXX_FLAGS_RELEASE']).lower() for flag in ('/gl','-flto','/fp:fast','-ffast-math'))
     selected={}
     for policy in POLICIES:
         items=tools(auto if policy.startswith('v3-') else fixed,policy)
         for kind in ('Time','Inspect','Profile','Trace','Verify') if policy.startswith('v3-') else ('Time','Inspect','Profile'):
             f=items[kind];shutil.copyfile(f,destination/f.name);selected[f.name]=sha(f)
-    compilers[compiler]=dict(build_info=kv,cache={k:cache.get(k) for k in ('CMAKE_CXX_FLAGS','CMAKE_CXX_FLAGS_RELEASE','CMAKE_BUILD_TYPE','CMAKE_GENERATOR','CMAKE_LINKER','CMAKE_MSVC_RUNTIME_LIBRARY')},compiler_binary_sha256=sha(Path(cache['CMAKE_CXX_COMPILER'])),target='Windows x64 MSVC ABI',standard_library='Microsoft STL 14.51.36231, Release CRT /MD; link.exe 14.51',application_allocator='Microsoft CRT; compiler executable allocator is irrelevant to measured applications')
+    compilers[compiler]=dict(build_info=kv,cache={k:cache.get(k) for k in ('CMAKE_CXX_FLAGS','CMAKE_CXX_FLAGS_RELEASE','CMAKE_BUILD_TYPE','CMAKE_GENERATOR','CMAKE_LINKER','CMAKE_MSVC_RUNTIME_LIBRARY','CMAKE_MSVC_RUNTIME_LIBRARY_DEFAULT')},compiler_binary_sha256=sha(Path(cache['CMAKE_CXX_COMPILER'])),target='Windows x64 MSVC ABI',standard_library='Microsoft STL 14.51.36231, Release CRT /MD; link.exe 14.51',application_allocator='Microsoft CRT; compiler executable allocator is irrelevant to measured applications')
     binaries[compiler]=selected
 tracked=subprocess.check_output(['git','-c','safe.directory='+repo.as_posix(),'ls-files'],cwd=repo,text=True).splitlines()
 prefixes=('core/','parser/','serializer/','io/','errors/','diagnostics/','utils/','fuzz/','benchmarks/real-corpus/','benchmarks/auto/','benchmarks/auto-v3/','benchmarks/reservation/')
