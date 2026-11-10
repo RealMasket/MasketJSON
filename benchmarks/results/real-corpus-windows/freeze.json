@@ -1,0 +1,576 @@
+{
+  "frozen_utc": "2026-11-10T16:38:58.545900+00:00",
+  "source_revision": "a8017e8d00910ada69be05644ed3a41c107c5474",
+  "corpus_sha256": "e26a77beb2f91376200e87a24e29bcbafc8107329adde15c9b091b137d7ac720",
+  "plan_sha256": "fa8195e6390d17c854b7f3c7542467771425dc0ee2a07bda263395a34c5d19a8",
+  "compilers": {
+    "msvc": {
+      "build_info": {
+        "compiler": "MSVC",
+        "compiler_version": "19.51.36257.0",
+        "configuration": "Release",
+        "speed_budget_bytes": "4194304",
+        "memory_budget_bytes": "1048576",
+        "speed_quarters": "7",
+        "memory_quarters": "6",
+        "speed_lookahead": "1",
+        "memory_lookahead": "1",
+        "config_flags": "/O2 /Ob2 /DNDEBUG"
+      },
+      "cache": {
+        "CMAKE_CXX_FLAGS": "/DWIN32 /D_WINDOWS /EHsc",
+        "CMAKE_CXX_FLAGS_RELEASE": "/O2 /Ob2 /DNDEBUG",
+        "CMAKE_BUILD_TYPE": null,
+        "CMAKE_GENERATOR": "Visual Studio 18 2026",
+        "CMAKE_LINKER": "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x64/link.exe",
+        "CMAKE_MSVC_RUNTIME_LIBRARY": null,
+        "CMAKE_MSVC_RUNTIME_LIBRARY_DEFAULT": null
+      },
+      "compiler_binary_sha256": "315a654ea116864516a1674858e587e535e3bc3045ff32ed2f2739a2c1ec5640",
+      "target": "Windows x64 MSVC ABI",
+      "standard_library": "Microsoft STL 14.51.36231, Release CRT /MD; link.exe 14.51",
+      "application_allocator": "Microsoft CRT; compiler executable allocator is irrelevant to measured applications"
+    },
+    "clang": {
+      "build_info": {
+        "compiler": "Clang",
+        "compiler_version": "23.1.5",
+        "configuration": "Release",
+        "speed_budget_bytes": "4194304",
+        "memory_budget_bytes": "1048576",
+        "speed_quarters": "7",
+        "memory_quarters": "6",
+        "speed_lookahead": "1",
+        "memory_lookahead": "1",
+        "config_flags": "/O2 /Ob2 /DNDEBUG"
+      },
+      "cache": {
+        "CMAKE_CXX_FLAGS": "/DWIN32 /D_WINDOWS /EHsc",
+        "CMAKE_CXX_FLAGS_RELEASE": "/O2 /Ob2 /DNDEBUG",
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_GENERATOR": "Ninja",
+        "CMAKE_LINKER": "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x64/link.exe",
+        "CMAKE_MSVC_RUNTIME_LIBRARY": null,
+        "CMAKE_MSVC_RUNTIME_LIBRARY_DEFAULT": null
+      },
+      "compiler_binary_sha256": "dd3634f32c562c92a2dc11e115df029a5abc5373f2ee6d640b26e2f68d656c01",
+      "target": "Windows x64 MSVC ABI",
+      "standard_library": "Microsoft STL 14.51.36231, Release CRT /MD; link.exe 14.51",
+      "application_allocator": "Microsoft CRT; compiler executable allocator is irrelevant to measured applications"
+    }
+  },
+  "binaries": {
+    "msvc": {
+      "AutoTime-balanced.exe": "63c9d2fd57780214f771e84d286248acd5d7a2d91b99b7bd7e682e4f72aa862e",
+      "AutoInspect-balanced.exe": "dda02f40a4dfa4a55662d854db682363f36eb175e0e75462edf16578698bc569",
+      "AutoProfile-balanced.exe": "6792ee6c29812bd94d97e0feb503702ede9f0ef8fcc4f36dfd1d114f634bb8f9",
+      "AutoV3Time-speed.exe": "3de161da248f822f5679a0d84f709e5abba3fe0552228666f2eb8db50483d475",
+      "AutoV3Inspect-speed.exe": "9176a56b5a95cd234711eb151479d719aa504b623ab22820ae2141b6966a1d79",
+      "AutoV3Profile-speed.exe": "640480d7fd5cb639cbd248cfdfcd5c84eef37ebb963bde396f6f94547a97a35b",
+      "AutoV3Trace-speed.exe": "138967ed1a3a3f95d1368383c3534a9fe8a4053672396a388cf9c48619924fee",
+      "AutoV3Verify-speed.exe": "d3268851bfc743d7013c1f8a1fc43c93b7cc35e3083b63857cc4c1274061ad16",
+      "AutoTime-low-memory.exe": "b4cc0726256d52efb8c86b441fade62659eee24ed400615677851d2d1e6f62b4",
+      "AutoInspect-low-memory.exe": "ce314df1b16afa4dc3b2dc779c7fdc20625bdbb104043b9886d7469fa6f99380",
+      "AutoProfile-low-memory.exe": "7a9258a98e9319e6d43d23662b4c1f178a564cccf3f12023075f43f1789866d1",
+      "AutoV3Time-memory.exe": "969c33c7797f630a5d156143d44dde47f5c4d73e94822efd3d9d4c6103760b03",
+      "AutoV3Inspect-memory.exe": "7941498d54ddfff47fe1a47c1be31f3feff815b4ba26d5d261b8bcd53237433b",
+      "AutoV3Profile-memory.exe": "067d1f35d6d0c0319e734137e69e4091dac8c2229b3833c93b56f50c78264588",
+      "AutoV3Trace-memory.exe": "953ad7ca4398c66f920415c118a71dda6ddb77c817456cebb704786fff880573",
+      "AutoV3Verify-memory.exe": "4a37772588796ad2d51374e25c90d4c132ef312c652d4e23e6b5cca7e4bfa019"
+    },
+    "clang": {
+      "AutoTime-balanced.exe": "4016f729521eadc68e8516c60f4d5aa0593019b6330807ddbedb77f5fd1fc950",
+      "AutoInspect-balanced.exe": "933b137a4a9c2c2bc75a18b064e11a83a78ea11e7592c7b2e02804da83640af0",
+      "AutoProfile-balanced.exe": "f3189b163fb575a019d75771cffeb802917b2c6d90b6884e1d6e5ced3322e13a",
+      "AutoV3Time-speed.exe": "738e7cb49464d5acc1dd4bcaff8fe365e8999ddc1188b2058f911bf8966f76e8",
+      "AutoV3Inspect-speed.exe": "6394c0d1c3a64b884c57eb126751343f9b767b387c10ce09056c43ec6e613b65",
+      "AutoV3Profile-speed.exe": "e30f51a352a5dfec8cad8decb90af78835692e1d11ff4ea34f855c9ed36c4f98",
+      "AutoV3Trace-speed.exe": "79df8b26bbc081bb75b0ee8356676d569d731c307458702eaafea036af6a1266",
+      "AutoV3Verify-speed.exe": "5d227b5fcd4ac788103ee9e6286312b9690fb61359d7817161744534b756fa6e",
+      "AutoTime-low-memory.exe": "a7f75b4de3315219867631753501cd64d32121af8e0a98c92e1f840bb33fd4c2",
+      "AutoInspect-low-memory.exe": "14afba1cef14444ef1d614657db7cfc135ec2da14a0681dbe9cff2a5174eba24",
+      "AutoProfile-low-memory.exe": "ddd3ece640311f1d6fee693eb03daa1787e8902f1e65f7ebe7dedccc450a92d2",
+      "AutoV3Time-memory.exe": "d30841eb1e65d9031d58a5193682a8449b9962001b8ea7c9e3481ed750f0317d",
+      "AutoV3Inspect-memory.exe": "12f42e7bb5b043fcd5af57498c575f950d67c86b35fdc8e41663e15fb9a39663",
+      "AutoV3Profile-memory.exe": "bc0291fc6ecee385c5a3def6c8ada2a05d797e7f57fc08b431fb99a22f63ec16",
+      "AutoV3Trace-memory.exe": "88a0a7723980805abb6e29f92a6428f4784f74b0f68b1b900ab224898bbab928",
+      "AutoV3Verify-memory.exe": "b4daf6485388862cb56b1101325a1eecb4dffa28d3147f6943409d1a9ea4b7fc"
+    }
+  },
+  "standard_library_header_sha256": "10b59d42bde2105e76cf16735e34dd0f1d45a943cb1b789c4a0406c67c2bd684",
+  "sources": [
+    {
+      "file": "benchmarks/auto/AutoReservation.hpp",
+      "sha256": "78854425cde2eb1e90d5f31b23bb47e34e1d09c1f8cdb91ed5e01774dab938c7"
+    },
+    {
+      "file": "benchmarks/auto/Baseline.cpp",
+      "sha256": "64328d7dcfa49e020d20ef9d163920e69fcfe0a8f8eef71176b9963e5c8b5fcc"
+    },
+    {
+      "file": "benchmarks/auto/check_auto.py",
+      "sha256": "4842a682d26093d0bb45a00e34c5368a0a2407981186aa12df630b020488c830"
+    },
+    {
+      "file": "benchmarks/auto/check_journal.py",
+      "sha256": "385e8c72498f3695bff7f96c68e5d980002e1bb6e6e7eb448b1ad5c1a3ee6afa"
+    },
+    {
+      "file": "benchmarks/auto/CMakeLists.txt",
+      "sha256": "a19698498c4defa32e386051e1921ecd8285263c83815efde56211d604eb9548"
+    },
+    {
+      "file": "benchmarks/auto/Compare.cpp",
+      "sha256": "5af3021e2fa4213324a24f50295511ad33cfea57b0053a4b904c30e3a7e2c474"
+    },
+    {
+      "file": "benchmarks/auto/Compare.hpp",
+      "sha256": "403470b1df25b446260b98d47b4e95c6607ebe0a9d77c1b3e233f31e4fb4ce92"
+    },
+    {
+      "file": "benchmarks/auto/freeze.py",
+      "sha256": "2d9ab75a7f5882f93593ee0ec13ca283467367b9037c091ef3b4a4c3e6173a0a"
+    },
+    {
+      "file": "benchmarks/auto/generate_holdout.py",
+      "sha256": "7da940e200c94a7a70d66b79f813faaea86bf64b5e1f50d12e5df3d81068e2bb"
+    },
+    {
+      "file": "benchmarks/auto/generate_lexer.py",
+      "sha256": "cf8f6eb8f92aa173586367207ca874ccd2116b9a00b4db6d80fa74f2aa1351b2"
+    },
+    {
+      "file": "benchmarks/auto/plan.json",
+      "sha256": "1a10506e39ef7460a6b1aca29bb3f944e1b9c43c6858d65d6993d89ef806b8ea"
+    },
+    {
+      "file": "benchmarks/auto/run_auto.py",
+      "sha256": "55cbdd2052fb7630a0b4e2f537ef4e4423a283cb88687a0bbd811b98f577add8"
+    },
+    {
+      "file": "benchmarks/auto/summarize.py",
+      "sha256": "11fa5967e8ec1fd7e792b0dbb5bc90ae22b7d287251deaf385cb3851dfac0565"
+    },
+    {
+      "file": "benchmarks/auto/Trace.cpp",
+      "sha256": "90bc1b38f1332f98c3a03d520d8263eb169116ea3aeb5de03adc85681d040c50"
+    },
+    {
+      "file": "benchmarks/auto/Verify.cpp",
+      "sha256": "5fb355a3481f2a0d753acac40e4578cc07c0cde7e088a11ba8f3079858228a1f"
+    },
+    {
+      "file": "benchmarks/auto-v3/AutoReservationV3.hpp",
+      "sha256": "2b93d6d4fa5fb788a27544fce31c732d1f291bc442794750ea0049fe54d294ff"
+    },
+    {
+      "file": "benchmarks/auto-v3/calibrate.py",
+      "sha256": "0bb3d48c7939ba368e335877ee6b514f1d8cdc1c22b896d7ea9cd4cd8bd803cf"
+    },
+    {
+      "file": "benchmarks/auto-v3/check_v3.py",
+      "sha256": "887dbfe56690d85e15b9cdd5861a24c290553fb61484c3ac0d072b01713f8c77"
+    },
+    {
+      "file": "benchmarks/auto-v3/CMakeLists.txt",
+      "sha256": "6420691a7b5093d55794006acf69de9d84e3704c7634d94530dc91299654c5c6"
+    },
+    {
+      "file": "benchmarks/auto-v3/freeze.py",
+      "sha256": "43e13aecf5d8fdc4ec1f7e14ff08df11b1b14b3daea4d9fe918da34edb9f9bf2"
+    },
+    {
+      "file": "benchmarks/auto-v3/generate_holdout.py",
+      "sha256": "a358f54469fc251cb716a6c885f7971c18c45971ea6054b08b10646368586b9a"
+    },
+    {
+      "file": "benchmarks/auto-v3/generate_lexer.py",
+      "sha256": "07098739a011199f0f9b776ea0b8191389e035132c49f19d3b2159127e8ea667"
+    },
+    {
+      "file": "benchmarks/auto-v3/journal.py",
+      "sha256": "a87e56e43383ac742d1bb17226afe6830fde305e401bbb65b6a2cbb5a5d55460"
+    },
+    {
+      "file": "benchmarks/auto-v3/plan.json",
+      "sha256": "2d22dc5e4a9b9a5341952c86cfaf08fc9f5dbe8b13afbb44e7bef86e78c66913"
+    },
+    {
+      "file": "benchmarks/auto-v3/run_final.py",
+      "sha256": "3cc9851052a7de1e99fea362ff34d183c7410677cd8ec40ce409c9cdb8353602"
+    },
+    {
+      "file": "benchmarks/auto-v3/select_floor.py",
+      "sha256": "7771eb49df1d39e123722091daecfe9ec66b7cecdb849e5e35c4a9487b8f93a2"
+    },
+    {
+      "file": "benchmarks/auto-v3/selection-plan.json",
+      "sha256": "70dd7ee319bb9c8475f5deab64d6ae9a0f65a9f551144fa1f7cdd1db66d82ce5"
+    },
+    {
+      "file": "benchmarks/auto-v3/summarize.py",
+      "sha256": "78fe68c1bc252548d12be608ab3d21a4a90163b410ed5ce2260b441ef3d59f18"
+    },
+    {
+      "file": "benchmarks/auto-v3/Trace.cpp",
+      "sha256": "5c41d804638c8a728f9d457d59801fed29a60e034fffba8097c97d6de082ff4d"
+    },
+    {
+      "file": "benchmarks/auto-v3/Verify.cpp",
+      "sha256": "c7598cc8a58b8a9cf4d8c3547eb764d503f890d45220479bc5e81c57d0d60df0"
+    },
+    {
+      "file": "benchmarks/BenchmarkUtils.cpp",
+      "sha256": "db230a04070829d9140bb260761e3d78349371a3ebb65c00724695d458a9593a"
+    },
+    {
+      "file": "benchmarks/BenchmarkUtils.hpp",
+      "sha256": "c8d14e94b775950fb12445e01b0109014ca30cf109150d53f4181f4618530236"
+    },
+    {
+      "file": "benchmarks/CMakeLists.txt",
+      "sha256": "2aed7669502fc50d1fb80b3dbfc09bc6a14e1801ab19f3655339abe881ee77d8"
+    },
+    {
+      "file": "benchmarks/MemoryTracker.cpp",
+      "sha256": "1bfb5af48e0750f24d588369ac7f7237e4180b3b39f273cf281973d96472616f"
+    },
+    {
+      "file": "benchmarks/MemoryTracker.hpp",
+      "sha256": "9cefa14171a8ab2255524d5cf4e19783bce98f5afd03119e9828ad4bf8695ca3"
+    },
+    {
+      "file": "benchmarks/ParserProfile.cpp",
+      "sha256": "47d3d28a5949939200d2b7fd32938928ca5cf8092df3d6b382d8e51c409a30ab"
+    },
+    {
+      "file": "benchmarks/real-corpus/common.py",
+      "sha256": "db7579b942465493e8e08c9a03a9b2171db8dbd118d506540adbaf790ea3a516"
+    },
+    {
+      "file": "benchmarks/real-corpus/corpus.json",
+      "sha256": "e26a77beb2f91376200e87a24e29bcbafc8107329adde15c9b091b137d7ac720"
+    },
+    {
+      "file": "benchmarks/real-corpus/fetch.py",
+      "sha256": "b6308c62efb37aedf233184dd5ad80bed3797c629406868e6cede85a80499e0f"
+    },
+    {
+      "file": "benchmarks/real-corpus/plan.json",
+      "sha256": "fa8195e6390d17c854b7f3c7542467771425dc0ee2a07bda263395a34c5d19a8"
+    },
+    {
+      "file": "benchmarks/real-corpus/prepare.py",
+      "sha256": "13711cd0d0546f866d0da4c798a45a4e24749bbc4765d7f0f35c53a08cb1624f"
+    },
+    {
+      "file": "benchmarks/real-corpus/run.py",
+      "sha256": "7b8bb4a16d52d6adf2e6b37e27a9fdc54adbdcdd33c9cb7d66bc2ebd135482de"
+    },
+    {
+      "file": "benchmarks/real-corpus/summarize.py",
+      "sha256": "5a0d98492ead256527ea1c526389eb2c2cf881857881ffe7ef4be300f0c8a709"
+    },
+    {
+      "file": "benchmarks/reservation/check_matrix.py",
+      "sha256": "535c51a44258cf46666d402538770fef84fad6c65783ff96692e194a798e9a5e"
+    },
+    {
+      "file": "benchmarks/reservation/CMakeLists.txt",
+      "sha256": "a3ac5751316e7258f71673fa45dcf05f725662c5c28700dc5b305c2331bd1a4f"
+    },
+    {
+      "file": "benchmarks/reservation/Data.hpp",
+      "sha256": "360acc67e010d2977700d076d07a14cec2d2b01d88fd3c0621e13ed1049c2760"
+    },
+    {
+      "file": "benchmarks/reservation/generate_holdout.py",
+      "sha256": "274538c233afa5af9910c7c9708bafc0cebc65c461ab0dab25d0a2d9fb29ae42"
+    },
+    {
+      "file": "benchmarks/reservation/generate_inputs.py",
+      "sha256": "9fae96c824ec228b2f63e695fa28de75cd092c13b7cd9b369049baedc1470536"
+    },
+    {
+      "file": "benchmarks/reservation/generate_lexer.py",
+      "sha256": "115fb49cba5a4db92bf45e04ab005741e5aeecd397b22d0983073bb5e5940962"
+    },
+    {
+      "file": "benchmarks/reservation/Inspect.cpp",
+      "sha256": "b5aaf0ac4dbfb99b8dd0f8d1b46e6603a6548cb256b2300a35919df83d8b69f6"
+    },
+    {
+      "file": "benchmarks/reservation/lowmemory-plan.json",
+      "sha256": "b373e5d97cec74a063223cd9834f51b8e6a143a60349554157ea405ba0f99e88"
+    },
+    {
+      "file": "benchmarks/reservation/ReservationStats.hpp",
+      "sha256": "14cfef84f2bece42a7992dc7cc402c727b061b4320ec42d7772dd9a2d340fb61"
+    },
+    {
+      "file": "benchmarks/reservation/run_lowmemory.py",
+      "sha256": "8aef1aca64d9b36658547f5b432ae76ea5177a2aef214d899fd6709480bba789"
+    },
+    {
+      "file": "benchmarks/reservation/run_matrix.py",
+      "sha256": "731b2fe5784a3df678abea1b65e1668614b424e2b022212be02d06c62535a178"
+    },
+    {
+      "file": "benchmarks/reservation/run_public_lowmemory.py",
+      "sha256": "8283332c5b5669e727540a7f7410fb4730e618395b9e3467e013bcf6ef013f09"
+    },
+    {
+      "file": "benchmarks/reservation/select_lowmemory.py",
+      "sha256": "575cefcf49480747f9c04924b6830eb727330e1ae3cecb82650561f3c0fda5b8"
+    },
+    {
+      "file": "benchmarks/reservation/summarize_lowmemory.py",
+      "sha256": "5871150b39cf427399fbd3f9513e8ca5582d62f5859f944bc22fe6ebf2813dba"
+    },
+    {
+      "file": "benchmarks/reservation/summarize_matrix.py",
+      "sha256": "898118a9fabaf703bf24f811dd00b3e46c97538fd5c4a1783b0fc110eb14f06b"
+    },
+    {
+      "file": "benchmarks/reservation/Timing.cpp",
+      "sha256": "cf7d639dce88ff03178b36aa3ae295c129b6ffe8f76e7dfff65cb37c77a0e7ef"
+    },
+    {
+      "file": "CMakeLists.txt",
+      "sha256": "dcfd9ae1d3ebaf63934f56530015e8228f0f73a278731223909e9a46d7d6bd93"
+    },
+    {
+      "file": "core/JsonHandler.cpp",
+      "sha256": "45f94e185d5c4b6be3a4c79a304431bf322469282baa2008123e454bb2af299b"
+    },
+    {
+      "file": "core/JsonHandler.hpp",
+      "sha256": "90d55357181117325604909077d9829336f7b0bade07f4cfe06f35f0df233468"
+    },
+    {
+      "file": "diagnostics/DiagnosticFormatter.cpp",
+      "sha256": "6aa2bfd5cca3b6021c6c0cb5333e9f75a8f7bd3d0cfedc090224191855cabd54"
+    },
+    {
+      "file": "diagnostics/DiagnosticFormatter.hpp",
+      "sha256": "6525112121fa47acd118165f497b3df503ab678f0bcbe54b8c1cec507945fea2"
+    },
+    {
+      "file": "errors/AccessException.cpp",
+      "sha256": "f319ede4960e630456df1e81c3102864989ed257a0e71e39a887b2d50a068437"
+    },
+    {
+      "file": "errors/AccessException.hpp",
+      "sha256": "a32ee725bcae80d6de99a8429a740ec0ac9969cb0326599c146d71ae5f91fcf8"
+    },
+    {
+      "file": "errors/FileException.cpp",
+      "sha256": "af11d861c6f4b1b256945ca5678876fdec19b49f8b2ce028a08419bc24531aa9"
+    },
+    {
+      "file": "errors/FileException.hpp",
+      "sha256": "4b3d99c04975100d98be209b0dd5717b0fafa541adb6ac4e3091c54fd5ab71e9"
+    },
+    {
+      "file": "errors/JsonException.hpp",
+      "sha256": "5a21ecee1684c792c5db08380d6277ef0dd29cacd82ec5c97dedcbaf68ae8b93"
+    },
+    {
+      "file": "errors/LexerException.cpp",
+      "sha256": "fba7cfd336c4b5fe77a3cc1a7d0016ec30a91fc0f38c22697cc7935f3f3c8d59"
+    },
+    {
+      "file": "errors/LexerException.hpp",
+      "sha256": "3ac62d7369de8bbf7861b34d5eea340f324e9d6974709e9a69e283eeb7baf6a7"
+    },
+    {
+      "file": "errors/OperationException.cpp",
+      "sha256": "42f1a550baf925ce8a087f9c52968ba1771e81323ee5cd6cb204225aba6d53a6"
+    },
+    {
+      "file": "errors/OperationException.hpp",
+      "sha256": "09a5542a6d70beeb679f880dc83cf399867aecd1e029585212abb9db175ecf32"
+    },
+    {
+      "file": "errors/ParseException.cpp",
+      "sha256": "75993d81620815c44411ed8fed3516102006df8890739224fc250e29dff41a61"
+    },
+    {
+      "file": "errors/ParseException.hpp",
+      "sha256": "ed06870027a0b0c27b8513b2d94e014c05f161234c61bd3ae7d0f6831bd50d7c"
+    },
+    {
+      "file": "errors/TypeException.cpp",
+      "sha256": "23d799787399aff6e0dc8bc30bc81bfa7b62dc9b08c6eab76ee3479cb8b5035c"
+    },
+    {
+      "file": "errors/TypeException.hpp",
+      "sha256": "588750e4997ad0e992ee3c4034f351d681b9f13ec67cf01903f101bfea720c61"
+    },
+    {
+      "file": "fuzz/CMakeLists.txt",
+      "sha256": "22557c7c529ca8afa6c1d212eaf1d2fe83cf5cf3d4d0e40cc9c0b50bfedc02a5"
+    },
+    {
+      "file": "fuzz/corpus/booleans.json",
+      "sha256": "153c9dbcc7025ecd7e50ce6d83f1995233dfc636bc869098e3a8d84288fd938a"
+    },
+    {
+      "file": "fuzz/corpus/depth-limit.json",
+      "sha256": "a87f12d34d179c4dd058f06d205b96585bd84797eab5360fe32bc414d56028ba"
+    },
+    {
+      "file": "fuzz/corpus/duplicate-keys.json",
+      "sha256": "ad68a9dab09c900b95cfe214ac7685d20c4363d64af737fcd8746cb9a848f829"
+    },
+    {
+      "file": "fuzz/corpus/escapes.json",
+      "sha256": "7ff91b00faeec3f6464da674479a023d56e7a36ae61bb399c902fe1d1ff86567"
+    },
+    {
+      "file": "fuzz/corpus/null.json",
+      "sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+    },
+    {
+      "file": "fuzz/corpus/numbers.json",
+      "sha256": "dfdc3e407ac5dd2ea855c5ff27029b8ba0c99d6726ab650e9b6522a5f1897443"
+    },
+    {
+      "file": "fuzz/corpus/object.json",
+      "sha256": "6e473ac5453c3613335614a35ecc4214070c7b5d4dc130353e8b362923a059e5"
+    },
+    {
+      "file": "fuzz/corpus/surrogates.json",
+      "sha256": "c628ead4a67d6d3447540a08d1664dbbd0c5006944b951da44de7e883897b981"
+    },
+    {
+      "file": "fuzz/corpus/unicode.json",
+      "sha256": "fd93b41cc9e333ec07bf20a7a0842ecd9023f19846dcdbd4ed1b19eeb46c69ac"
+    },
+    {
+      "file": "fuzz/FuzzChecks.cpp",
+      "sha256": "b08d509a9478b848dcafbd95611ec9f3525cf298ce63b4c47dcf2a07e8984f35"
+    },
+    {
+      "file": "fuzz/FuzzChecks.hpp",
+      "sha256": "a45cb98242923109ae47ffb3c0b95a6c8013266a4298af91778905a2ec73be46"
+    },
+    {
+      "file": "fuzz/FuzzReplay.cpp",
+      "sha256": "0a8dc60e957e6f1d2cb5b1b160bf2ef62baa0138de0c83b2e439e6577952f49b"
+    },
+    {
+      "file": "fuzz/ParserFuzz.cpp",
+      "sha256": "14febee99538841be18273443c17759cec5110f7f92f1d17643cc70d56d5c05a"
+    },
+    {
+      "file": "fuzz/regressions/control-character.json",
+      "sha256": "b81cfb0a6715e53b373345b49e8ad94eb55fd777519dc539373d0634973c186e"
+    },
+    {
+      "file": "fuzz/regressions/digit-string.json",
+      "sha256": "a3feaa646c54c2326763b52932b8dca80a69cf44bb81d7293e4f1c913a54f77d"
+    },
+    {
+      "file": "fuzz/regressions/empty-siblings.json",
+      "sha256": "951ac3748bd71288cd3b6136814c11645ab8a94eb0ca17843d6f598c2878b10c"
+    },
+    {
+      "file": "fuzz/regressions/negative-zero.json",
+      "sha256": "c26617c7ccbcaa6631b45d851b8cf56e21d2ca624bdb1193afdbd4b560702cec"
+    },
+    {
+      "file": "fuzz/regressions/precise-double.json",
+      "sha256": "c79c8d67f56ad5730a3742bf6f8a142e44483465f675bffd3c9000c1e9ddb239"
+    },
+    {
+      "file": "fuzz/regressions/surrogate-pair.json",
+      "sha256": "90a0592bc0139ce2c0bb6663aeb86fbcd798ec35cee310184c5e5688f76c3e8c"
+    },
+    {
+      "file": "fuzz/regressions/uint64-limit.json",
+      "sha256": "2cdb26265b4dc65e3b44d694f121fd6de99b9e4b8ae7f08d84bfa9537635ae43"
+    },
+    {
+      "file": "io/AtomicFile.cpp",
+      "sha256": "d2ece4fd1930362307841646db9614c41fe9ba159cb6e1ae313a8af81b57af08"
+    },
+    {
+      "file": "io/AtomicFile.hpp",
+      "sha256": "b0a6185dd4630a80dbb681b0d1199d86a48f2caf154c53222c994b6222715249"
+    },
+    {
+      "file": "io/JsonFile.cpp",
+      "sha256": "69a47d553a9e069d4597f7ef669a3ba04166a7709b39279cc4c02af52db1cc9f"
+    },
+    {
+      "file": "io/JsonFile.hpp",
+      "sha256": "66278a2fcb1e2f4d926e737a4e0422abf3043dcd6d5366375ea05f7b570b0210"
+    },
+    {
+      "file": "parser/JsonLexer.cpp",
+      "sha256": "59bd2733d35caad5605be373587e3811b16cb16d734114f25a0ca577a0e435b2"
+    },
+    {
+      "file": "parser/JsonLexer.hpp",
+      "sha256": "e72da42f50f2379331c8b0185fb3ec40b3b1506865d228a942bb1bda46c2aba6"
+    },
+    {
+      "file": "parser/JsonParser.cpp",
+      "sha256": "ea66e451674ae6c43f46977ca51893cc51ad94acf65474acb798fd5f79454cdf"
+    },
+    {
+      "file": "parser/JsonParser.hpp",
+      "sha256": "e4cf15b8edde6feadff255a3a41d2cebd6c4769c557132d342a012130feeaef3"
+    },
+    {
+      "file": "parser/ParseOptions.hpp",
+      "sha256": "2402bd7a78efff045145211b9895eb877028b866da4d6d1d7470f706f8c09774"
+    },
+    {
+      "file": "parser/Token.hpp",
+      "sha256": "c8985f42148273ccdcd4010a1fd6d2c4688a6e56bd42799fbe95a229e5bf5534"
+    },
+    {
+      "file": "parser/TokenReservation.hpp",
+      "sha256": "9e2b511b0d9d8e748d8d2dd113ecdbed4f627625f3e8e75bedc531deb08a3a5a"
+    },
+    {
+      "file": "pch.cpp",
+      "sha256": "b20ad711fa06e3ef62f8e3c626e13b3bdc69cff08c60c8b358f38b09e16c99ef"
+    },
+    {
+      "file": "pch.h",
+      "sha256": "457d895c632454e218f824a4b05f26794269021350e946fae4699d4f46d4e0c5"
+    },
+    {
+      "file": "serializer/JsonSerializer.cpp",
+      "sha256": "b4b38108fb3c7e7743ef3318b5ab6efb098ced8029340d1cfc7e17c2e34c8566"
+    },
+    {
+      "file": "serializer/JsonSerializer.hpp",
+      "sha256": "ffaf71cf40c089fd209d1750598a3d1e3475ea38bff2ad6779dd1f4fe5fa163b"
+    },
+    {
+      "file": "utils/Api.hpp",
+      "sha256": "a54e07b1c529983f560e65a6deb858de57832062f35d0dc0a619756a2a506f92"
+    },
+    {
+      "file": "utils/framework.h",
+      "sha256": "20db0f43764728253c5a64ad3ecfdc4890f1773000fd4338392f5ae14aa56a59"
+    },
+    {
+      "file": "utils/JsonAlgorithms.cpp",
+      "sha256": "95be37996741c0795eaf53c2330c0cbd7ae43b10743058c2a25e9ba6e3c52a28"
+    },
+    {
+      "file": "utils/JsonAlgorithms.hpp",
+      "sha256": "cd2741ed3dc0a0a16370964d596e42b153d7994289928a3a5514d4c7cfcce531"
+    },
+    {
+      "file": "utils/Utf8.hpp",
+      "sha256": "b7bd2000584210a3e9e5a01e6fad91381ec044ae90ccec4ef6d4fc336ae09a9c"
+    }
+  ],
+  "source_hash_format": "UTF-8 without BOM, LF line endings"
+}

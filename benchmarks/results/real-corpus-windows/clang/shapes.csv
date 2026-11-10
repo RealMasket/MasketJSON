@@ -1,0 +1,6 @@
+dataset,input_bytes,token_count,whitespace_bytes,string_tokens,raw_string_bytes,max_raw_string_bytes,escape_sequences,number_tokens,max_depth,max_array_width,max_object_width,first_4k_tokens,last_4k_tokens,token_fingerprint,dom_fingerprint
+"canada.json",2251051,334374,24,12,90,17,0,111126,7,14310,3,620,609,f7873150eb3eb6b5,1d40e930594742c7
+"citm_catalog.json",1727204,135991,1226905,26604,221381,55,2,14392,8,243,184,393,421,6483f77d759e4218,2db3d46bf7b3848c
+"twitter.json",631514,55264,164608,18099,369145,463,1228,2109,10,100,40,380,350,17c2e221c83e54bc,e5bbb58071769394
+"natural-earth-countries.json",838726,189786,1,48828,394286,167,0,27507,8,556,168,931,924,71f10ffadd3381b3,69e90c774ce04eef
+"typescript-package-lock.json",158517,12022,55275,4847,85369,117,0,1,5,3,277,340,352,4abb90bebf486d44,ab25e61373e07c6e

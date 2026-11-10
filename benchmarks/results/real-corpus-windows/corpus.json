@@ -1,0 +1,67 @@
+{
+  "format": 1,
+  "base_revision": "838a26e70cdd3d675408121e08e3e83b7cef7173",
+  "entries": [
+    {
+      "repo": "miloyip/nativejson-benchmark",
+      "commit": "478d5727c2a4048e835a29c65adecc7d795360d5",
+      "path": "data/canada.json",
+      "name": "canada.json",
+      "description": "Canada border GeoJSON with many floating-point coordinates",
+      "bytes": 2251051,
+      "git_blob_sha1": "04f63b405b2ad0826a19b6e7290b19227e7c772d",
+      "url": "https://raw.githubusercontent.com/miloyip/nativejson-benchmark/478d5727c2a4048e835a29c65adecc7d795360d5/data/canada.json",
+      "sha256": "f83b3b354030d5dd58740c68ac4fecef64cb730a0d12a90362a7f23077f50d78"
+    },
+    {
+      "repo": "miloyip/nativejson-benchmark",
+      "commit": "478d5727c2a4048e835a29c65adecc7d795360d5",
+      "path": "data/citm_catalog.json",
+      "name": "citm_catalog.json",
+      "description": "Indented event catalog snapshot used by native JSON benchmarks",
+      "bytes": 1727204,
+      "git_blob_sha1": "245fdbbedf478e0094ce25ad8f771c2b9031320c",
+      "url": "https://raw.githubusercontent.com/miloyip/nativejson-benchmark/478d5727c2a4048e835a29c65adecc7d795360d5/data/citm_catalog.json",
+      "sha256": "a73e7a883f6ea8de113dff59702975e60119b4b58d451d518a929f31c92e2059"
+    },
+    {
+      "repo": "miloyip/nativejson-benchmark",
+      "commit": "478d5727c2a4048e835a29c65adecc7d795360d5",
+      "path": "data/twitter.json",
+      "name": "twitter.json",
+      "description": "Historical Twitter search-response snapshot with CJK text",
+      "bytes": 631514,
+      "git_blob_sha1": "137fb516252d6941523cdbd0d8acf81e5d286bab",
+      "url": "https://raw.githubusercontent.com/miloyip/nativejson-benchmark/478d5727c2a4048e835a29c65adecc7d795360d5/data/twitter.json",
+      "sha256": "a08b769f32b95f426cbc3abafcec65c1a19d3eb544d4ddf320eae142c99efc5d"
+    },
+    {
+      "repo": "nvkelso/natural-earth-vector",
+      "commit": "ca96624a56bd078437bca8184e78163e5039ad19",
+      "path": "geojson/ne_110m_admin_0_countries.geojson",
+      "name": "natural-earth-countries.json",
+      "description": "Natural Earth 1:110m country geometry and attributes",
+      "bytes": 838726,
+      "git_blob_sha1": "1e6ab74c7042f97013be69ceec798be8e1aff27d",
+      "url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/ca96624a56bd078437bca8184e78163e5039ad19/geojson/ne_110m_admin_0_countries.geojson",
+      "sha256": "6866c877d39cba9c357620878839b336d569f8c662d3cfab4cb1dbe2d39c977f"
+    },
+    {
+      "repo": "microsoft/TypeScript",
+      "commit": "df43aada644be309fe8ceee3f1254b6eea25a549",
+      "path": "package-lock.json",
+      "name": "typescript-package-lock.json",
+      "description": "TypeScript npm dependency lockfile",
+      "bytes": 158517,
+      "git_blob_sha1": "e69551738341261a0668d9adc8366e89d0483e9b",
+      "url": "https://raw.githubusercontent.com/microsoft/TypeScript/df43aada644be309fe8ceee3f1254b6eea25a549/package-lock.json",
+      "sha256": "9ad3d45f3b8c590d96b64b791033dad1f10994db95bd3dc3f9671f9201599672"
+    }
+  ],
+  "notes": "Original bytes, pinned upstream commits. Inputs downloaded to ignored out directory, not redistributed or relicensed by MasketJSON.",
+  "sources": [
+    "https://github.com/miloyip/nativejson-benchmark#json-data",
+    "https://www.naturalearthdata.com/about/terms-of-use/",
+    "https://github.com/microsoft/TypeScript"
+  ]
+}

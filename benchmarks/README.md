@@ -293,7 +293,7 @@ python benchmarks/auto/run_auto.py --bin build-auto/benchmarks/auto/Release --in
 
 Use fresh result directories. Keep the machine idle and do not rebuild while
 measuring. The runner pins CPU affinity and rotates four policies across four
-rounds (5 samples Р В Р’В Р Р†Р вЂљРЎС™Р В Р вЂ Р В РІР‚С™Р Р†Р вЂљРЎСљ 3 operations by default), checks exact results against both
+rounds (5 samples Р В Р’В Р вЂ™Р’В Р В РІР‚в„ўР вЂ™Р’В Р В Р’В Р В РІР‚В Р В Р’В Р Р†Р вЂљРЎв„ўР В Р Р‹Р РЋРІвЂћСћР В Р’В Р вЂ™Р’В Р В Р’В Р Р†Р вЂљР’В Р В Р’В Р вЂ™Р’В Р В Р вЂ Р В РІР‚С™Р РЋРІвЂћСћР В Р’В Р В РІР‚В Р В Р’В Р Р†Р вЂљРЎв„ўР В Р Р‹Р РЋРЎв„ў 3 operations by default), checks exact results against both
 fixed production modes, validates journal bounds and matches copy counts with
 separate profiles. Freeze verifies unchanged controller sources and executable
 hashes before full held-out evaluation; do not retune using that split.
@@ -448,6 +448,27 @@ retain LF endings for stable cross-file SHA-256 checks. Reported captured heap
 is simultaneous requested C++ allocation bytes, including old/new token buffers;
 it excludes caller input, stack/root Json, allocator metadata/rounding, direct
 malloc and profiler bookkeeping. It is not RSS or a hard runtime memory bound.
+
+## External corpus and compiler transfer
+
+The [external-corpus report](results/real-corpus.md) freezes the selected Auto v3
+and tests five original public snapshots under MSVC 19.51 and Clang-cl 23.1.5 on
+the same Windows x64 machine with Microsoft STL/CRT. Native JSON Benchmark,
+Natural Earth and TypeScript inputs are pinned by commit, size, Git blob SHA-1
+and SHA-256; raw JSON is downloaded to ignored output, not redistributed here.
+See [the complete protocol and commands](real-corpus/README.md).
+
+Eight compiler/preset pairs rotate over eight rounds. Exact values and tokens
+agree across all modes and compilers. Memory-goal v3 passes the existing joint
+CPU/heap gates under both compilers. Speed v3 fails the peak/Balanced gate on
+Canada geometry: 39.360 versus 24.876 MiB, or 1.582x against the unchanged 1.5x
+limit. This failure is preserved without retuning or weakening the criterion.
+
+Clang's geometric-mean Balanced parse time is 0.914x MSVC across these snapshots;
+compiler effects vary by input/preset. This is a small external convenience corpus,
+not a representative production sample or evidence for universal auto selection.
+Windows/Linux CI downloads the same originals and checks semantics, profiles and
+journals; sanitizer checks omit allocation interception and timing assertions.
 
 ## References
 

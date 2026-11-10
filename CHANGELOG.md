@@ -4,6 +4,10 @@
 
 ### Planned for 1.1.0
 
+- Evaluate frozen Auto v3 on five immutable external JSON snapshots with paired
+  MSVC/Clang-cl rounds, exact cross-compiler checks and retained source/binary
+  identities. Preserve the Canada speed-goal peak failure without retuning;
+  add Windows/Linux profile and sanitizer corpus checks and reproduction tools.
 - Evaluate private Auto v3 growth under historical/projected copy pressure,
   preserving six candidate observations on 91 known documents. Select per-goal
   floors with unchanged joint CPU/heap gates, freeze before 16 new inputs, and
@@ -55,7 +59,7 @@
   failures, Unicode paths, temporary cleanup, hard links, and installed DLL API.
 - Advance the development version to 1.1.0; the published 1.0.0 tag is unchanged.
 
-## 1.0.0 РІР‚вЂќ 2026-11-06
+## 1.0.0 Р Р†Р вЂљРІР‚Сњ 2026-11-06
 
 ### Correctness
 

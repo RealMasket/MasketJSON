@@ -1,0 +1,11 @@
+dataset,bytes,operation,iterations,samples,median_us,min_us,max_us,configuration
+"canada.json",2251051,parse,3,5,34812.2333333,33409.7,35771.9666667,Release
+"canada.json",2251051,lex_only,3,5,12950.5,12810.4,13047.8333333,Release
+"citm_catalog.json",1727204,parse,3,5,12434.8333333,12256.8,12517.5666667,Release
+"citm_catalog.json",1727204,lex_only,3,5,6278.63333333,6168.56666667,6833.03333333,Release
+"twitter.json",631514,parse,3,5,6177.3,5930.7,7061.63333333,Release
+"twitter.json",631514,lex_only,3,5,3192.8,2822.96666667,3236.46666667,Release
+"natural-earth-countries.json",838726,parse,3,5,15146.6333333,14821.1333333,16129.9666667,Release
+"natural-earth-countries.json",838726,lex_only,3,5,5720.96666667,5521.73333333,5806.96666667,Release
+"typescript-package-lock.json",158517,parse,3,5,945.066666667,774.8,1031.83333333,Release
+"typescript-package-lock.json",158517,lex_only,3,5,315.966666667,306.466666667,653.233333333,Release

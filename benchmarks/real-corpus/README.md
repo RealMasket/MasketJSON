@@ -35,6 +35,23 @@ The freeze records exact build information, global flags, compiler-binary hashes
 standard-library header hash and every benchmark executable identity. This holds
 OS/STL/runtime constant rather than measuring GCC/libstdc++ or Linux performance.
 
+For a fresh checkout, run these from an x64 Visual Studio developer shell with
+CMake and Ninja available. Point the Clang variable at the verified portable
+compiler or an equivalent official installation. The recorded study requires the
+exact compiler versions above; other versions should use a new pre-recorded plan.
+
+```powershell
+$clangExecutable = (Resolve-Path out/real-toolchain/llvm/bin/clang-cl.exe).Path
+$linkExecutable = (Get-Command link.exe).Source
+cmake -S . -B out/real-msvc-build -G "Visual Studio 18 2026" -A x64 -DBUILD_TESTING=OFF -DBUILD_SHARED_LIBS=OFF -DMASKETJSON_BUILD_BENCHMARKS=ON -DMASKETJSON_BUILD_PROFILER=ON -DMASKETJSON_BUILD_AUTO_V3_EXPERIMENT=ON -DAUTO_V3_SPEED_QUARTERS=7 -DAUTO_V3_MEMORY_QUARTERS=6 -DAUTO_V3_SPEED_LOOKAHEAD=1 -DAUTO_V3_MEMORY_LOOKAHEAD=1
+cmake --build out/real-msvc-build --config Release --target AutoV3Tools --parallel 2
+cmake -S . -B out/real-clang-build -G Ninja -DCMAKE_BUILD_TYPE=Release "-DCMAKE_CXX_COMPILER=$clangExecutable" "-DCMAKE_LINKER=$linkExecutable" -DBUILD_TESTING=OFF -DBUILD_SHARED_LIBS=OFF -DMASKETJSON_BUILD_BENCHMARKS=ON -DMASKETJSON_BUILD_PROFILER=ON -DMASKETJSON_BUILD_AUTO_V3_EXPERIMENT=ON -DAUTO_V3_SPEED_QUARTERS=7 -DAUTO_V3_MEMORY_QUARTERS=6 -DAUTO_V3_SPEED_LOOKAHEAD=1 -DAUTO_V3_MEMORY_LOOKAHEAD=1
+cmake --build out/real-clang-build --target AutoV3Tools --parallel 2
+```
+
+Use `--msvc-build out/real-msvc-build` below for a fresh producer build. The recorded
+run reused the unchanged MSVC producer from the preceding Auto v3 stage.
+
 ```powershell
 python benchmarks/real-corpus/prepare.py --msvc-build out/auto-v3-build --clang-build out/real-clang-build --inputs out/real-corpus-inputs --output out/real-frozen-bin
 python benchmarks/real-corpus/run.py --bin out/real-frozen-bin --inputs out/real-corpus-inputs --output out/real-corpus-final

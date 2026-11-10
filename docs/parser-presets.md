@@ -29,10 +29,10 @@ treated as available before parsing, or as free features for an automatic select
 
 | Preset / status | Objective | Mechanism |
 | --- | --- | --- |
-| Balanced РІР‚вЂќ implemented | Existing behavior | Observed density, 1.5Р“вЂ”РІР‚В¦64Р“вЂ” growth |
-| LowMemory РІР‚вЂќ implemented | Limit speculative capacity | At growth request at most live token count + max(live token count, 256) slots; accept more copying |
-| Throughput РІР‚вЂќ proposed | Reduce reallocations on known dense inputs | More eager reservation, possibly with a caller-supplied token-count hint |
-| Auto РІР‚вЂќ proposed | Select/revise a strategy within explicit bounds | Online estimates with a conservative fallback when density changes |
+| Balanced Р В Р вЂ Р В РІР‚С™Р Р†Р вЂљРЎСљ implemented | Existing behavior | Observed density, 1.5Р В РІР‚СљР Р†Р вЂљРІР‚СњР В Р вЂ Р В РІР‚С™Р вЂ™Р’В¦64Р В РІР‚СљР Р†Р вЂљРІР‚Сњ growth |
+| LowMemory Р В Р вЂ Р В РІР‚С™Р Р†Р вЂљРЎСљ implemented | Limit speculative capacity | At growth request at most live token count + max(live token count, 256) slots; accept more copying |
+| Throughput Р В Р вЂ Р В РІР‚С™Р Р†Р вЂљРЎСљ proposed | Reduce reallocations on known dense inputs | More eager reservation, possibly with a caller-supplied token-count hint |
+| Auto Р В Р вЂ Р В РІР‚С™Р Р†Р вЂљРЎСљ proposed | Select/revise a strategy within explicit bounds | Online estimates with a conservative fallback when density changes |
 
 These are objectives, not names for the fastest/lowest-memory row on one fixture.
 The matrix already shows that small initial reserve alone does not ensure a low
@@ -91,6 +91,28 @@ excludes several allocation classes. Cheap logical counters, offline DOM walks a
 instrumented heap measurements have different costs and meanings.
 
 ## Further validation and future modes
+
+The [external-corpus transfer study](../benchmarks/results/real-corpus.md) adds
+five original public snapshots with pinned provenance and compares frozen v3
+under MSVC 19.51 and Clang-cl 23.1.5 using the same Windows machine and Microsoft
+STL/CRT. Exact values/tokens agree across modes and compilers. Memory-goal v3
+passes the original joint targets in both builds, while speed-goal v3 fails the
+peak/Balanced criterion on Canada geometry: 39.360 versus 24.876 MiB (1.582x,
+limit 1.5x). Its final token capacity is 508758 for only 334374 tokens.
+The final expansion starts at 304178 slots: projected pressure raises the floor
+to 532311, then the remaining-byte proof trims it to 508758. That proof prevents
+another expansion, but is loose for long coordinate-number tokens. The logged
+byte-floor override and overlapping old/new buffers explain the captured peak;
+this is a controller tradeoff reproduced by both compilers.
+
+This external failure remains a failure; no controller parameters or criteria
+were tuned using these files. A synthetic passing result did not establish
+reliable transfer. Clang's geometric-mean Balanced time is 0.914x MSVC on this
+five-file study, with input-specific exceptions for other presets. This does not
+measure Linux or alternative standard libraries/allocators. Auto remains private;
+future work needs representative opt-in workload samples and a separately frozen
+study of late growth on floating-point geometry rather than tuning to five files.
+
 
 The [Auto v3 experiment](../benchmarks/results/auto-v3-reservation.md) finds that
 historical copy pressure can activate too late. Varying the floor alone does not

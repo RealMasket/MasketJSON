@@ -1,0 +1,422 @@
+{
+  "freeze_sha256": "9c28fdc3ffde412585cb065275d4aea4df65af623d2110192d3d5a097c447ee4",
+  "corpus_sha256": "e26a77beb2f91376200e87a24e29bcbafc8107329adde15c9b091b137d7ac720",
+  "plan_sha256": "fa8195e6390d17c854b7f3c7542467771425dc0ee2a07bda263395a34c5d19a8",
+  "cpu": "12th Gen Intel(R) Core(TM) i5-12600KF",
+  "os": "Windows-10-10.0.19045-SP0",
+  "logical_cpu": 0,
+  "rounds": 8,
+  "samples": 5,
+  "iterations": 3,
+  "round_order": [
+    [
+      [
+        "msvc",
+        "balanced"
+      ],
+      [
+        "clang",
+        "balanced"
+      ],
+      [
+        "msvc",
+        "v3-speed"
+      ],
+      [
+        "clang",
+        "v3-speed"
+      ],
+      [
+        "msvc",
+        "low-memory"
+      ],
+      [
+        "clang",
+        "low-memory"
+      ],
+      [
+        "msvc",
+        "v3-memory"
+      ],
+      [
+        "clang",
+        "v3-memory"
+      ]
+    ],
+    [
+      [
+        "clang",
+        "balanced"
+      ],
+      [
+        "msvc",
+        "v3-speed"
+      ],
+      [
+        "clang",
+        "v3-speed"
+      ],
+      [
+        "msvc",
+        "low-memory"
+      ],
+      [
+        "clang",
+        "low-memory"
+      ],
+      [
+        "msvc",
+        "v3-memory"
+      ],
+      [
+        "clang",
+        "v3-memory"
+      ],
+      [
+        "msvc",
+        "balanced"
+      ]
+    ],
+    [
+      [
+        "msvc",
+        "v3-speed"
+      ],
+      [
+        "clang",
+        "v3-speed"
+      ],
+      [
+        "msvc",
+        "low-memory"
+      ],
+      [
+        "clang",
+        "low-memory"
+      ],
+      [
+        "msvc",
+        "v3-memory"
+      ],
+      [
+        "clang",
+        "v3-memory"
+      ],
+      [
+        "msvc",
+        "balanced"
+      ],
+      [
+        "clang",
+        "balanced"
+      ]
+    ],
+    [
+      [
+        "clang",
+        "v3-speed"
+      ],
+      [
+        "msvc",
+        "low-memory"
+      ],
+      [
+        "clang",
+        "low-memory"
+      ],
+      [
+        "msvc",
+        "v3-memory"
+      ],
+      [
+        "clang",
+        "v3-memory"
+      ],
+      [
+        "msvc",
+        "balanced"
+      ],
+      [
+        "clang",
+        "balanced"
+      ],
+      [
+        "msvc",
+        "v3-speed"
+      ]
+    ],
+    [
+      [
+        "msvc",
+        "low-memory"
+      ],
+      [
+        "clang",
+        "low-memory"
+      ],
+      [
+        "msvc",
+        "v3-memory"
+      ],
+      [
+        "clang",
+        "v3-memory"
+      ],
+      [
+        "msvc",
+        "balanced"
+      ],
+      [
+        "clang",
+        "balanced"
+      ],
+      [
+        "msvc",
+        "v3-speed"
+      ],
+      [
+        "clang",
+        "v3-speed"
+      ]
+    ],
+    [
+      [
+        "clang",
+        "low-memory"
+      ],
+      [
+        "msvc",
+        "v3-memory"
+      ],
+      [
+        "clang",
+        "v3-memory"
+      ],
+      [
+        "msvc",
+        "balanced"
+      ],
+      [
+        "clang",
+        "balanced"
+      ],
+      [
+        "msvc",
+        "v3-speed"
+      ],
+      [
+        "clang",
+        "v3-speed"
+      ],
+      [
+        "msvc",
+        "low-memory"
+      ]
+    ],
+    [
+      [
+        "msvc",
+        "v3-memory"
+      ],
+      [
+        "clang",
+        "v3-memory"
+      ],
+      [
+        "msvc",
+        "balanced"
+      ],
+      [
+        "clang",
+        "balanced"
+      ],
+      [
+        "msvc",
+        "v3-speed"
+      ],
+      [
+        "clang",
+        "v3-speed"
+      ],
+      [
+        "msvc",
+        "low-memory"
+      ],
+      [
+        "clang",
+        "low-memory"
+      ]
+    ],
+    [
+      [
+        "clang",
+        "v3-memory"
+      ],
+      [
+        "msvc",
+        "balanced"
+      ],
+      [
+        "clang",
+        "balanced"
+      ],
+      [
+        "msvc",
+        "v3-speed"
+      ],
+      [
+        "clang",
+        "v3-speed"
+      ],
+      [
+        "msvc",
+        "low-memory"
+      ],
+      [
+        "clang",
+        "low-memory"
+      ],
+      [
+        "msvc",
+        "v3-memory"
+      ]
+    ]
+  ],
+  "files": {
+    "clang/balanced-1.csv": "ec263b04ae1e6d6abe3594f9ea5350965e75925380c3f0b51833f7f7e7c27717",
+    "clang/balanced-2.csv": "f9ef94cbd7e0ec48fba3d28eb56f3f2dc177899a847714298c79dd7c72249e60",
+    "clang/balanced-3.csv": "f7f1928abc5a2ac041a31d3c894a4babea3bc1a55d760f06a1d6cb618a0a139e",
+    "clang/balanced-4.csv": "348bbfc90ea7309b88508b860c1c4fcf7a511d7858a33a32e1e0847e9cadc0a1",
+    "clang/balanced-5.csv": "1c86a1ff4a8dc25715ffed506443b1f3a6e314d07f198371eeab743276707346",
+    "clang/balanced-6.csv": "45d7a40be46b7653a52da7beadb1c600f330311d7b4ac150aa8e0cf1173d4d06",
+    "clang/balanced-7.csv": "5a696b9262eb8be8b9d20cc080a2ba9df058688e8681ba8300c012e80302c287",
+    "clang/balanced-8.csv": "4f9992e78991e6c39c8d81c4a8ad62d0d884a2ec2d342549af4825e5e616e04e",
+    "clang/balanced-memory.csv": "4e0c22f6340f9de3c19748b218dfb63c11d10476a3330e984ef3a21211bf7fd0",
+    "clang/low-memory-1.csv": "9bed7fcddd15edf2a178fd321380b4767d02e1969b9f7d810d3d59a8792423dd",
+    "clang/low-memory-2.csv": "f9763c0f5be7b8997ef38f24b84b97adcdbac475ca29d4086eebe4295bf7608e",
+    "clang/low-memory-3.csv": "b28374b90b3907704629fc19e0ba4d5a5ca3e95a4284238c898d7a5df1f0137a",
+    "clang/low-memory-4.csv": "da21551c10226870bd1464c2674c30ebfd7eaa888914c120acd57f9b7e3016c0",
+    "clang/low-memory-5.csv": "e3ffc27c7eac7d63478e14affab3cbfd8d1441fa0d8d4b28db74c5eb79d86d33",
+    "clang/low-memory-6.csv": "39b20b7324eaaa43840d79d3f99ee12fa2f22ec29dd559986b59e7d4164f44fa",
+    "clang/low-memory-7.csv": "cde8e59f4a6042933271ecede4b59b6d9dfbfc77abd2159cf199337206c51e5f",
+    "clang/low-memory-8.csv": "25d556d115883d30fb9ee5a9726a87f4f1572133aabb1653b0da80d50ca6a48b",
+    "clang/low-memory-memory.csv": "097790728b906c54e8fd02301c9df3d7f41da1d8a0e4b3b8aa65f4cb9281e930",
+    "clang/memory-decisions.csv": "7fdefdc2893740e0643e211755568a2002f1209630d375780473d6dd7afdf2d9",
+    "clang/shapes.csv": "95039b90d6be1bfd312489595cc730926f014548573c3af1ee3fb2ffcd58d650",
+    "clang/speed-decisions.csv": "8d01b172a1e084fa73c66d5296762fe4af2f97f0a8aff1df6872ccad77f003ac",
+    "clang/v3-memory-1.csv": "e68552060b28e153fa30d4234abc98819cf71da6ca9d4eb57fadc468ced4cd84",
+    "clang/v3-memory-2.csv": "0287a204e1e009c638e0f7fd7a5cce29e4e127bf4edbc41ffbe37751fa74ef13",
+    "clang/v3-memory-3.csv": "0d57dd3259467a567bbecc302f6dfce507008a298275ad06fa020f0d0e312c62",
+    "clang/v3-memory-4.csv": "036170026a86e9751ceabff3c9869a7968e581d8a99cbaad137b0d22154f8652",
+    "clang/v3-memory-5.csv": "538350d7ca32318346bdf61f9992573d12fccbfd83c095ae1a10acc6d534f2bb",
+    "clang/v3-memory-6.csv": "4aa3b090bdbcb1b78dafd1900885f0e12c5bc5838ad3cd85ff23fb2698022a31",
+    "clang/v3-memory-7.csv": "1e72d75d5ea5599482f83c29c713ef399ff264fb2715c194465c371df4f3ab25",
+    "clang/v3-memory-8.csv": "c616f6970b1125c6d0bf7837373ced4599c7c0cbbb470c959487146b2a4d751b",
+    "clang/v3-memory-memory.csv": "dcab28bc2476b191c6db5faae32d9de1e5a33c39d467fed8911931fe0ff2c916",
+    "clang/v3-speed-1.csv": "3deac35935137c12bf33d697b4c6d05aaf0c8be0c51abd806f0f100a72028b32",
+    "clang/v3-speed-2.csv": "95504013d281ce90f3a99d2bc3424a9b59c5375f5f16a68f897901b2fb1459dc",
+    "clang/v3-speed-3.csv": "01cc6920560021926883dbc34b6ad84c5c2fe9090e0e26114fb58926d325173a",
+    "clang/v3-speed-4.csv": "0f361de09d050fa8a59fcc08dd518368d04260cdb060fbed0d27f6764734f908",
+    "clang/v3-speed-5.csv": "3de35bf6d23644c2fbf43caf118b207a64b78474e92a704e6a28a23cec4d589a",
+    "clang/v3-speed-6.csv": "b1634420e8a3705f51b337fe9b85667fc094516b2169ecba357e73f8d5ed7c5c",
+    "clang/v3-speed-7.csv": "95e58e1b0aa88352f17b2840eb7241cb20a8818d901eccad9a4ac0cbc420f652",
+    "clang/v3-speed-8.csv": "cbf212426e37a0f49e03c323ebb45f4dde3a243622f6c4cc59565f44f0c89cd0",
+    "clang/v3-speed-memory.csv": "84f68530a7f389ab0e0941889f071bbec5d09dbdfb8e287849d798cb8e15fc9c",
+    "msvc/balanced-1.csv": "6b0b40c38d4dd41e4135d36743b930746f6e021301f9837028cfe06932935b9d",
+    "msvc/balanced-2.csv": "73c7a652b763f66f6cd565707f76a35e1c4c98fc7166f60a41d1fe1be22d574c",
+    "msvc/balanced-3.csv": "f3fe9c37e8281c4b0d4d59fd91c03ad2fe2c10cb6d7fe6e1017511dd54b3318f",
+    "msvc/balanced-4.csv": "1a356daf66d56e862dbfb30fec9b6744e31af8e818f0f29af45d7428edd81540",
+    "msvc/balanced-5.csv": "32f443b2e2775e8cbc2a6d5c4a936dc7cc3ddd41095ba62214c55d05a8f53c6b",
+    "msvc/balanced-6.csv": "dd085e08c2ef5a220abf45b6c0cc06a6f8f31b76372af3f8ca561733dd4b1c88",
+    "msvc/balanced-7.csv": "3491366d5829e1c6c32363253700630e7954da5c0438eb61643c8506b700a6b3",
+    "msvc/balanced-8.csv": "10b990953dbe6d0183243292e3a283d55bf7f9d3438ff3744ba33a9606f43380",
+    "msvc/balanced-memory.csv": "4e0c22f6340f9de3c19748b218dfb63c11d10476a3330e984ef3a21211bf7fd0",
+    "msvc/low-memory-1.csv": "cc4c81960f60fac050aefb3ba91ed2769f3296334c9aa0d1dcd03dd8d7900cd4",
+    "msvc/low-memory-2.csv": "5e0d70e45b7459a2aee3001e144f2fc869b43443f92f74accc67c9b816d807ed",
+    "msvc/low-memory-3.csv": "3647b751cf12e17bb5e134ce0c68e93b5d02b15598e7942c922496cbb3b6b876",
+    "msvc/low-memory-4.csv": "d7793a98fe512794a92a1348376a6bc984b84cf05e71e8136ba6eabf4b78abe1",
+    "msvc/low-memory-5.csv": "2fae25f996252df5a559e3693dcf511c98e87cdbc230d19cc782401779300d1a",
+    "msvc/low-memory-6.csv": "1ef26cc20f2e3fc766d264a1d523c9da4a52ff19cb788cb68bab0f013b364e02",
+    "msvc/low-memory-7.csv": "80db62d9c4b91e1edb802431b9ae401b46026d4c2490ec0711f5194f7af2afe6",
+    "msvc/low-memory-8.csv": "ca1abf4f52d6a20061be9f70671ace4cbc46425eb1ed8fbf9f11af388b504908",
+    "msvc/low-memory-memory.csv": "097790728b906c54e8fd02301c9df3d7f41da1d8a0e4b3b8aa65f4cb9281e930",
+    "msvc/memory-decisions.csv": "7fdefdc2893740e0643e211755568a2002f1209630d375780473d6dd7afdf2d9",
+    "msvc/shapes.csv": "95039b90d6be1bfd312489595cc730926f014548573c3af1ee3fb2ffcd58d650",
+    "msvc/speed-decisions.csv": "8d01b172a1e084fa73c66d5296762fe4af2f97f0a8aff1df6872ccad77f003ac",
+    "msvc/v3-memory-1.csv": "024f799a4d090e836fd0a7705e23655412cf9f5772d28bb3b67529be8f50a86a",
+    "msvc/v3-memory-2.csv": "a5c1601bd7a00110f70b56f62c300ff89988ec1684a5c8bbbcb33d47fcac81bd",
+    "msvc/v3-memory-3.csv": "8b2c4e4021d14da5e54e8ec39939279c9e87993e0760ef75e11998716eed146b",
+    "msvc/v3-memory-4.csv": "3f9bb26d3cf0cb80ff067a0c2a66add13557c21dd6c356f28451dc1f8e4ab3b6",
+    "msvc/v3-memory-5.csv": "69d0ac10b9e7033a1e0259b72193343a24f61387040cfa4d9c31b83ec4a203f4",
+    "msvc/v3-memory-6.csv": "cf8cfd0ea4befada26ba0c0ffb132a705cf4a0915f4e0865db969811615a29a8",
+    "msvc/v3-memory-7.csv": "6e0d6b18c815f5ef526507f3a0a7ea40da9ac31b7536278689ae6efd8c3a920a",
+    "msvc/v3-memory-8.csv": "2a5fbdc789cf65a058095b96c23e115a1ac69caf4d145faff77c9e3b30998a5e",
+    "msvc/v3-memory-memory.csv": "dcab28bc2476b191c6db5faae32d9de1e5a33c39d467fed8911931fe0ff2c916",
+    "msvc/v3-speed-1.csv": "407e45427d9d02dc764aa945cc2c2929ddeff721691143eecd9a5e295d7df40d",
+    "msvc/v3-speed-2.csv": "6ab7d833120857e57ba7ef9f6c8a77ed358e4c4b7537cf84a51f356eb58a7a95",
+    "msvc/v3-speed-3.csv": "4339d68be326546d56e07219ca301f9e2e6bf1dc70d6a3ff97b03d45b4e735be",
+    "msvc/v3-speed-4.csv": "d65c3b264e89df0b5895653235b55283067f029df1214a9f662200ec8310fb21",
+    "msvc/v3-speed-5.csv": "a864383b92ffbe221a656cc79ec40d9933c784c9531f9cdd1ad9c9a137d5ee2b",
+    "msvc/v3-speed-6.csv": "54d663d349b525b5ea500fb26f6bc1143917e3cd95fe16d29e6e9126e59f69bc",
+    "msvc/v3-speed-7.csv": "524e2708eb0666ebe7df4d6de2aea6abad517d3ac7839da95594badda68e440b",
+    "msvc/v3-speed-8.csv": "7138ad0fe1be31b30b371dea7fc74a7c2cb03f9b9078aebf6609b4b6b081deae",
+    "msvc/v3-speed-memory.csv": "84f68530a7f389ab0e0941889f071bbec5d09dbdfb8e287849d798cb8e15fc9c"
+  },
+  "inputs": [
+    {
+      "repo": "miloyip/nativejson-benchmark",
+      "commit": "478d5727c2a4048e835a29c65adecc7d795360d5",
+      "path": "data/canada.json",
+      "name": "canada.json",
+      "description": "Canada border GeoJSON with many floating-point coordinates",
+      "bytes": 2251051,
+      "git_blob_sha1": "04f63b405b2ad0826a19b6e7290b19227e7c772d",
+      "url": "https://raw.githubusercontent.com/miloyip/nativejson-benchmark/478d5727c2a4048e835a29c65adecc7d795360d5/data/canada.json",
+      "sha256": "f83b3b354030d5dd58740c68ac4fecef64cb730a0d12a90362a7f23077f50d78"
+    },
+    {
+      "repo": "miloyip/nativejson-benchmark",
+      "commit": "478d5727c2a4048e835a29c65adecc7d795360d5",
+      "path": "data/citm_catalog.json",
+      "name": "citm_catalog.json",
+      "description": "Indented event catalog snapshot used by native JSON benchmarks",
+      "bytes": 1727204,
+      "git_blob_sha1": "245fdbbedf478e0094ce25ad8f771c2b9031320c",
+      "url": "https://raw.githubusercontent.com/miloyip/nativejson-benchmark/478d5727c2a4048e835a29c65adecc7d795360d5/data/citm_catalog.json",
+      "sha256": "a73e7a883f6ea8de113dff59702975e60119b4b58d451d518a929f31c92e2059"
+    },
+    {
+      "repo": "miloyip/nativejson-benchmark",
+      "commit": "478d5727c2a4048e835a29c65adecc7d795360d5",
+      "path": "data/twitter.json",
+      "name": "twitter.json",
+      "description": "Historical Twitter search-response snapshot with CJK text",
+      "bytes": 631514,
+      "git_blob_sha1": "137fb516252d6941523cdbd0d8acf81e5d286bab",
+      "url": "https://raw.githubusercontent.com/miloyip/nativejson-benchmark/478d5727c2a4048e835a29c65adecc7d795360d5/data/twitter.json",
+      "sha256": "a08b769f32b95f426cbc3abafcec65c1a19d3eb544d4ddf320eae142c99efc5d"
+    },
+    {
+      "repo": "nvkelso/natural-earth-vector",
+      "commit": "ca96624a56bd078437bca8184e78163e5039ad19",
+      "path": "geojson/ne_110m_admin_0_countries.geojson",
+      "name": "natural-earth-countries.json",
+      "description": "Natural Earth 1:110m country geometry and attributes",
+      "bytes": 838726,
+      "git_blob_sha1": "1e6ab74c7042f97013be69ceec798be8e1aff27d",
+      "url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/ca96624a56bd078437bca8184e78163e5039ad19/geojson/ne_110m_admin_0_countries.geojson",
+      "sha256": "6866c877d39cba9c357620878839b336d569f8c662d3cfab4cb1dbe2d39c977f"
+    },
+    {
+      "repo": "microsoft/TypeScript",
+      "commit": "df43aada644be309fe8ceee3f1254b6eea25a549",
+      "path": "package-lock.json",
+      "name": "typescript-package-lock.json",
+      "description": "TypeScript npm dependency lockfile",
+      "bytes": 158517,
+      "git_blob_sha1": "e69551738341261a0668d9adc8366e89d0483e9b",
+      "url": "https://raw.githubusercontent.com/microsoft/TypeScript/df43aada644be309fe8ceee3f1254b6eea25a549/package-lock.json",
+      "sha256": "9ad3d45f3b8c590d96b64b791033dad1f10994db95bd3dc3f9671f9201599672"
+    }
+  ]
+}
