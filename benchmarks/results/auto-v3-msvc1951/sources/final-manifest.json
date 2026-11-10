@@ -1,0 +1,175 @@
+{
+  "format": "Normalized UTF-8/LF source snapshots recorded by final measurement metadata, before subsequent report wording updates",
+  "references": [
+    {
+      "stage": "known",
+      "file": "benchmarks/auto/AutoReservation.hpp",
+      "sha256": "78854425cde2eb1e90d5f31b23bb47e34e1d09c1f8cdb91ed5e01774dab938c7"
+    },
+    {
+      "stage": "known",
+      "file": "benchmarks/auto/generate_lexer.py",
+      "sha256": "cf8f6eb8f92aa173586367207ca874ccd2116b9a00b4db6d80fa74f2aa1351b2"
+    },
+    {
+      "stage": "known",
+      "file": "benchmarks/auto-v3/AutoReservationV3.hpp",
+      "sha256": "2b93d6d4fa5fb788a27544fce31c732d1f291bc442794750ea0049fe54d294ff"
+    },
+    {
+      "stage": "known",
+      "file": "benchmarks/auto-v3/calibrate.py",
+      "sha256": "0bb3d48c7939ba368e335877ee6b514f1d8cdc1c22b896d7ea9cd4cd8bd803cf"
+    },
+    {
+      "stage": "known",
+      "file": "benchmarks/auto-v3/check_v3.py",
+      "sha256": "887dbfe56690d85e15b9cdd5861a24c290553fb61484c3ac0d072b01713f8c77"
+    },
+    {
+      "stage": "known",
+      "file": "benchmarks/auto-v3/CMakeLists.txt",
+      "sha256": "6420691a7b5093d55794006acf69de9d84e3704c7634d94530dc91299654c5c6"
+    },
+    {
+      "stage": "known",
+      "file": "benchmarks/auto-v3/freeze.py",
+      "sha256": "43e13aecf5d8fdc4ec1f7e14ff08df11b1b14b3daea4d9fe918da34edb9f9bf2"
+    },
+    {
+      "stage": "known",
+      "file": "benchmarks/auto-v3/generate_holdout.py",
+      "sha256": "a358f54469fc251cb716a6c885f7971c18c45971ea6054b08b10646368586b9a"
+    },
+    {
+      "stage": "known",
+      "file": "benchmarks/auto-v3/generate_lexer.py",
+      "sha256": "07098739a011199f0f9b776ea0b8191389e035132c49f19d3b2159127e8ea667"
+    },
+    {
+      "stage": "known",
+      "file": "benchmarks/auto-v3/journal.py",
+      "sha256": "a87e56e43383ac742d1bb17226afe6830fde305e401bbb65b6a2cbb5a5d55460"
+    },
+    {
+      "stage": "known",
+      "file": "benchmarks/auto-v3/plan.json",
+      "sha256": "2d22dc5e4a9b9a5341952c86cfaf08fc9f5dbe8b13afbb44e7bef86e78c66913"
+    },
+    {
+      "stage": "known",
+      "file": "benchmarks/auto-v3/run_final.py",
+      "sha256": "3cc9851052a7de1e99fea362ff34d183c7410677cd8ec40ce409c9cdb8353602"
+    },
+    {
+      "stage": "known",
+      "file": "benchmarks/auto-v3/select_floor.py",
+      "sha256": "7771eb49df1d39e123722091daecfe9ec66b7cecdb849e5e35c4a9487b8f93a2"
+    },
+    {
+      "stage": "known",
+      "file": "benchmarks/auto-v3/selection-plan.json",
+      "sha256": "70dd7ee319bb9c8475f5deab64d6ae9a0f65a9f551144fa1f7cdd1db66d82ce5"
+    },
+    {
+      "stage": "known",
+      "file": "benchmarks/auto-v3/summarize.py",
+      "sha256": "533c9476671aaf8f45cf98b70f7a2c738a32397cc22fc795ce046e256bc69d62"
+    },
+    {
+      "stage": "known",
+      "file": "benchmarks/auto-v3/Trace.cpp",
+      "sha256": "5c41d804638c8a728f9d457d59801fed29a60e034fffba8097c97d6de082ff4d"
+    },
+    {
+      "stage": "known",
+      "file": "benchmarks/auto-v3/Verify.cpp",
+      "sha256": "c7598cc8a58b8a9cf4d8c3547eb764d503f890d45220479bc5e81c57d0d60df0"
+    },
+    {
+      "stage": "holdout",
+      "file": "benchmarks/auto/AutoReservation.hpp",
+      "sha256": "78854425cde2eb1e90d5f31b23bb47e34e1d09c1f8cdb91ed5e01774dab938c7"
+    },
+    {
+      "stage": "holdout",
+      "file": "benchmarks/auto/generate_lexer.py",
+      "sha256": "cf8f6eb8f92aa173586367207ca874ccd2116b9a00b4db6d80fa74f2aa1351b2"
+    },
+    {
+      "stage": "holdout",
+      "file": "benchmarks/auto-v3/AutoReservationV3.hpp",
+      "sha256": "2b93d6d4fa5fb788a27544fce31c732d1f291bc442794750ea0049fe54d294ff"
+    },
+    {
+      "stage": "holdout",
+      "file": "benchmarks/auto-v3/calibrate.py",
+      "sha256": "0bb3d48c7939ba368e335877ee6b514f1d8cdc1c22b896d7ea9cd4cd8bd803cf"
+    },
+    {
+      "stage": "holdout",
+      "file": "benchmarks/auto-v3/check_v3.py",
+      "sha256": "887dbfe56690d85e15b9cdd5861a24c290553fb61484c3ac0d072b01713f8c77"
+    },
+    {
+      "stage": "holdout",
+      "file": "benchmarks/auto-v3/CMakeLists.txt",
+      "sha256": "6420691a7b5093d55794006acf69de9d84e3704c7634d94530dc91299654c5c6"
+    },
+    {
+      "stage": "holdout",
+      "file": "benchmarks/auto-v3/freeze.py",
+      "sha256": "43e13aecf5d8fdc4ec1f7e14ff08df11b1b14b3daea4d9fe918da34edb9f9bf2"
+    },
+    {
+      "stage": "holdout",
+      "file": "benchmarks/auto-v3/generate_holdout.py",
+      "sha256": "a358f54469fc251cb716a6c885f7971c18c45971ea6054b08b10646368586b9a"
+    },
+    {
+      "stage": "holdout",
+      "file": "benchmarks/auto-v3/generate_lexer.py",
+      "sha256": "07098739a011199f0f9b776ea0b8191389e035132c49f19d3b2159127e8ea667"
+    },
+    {
+      "stage": "holdout",
+      "file": "benchmarks/auto-v3/journal.py",
+      "sha256": "a87e56e43383ac742d1bb17226afe6830fde305e401bbb65b6a2cbb5a5d55460"
+    },
+    {
+      "stage": "holdout",
+      "file": "benchmarks/auto-v3/plan.json",
+      "sha256": "2d22dc5e4a9b9a5341952c86cfaf08fc9f5dbe8b13afbb44e7bef86e78c66913"
+    },
+    {
+      "stage": "holdout",
+      "file": "benchmarks/auto-v3/run_final.py",
+      "sha256": "3cc9851052a7de1e99fea362ff34d183c7410677cd8ec40ce409c9cdb8353602"
+    },
+    {
+      "stage": "holdout",
+      "file": "benchmarks/auto-v3/select_floor.py",
+      "sha256": "7771eb49df1d39e123722091daecfe9ec66b7cecdb849e5e35c4a9487b8f93a2"
+    },
+    {
+      "stage": "holdout",
+      "file": "benchmarks/auto-v3/selection-plan.json",
+      "sha256": "70dd7ee319bb9c8475f5deab64d6ae9a0f65a9f551144fa1f7cdd1db66d82ce5"
+    },
+    {
+      "stage": "holdout",
+      "file": "benchmarks/auto-v3/summarize.py",
+      "sha256": "533c9476671aaf8f45cf98b70f7a2c738a32397cc22fc795ce046e256bc69d62"
+    },
+    {
+      "stage": "holdout",
+      "file": "benchmarks/auto-v3/Trace.cpp",
+      "sha256": "5c41d804638c8a728f9d457d59801fed29a60e034fffba8097c97d6de082ff4d"
+    },
+    {
+      "stage": "holdout",
+      "file": "benchmarks/auto-v3/Verify.cpp",
+      "sha256": "c7598cc8a58b8a9cf4d8c3547eb764d503f890d45220479bc5e81c57d0d60df0"
+    }
+  ]
+}

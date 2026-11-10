@@ -29,10 +29,10 @@ treated as available before parsing, or as free features for an automatic select
 
 | Preset / status | Objective | Mechanism |
 | --- | --- | --- |
-| Balanced вЂ” implemented | Existing behavior | Observed density, 1.5Г—вЂ¦64Г— growth |
-| LowMemory вЂ” implemented | Limit speculative capacity | At growth request at most live token count + max(live token count, 256) slots; accept more copying |
-| Throughput вЂ” proposed | Reduce reallocations on known dense inputs | More eager reservation, possibly with a caller-supplied token-count hint |
-| Auto вЂ” proposed | Select/revise a strategy within explicit bounds | Online estimates with a conservative fallback when density changes |
+| Balanced РІР‚вЂќ implemented | Existing behavior | Observed density, 1.5Р“вЂ”РІР‚В¦64Р“вЂ” growth |
+| LowMemory РІР‚вЂќ implemented | Limit speculative capacity | At growth request at most live token count + max(live token count, 256) slots; accept more copying |
+| Throughput РІР‚вЂќ proposed | Reduce reallocations on known dense inputs | More eager reservation, possibly with a caller-supplied token-count hint |
+| Auto РІР‚вЂќ proposed | Select/revise a strategy within explicit bounds | Online estimates with a conservative fallback when density changes |
 
 These are objectives, not names for the fastest/lowest-memory row on one fixture.
 The matrix already shows that small initial reserve alone does not ensure a low
@@ -91,6 +91,27 @@ excludes several allocation classes. Cheap logical counters, offline DOM walks a
 instrumented heap measurements have different costs and meanings.
 
 ## Further validation and future modes
+
+The [Auto v3 experiment](../benchmarks/results/auto-v3-reservation.md) finds that
+historical copy pressure can activate too late. Varying the floor alone does not
+change the large dense speed schedule. A separately pre-recorded extension adds
+the unavoidable pending relocation before deciding: projected speed pressure is
+moved > floor(n/2), memory moved > 2*n. These comparisons avoid overflowing sums.
+Selection over six known-data combinations keeps a 1.75 speed floor and a 1.5
+memory floor, both with projected pressure and unchanged 4/1 MiB byte budgets.
+
+On repeated measurements, both selected goals pass the unchanged joint CPU/heap
+targets on 91 known and 16 newly generated documents. Known worst time ratios are
+1.460 for speed versus the better fixed mode and 1.911 for memory versus Balanced;
+the new split reaches 1.294 and 1.494. The largest dense case reduces logical
+relocation from 42.122 to 26.154 MiB for speed and 82.808 to 59.031 MiB for memory.
+The original sparse-tail peak improvements remain. Controller/binary identities
+were frozen before full generation of the new split, without subsequent tuning.
+
+This is local synthetic evidence, not a runtime latency/total-memory guarantee or
+proof of general automatic selection. Auto remains private. Real workload data
+and timing on other toolchains remain necessary before a public API decision.
+
 
 The [dense-input follow-up](../benchmarks/results/auto-v2-dense-diagnosis.md)
 repeats measurements with unchanged frozen binaries. On the largest dense array,

@@ -1,0 +1,71 @@
+{
+  "frozen_utc": "2026-11-10T16:05:51.411550+00:00",
+  "selection_sha256": "1f4f67bc750a4d9151fdef1926e1e25e8dde47a6faa83d609b7a3f6e2bb41b84",
+  "known_metadata_sha256": "98995d2ed1156bd8375b4bcf5e638909e00030ce856be050d7bdaf3eafd9ac3a",
+  "binaries": {
+    "balanced": {
+      "Time": "73df6f44f4b9cd5fbce0eef1a6113f066600f844793686e0d69239cf6c7af2d3",
+      "Profile": "11bef6be9b7274f3067112ffc39876c82226c1e75f543c8712aba7e7613de693",
+      "Inspect": "8ffe9b757071cef9dfe0327f7239f81c24964265176c87ab1adc0c9f8e214db2"
+    },
+    "v2-speed": {
+      "Time": "7cb2e2c746dafb28df68011245d6e90584f77aad5869802e7d55a0407d5ff27d",
+      "Profile": "d1cf6b38c56d779cd7681e156bd0b588b2e84a1bf7337c01bb0a4e207b31668c",
+      "Inspect": "fe81a57d895afc89b0fccd27ae12ce70af34ca45cbb2c07a073d76983139b58b"
+    },
+    "v3-speed": {
+      "Time": "2c243a7b8a47320e293372a2b78118c7021287b9a20e8edf06ec4499b95bae59",
+      "Profile": "14d6b3dda4121d03b4c87243a1cf09dbbbc5f545ac91ab997cc22eb304fc94fe",
+      "Inspect": "45af5ac503aca3f59d6629bce73d53933b36561cb9e86b4d4518fd10e7ea7fe7",
+      "Trace": "0cf6528e7a48726f7fb6031b4cb76da06967c2354e877c0c3c086be18f7aaf57",
+      "Verify": "70cf22abde8d9fbd51ec4fd6442299803e18f16a7504f786c1b48ce4abfdae86"
+    },
+    "low-memory": {
+      "Time": "e61e3340ad55723de804415cc6536c1fdac7e21da9dce800b746daf554e0e479",
+      "Profile": "dd63a013e556d417a15fa62124db0bd0c950c91081e3879783c24ac5a2bbaad1",
+      "Inspect": "394d8e851f6560985c132d39d690f08cb770a62136bca1bc0ec014fcab71722f"
+    },
+    "v2-memory": {
+      "Time": "d5a0d4805a5c2f0e0e00dadba8163f969553b32ba3bfcb5f25b73ad49ea9eb7f",
+      "Profile": "d3558ae64a7da2412fe9db40629dbb6877948e7fa63fce9fe43042bed2da04a2",
+      "Inspect": "c71ad54593cf90d9148eac3264d4589692bd3d2f7aa295462781de92675a9f7c"
+    },
+    "v3-memory": {
+      "Time": "bf4795460ae1fca960e2419c1541541d543ab813d518e0de02a999442bd1ebad",
+      "Profile": "0147e32e465c02821a2a14fe7d4aef88b66fc2719066f8cc96ed557ef9fff6bb",
+      "Inspect": "7a1fd4db1d48faa01186272e901db5da7a6fff860778cecf49a6a99e62c7c276",
+      "Trace": "faac4fa79f8ccfd4e0714068cd910c0a4f12a006ab4755c04efb5076751abebc",
+      "Verify": "5eedc1bb30cbbf3993d51287e9cf65438aeec690ca3ef282ebb6db877f55130b"
+    }
+  },
+  "policy_sources": [
+    {
+      "file": "benchmarks/auto-v3/AutoReservationV3.hpp",
+      "sha256": "2b93d6d4fa5fb788a27544fce31c732d1f291bc442794750ea0049fe54d294ff"
+    },
+    {
+      "file": "benchmarks/auto-v3/generate_lexer.py",
+      "sha256": "07098739a011199f0f9b776ea0b8191389e035132c49f19d3b2159127e8ea667"
+    },
+    {
+      "file": "benchmarks/auto-v3/generate_holdout.py",
+      "sha256": "a358f54469fc251cb716a6c885f7971c18c45971ea6054b08b10646368586b9a"
+    },
+    {
+      "file": "benchmarks/auto-v3/plan.json",
+      "sha256": "2d22dc5e4a9b9a5341952c86cfaf08fc9f5dbe8b13afbb44e7bef86e78c66913"
+    },
+    {
+      "file": "benchmarks/auto-v3/selection-plan.json",
+      "sha256": "70dd7ee319bb9c8475f5deab64d6ae9a0f65a9f551144fa1f7cdd1db66d82ce5"
+    },
+    {
+      "file": "benchmarks/auto/AutoReservation.hpp",
+      "sha256": "78854425cde2eb1e90d5f31b23bb47e34e1d09c1f8cdb91ed5e01774dab938c7"
+    },
+    {
+      "file": "benchmarks/auto/generate_lexer.py",
+      "sha256": "cf8f6eb8f92aa173586367207ca874ccd2116b9a00b4db6d80fa74f2aa1351b2"
+    }
+  ]
+}

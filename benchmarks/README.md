@@ -293,7 +293,7 @@ python benchmarks/auto/run_auto.py --bin build-auto/benchmarks/auto/Release --in
 
 Use fresh result directories. Keep the machine idle and do not rebuild while
 measuring. The runner pins CPU affinity and rotates four policies across four
-rounds (5 samples Р В РІР‚СљР Р†Р вЂљРІР‚Сњ 3 operations by default), checks exact results against both
+rounds (5 samples Р В Р’В Р Р†Р вЂљРЎС™Р В Р вЂ Р В РІР‚С™Р Р†Р вЂљРЎСљ 3 operations by default), checks exact results against both
 fixed production modes, validates journal bounds and matches copy counts with
 separate profiles. Freeze verifies unchanged controller sources and executable
 hashes before full held-out evaluation; do not retune using that split.
@@ -382,8 +382,8 @@ predicate never activates on the problematic large dense array in this phase.
 A second [pre-recorded plan](auto-v3/selection-plan.json), committed at `f6604dc`
 before new measurements, therefore adds the inevitable pending relocation to
 the pressure calculation. It crosses both historical/projected predicates with
-all three floors, without generating or consulting the new full holdout. Byte budgets remain
-soft: a geometric floor may override them, and every actual exception is logged.
+all three floors, without generating or consulting the new full holdout.
+Byte budgets remain soft: a geometric floor may override them, and every actual exception is logged.
 
 The [pre-recorded plan](auto-v3/plan.json) is committed as `f4b9f04`. Calibration
 uses one exploratory round, 3 samples x 2 operations. Selection filters by both
@@ -413,7 +413,8 @@ Time/Profile/Inspect executables from the frozen v2 experiment into each snapsho
 Use all 47 original fixtures, the 12 LowMemory holdouts, 16 v1 holdouts and 16 v2
 holdouts (91 known documents total) from the preceding frozen-input directories.
 Then run `auto-v3/calibrate.py --bin SNAPSHOT --inputs DIRS --output ROOT/NAME
---candidate NAME` for control, seven-fourths, double and their projected- prefixed counterparts, followed by
+--candidate NAME` for control, seven-fourths, double and their `projected-`
+prefixed counterparts, followed by
 `auto-v3/select_floor.py ROOT selection.json`. Per-goal snapshot assembly preserves
 selected executables; the unused other-goal macro in each binary is irrelevant.
 Keep the v2 comparison binaries frozen at `fc03dae`.
@@ -439,7 +440,10 @@ fuzzers compare each goal with independent production parsing, up to 262144-byte
 inputs to reach speculative-budget transitions. Auto remains private.
 
 To reproduce the report, gather `calibration/`, `known/`, `holdout/`, selection and
-freeze under one root, then run `auto-v3/summarize.py ROOT REPORT.md`. Raw files
+freeze under one root, then run `auto-v3/summarize.py ROOT REPORT.md`. Content
+addressed `sources/` snapshots preserve all normalized calibration/final tool
+versions, including measurement-time report helpers before later wording updates.
+Raw files
 retain LF endings for stable cross-file SHA-256 checks. Reported captured heap
 is simultaneous requested C++ allocation bytes, including old/new token buffers;
 it excludes caller input, stack/root Json, allocator metadata/rounding, direct
