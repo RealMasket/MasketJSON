@@ -16,6 +16,14 @@
 #endif
 static_assert(AUTO_V3_SPEED_QUARTERS>=6 && AUTO_V3_SPEED_QUARTERS<=8);
 static_assert(AUTO_V3_MEMORY_QUARTERS>=6 && AUTO_V3_MEMORY_QUARTERS<=8);
+#ifndef AUTO_V3_SPEED_LOOKAHEAD
+#define AUTO_V3_SPEED_LOOKAHEAD 0
+#endif
+#ifndef AUTO_V3_MEMORY_LOOKAHEAD
+#define AUTO_V3_MEMORY_LOOKAHEAD 0
+#endif
+static_assert(AUTO_V3_SPEED_LOOKAHEAD==0 || AUTO_V3_SPEED_LOOKAHEAD==1);
+static_assert(AUTO_V3_MEMORY_LOOKAHEAD==0 || AUTO_V3_MEMORY_LOOKAHEAD==1);
 namespace AutoReserveV3 {
 using AutoReserve::Goal;
 using AutoReserve::Reason;
@@ -50,9 +58,18 @@ inline size_t pressureFloor(size_t capacity,size_t limit,size_t quarters) noexce
     const size_t remainder=(capacity%4)*(quarters-4)/4;
     return add(capacity,(std::max)(add(whole,remainder,limit),size_t{1}),limit);
 }
+inline bool copyPressure(Goal goal,size_t moved,size_t n,bool lookahead) noexcept {
+    if (!n) return false;
+    if (lookahead) {
+        // Include the n tokens about to move, cancelling n before comparison.
+        if (goal==Goal::Speed) return moved>n/2;
+        return n<=(std::numeric_limits<size_t>::max)()/2 && moved>n*2;
+    }
+    return static_cast<double>(moved)>(goal==Goal::Speed ? 1.5 : 3.0)*static_cast<double>(n);
+}
 struct Hint {
     size_t request=0, lower=0, relativeUpper=0, byteUpper=0, effectiveUpper=0, budgetBytes=0, tailBound=0;
-    bool floorOverride=false, byteLimited=false, tailApplied=false, pressure=false, floorRaised=false;
+    bool floorOverride=false, byteLimited=false, tailApplied=false, pressure=false, floorRaised=false, lookahead=false;
     size_t quarters=0;
 };
 inline Hint choose(Goal goal,size_t capacity,size_t limit,bool mature,bool pressure,
@@ -62,6 +79,7 @@ inline Hint choose(Goal goal,size_t capacity,size_t limit,bool mature,bool press
     const auto relative=AutoReserve::bounds(goal,capacity,limit,mature);
     h.lower=relative.lower;
     h.pressure=pressure;
+    h.lookahead=goal==Goal::Speed ? AUTO_V3_SPEED_LOOKAHEAD : AUTO_V3_MEMORY_LOOKAHEAD;
     h.quarters=goal==Goal::Speed ? AUTO_V3_SPEED_QUARTERS : AUTO_V3_MEMORY_QUARTERS;
     if (pressure) {
         const size_t raised=(std::max)(h.lower,pressureFloor(capacity,limit,h.quarters));
@@ -140,7 +158,7 @@ public:
         stableStreak=stable ? add(stableStreak,1,(std::numeric_limits<size_t>::max)()) : 0;
         const bool cold=n<1024 || position<4096 || previousDensity==0;
         // V1's speed threshold 2*n was unreachable under its 1.5x growth floor.
-        const bool pressure=n && static_cast<double>(relocated)>(goal==Goal::Speed ? 1.5 : 3.0)*static_cast<double>(n);
+        const bool pressure=copyPressure(goal,relocated,n,goal==Goal::Speed ? AUTO_V3_SPEED_LOOKAHEAD : AUTO_V3_MEMORY_LOOKAHEAD);
         const bool mature=!cold && (stableStreak>=2 || (pressure && stable));
         const Reason state=drop ? Reason::DensityDrop : rise ? Reason::DensityRise : cold ? Reason::Warming
             : pressure ? Reason::CopyPressure : stable ? Reason::Stable : Reason::Unstable;

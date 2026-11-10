@@ -4,7 +4,7 @@ from pathlib import Path
 known,selection,destination=map(Path,sys.argv[1:]);assert not destination.exists()
 meta=json.loads((known/'metadata.json').read_text());assert meta['stage']=='known' and len(meta['inputs'])==91
 repo=Path(__file__).resolve().parents[2]
-paths=[Path(__file__).with_name(n).resolve() for n in ('AutoReservationV3.hpp','generate_lexer.py','generate_holdout.py','plan.json')]
+paths=[Path(__file__).with_name(n).resolve() for n in ('AutoReservationV3.hpp','generate_lexer.py','generate_holdout.py','plan.json','selection-plan.json')]
 paths += [repo/'benchmarks/auto/AutoReservation.hpp',repo/'benchmarks/auto/generate_lexer.py']
 sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
 out=dict(frozen_utc=datetime.now(timezone.utc).isoformat(),selection_sha256=sha(selection),known_metadata_sha256=sha(known/'metadata.json'),binaries=meta['binaries'],

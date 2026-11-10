@@ -46,6 +46,7 @@ def main():
                 assert int(last['moved_tokens'])*int(row['token_size'])==int(row['copied_token_bytes'])
                 assert last['tokens']==row['token_count'] and last['actual_capacity']==row['token_capacity']
                 assert int(last['budget_bytes'])==selection['chosen'][goal]['budget_bytes']
+                assert all(int(r.get('pressure_lookahead','0'))==selection['chosen'][goal]['lookahead'] for r in rows if r['dataset']==n and int(r['pressure_floor_quarters']))
                 assert all(int(r['pressure_floor_quarters'])==selection['chosen'][goal]['quarters'] for r in rows if r['dataset']==n and int(r['pressure_floor_quarters']))
             (args.output/f'{goal}-decisions.csv').write_bytes(text.encode())
         policies=list(programs);orders=[]

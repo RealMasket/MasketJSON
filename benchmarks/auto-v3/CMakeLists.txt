@@ -13,6 +13,13 @@ foreach(value AUTO_V3_SPEED_QUARTERS AUTO_V3_MEMORY_QUARTERS)
         message(FATAL_ERROR "${value} must be 6, 7 or 8")
     endif()
 endforeach()
+set(AUTO_V3_SPEED_LOOKAHEAD 0 CACHE STRING "Include the next inevitable relocation in pressure")
+set(AUTO_V3_MEMORY_LOOKAHEAD 0 CACHE STRING "Include the next inevitable relocation in pressure")
+foreach(value AUTO_V3_SPEED_LOOKAHEAD AUTO_V3_MEMORY_LOOKAHEAD)
+    if(NOT "${${value}}" MATCHES "^[01]$")
+        message(FATAL_ERROR "${value} must be 0 or 1")
+    endif()
+endforeach()
 set(generated "${CMAKE_CURRENT_BINARY_DIR}/generated")
 set_property(DIRECTORY APPEND PROPERTY CMAKE_CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/generate_lexer.py")
 execute_process(COMMAND "${Python3_EXECUTABLE}" "${CMAKE_CURRENT_SOURCE_DIR}/generate_lexer.py"
@@ -29,7 +36,8 @@ foreach(goal speed memory)
         target_include_directories(${library} PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}" "${PROJECT_SOURCE_DIR}/benchmarks/auto" "${PROJECT_SOURCE_DIR}/benchmarks/reservation")
         target_compile_definitions(${library} PUBLIC JsonLexer=AutoLexer JsonParser=AutoParser
             AUTO_V3_SPEED_BYTES=${AUTO_V3_SPEED_BUDGET} AUTO_V3_MEMORY_BYTES=${AUTO_V3_MEMORY_BUDGET}
-            AUTO_V3_SPEED_QUARTERS=${AUTO_V3_SPEED_QUARTERS} AUTO_V3_MEMORY_QUARTERS=${AUTO_V3_MEMORY_QUARTERS})
+            AUTO_V3_SPEED_QUARTERS=${AUTO_V3_SPEED_QUARTERS} AUTO_V3_MEMORY_QUARTERS=${AUTO_V3_MEMORY_QUARTERS}
+            AUTO_V3_SPEED_LOOKAHEAD=${AUTO_V3_SPEED_LOOKAHEAD} AUTO_V3_MEMORY_LOOKAHEAD=${AUTO_V3_MEMORY_LOOKAHEAD})
         if(mode STREQUAL "time")
             add_executable(AutoV3Time-${goal} ../reservation/Timing.cpp ../BenchmarkUtils.cpp)
             target_compile_definitions(AutoV3Time-${goal} PRIVATE MATRIX_CONFIGURATION="$<CONFIG>")
@@ -61,7 +69,7 @@ if(TARGET ParserProfile)
     add_dependencies(AutoV3Tools AutoProfile-balanced AutoProfile-low-memory)
 endif()
 file(GENERATE OUTPUT "${CMAKE_CURRENT_BINARY_DIR}/$<IF:$<BOOL:${CMAKE_CONFIGURATION_TYPES}>,$<CONFIG>/,>build-info-$<CONFIG>.txt"
-    CONTENT "compiler=${CMAKE_CXX_COMPILER_ID}\ncompiler_version=${CMAKE_CXX_COMPILER_VERSION}\nconfiguration=$<CONFIG>\nspeed_budget_bytes=${AUTO_V3_SPEED_BUDGET}\nmemory_budget_bytes=${AUTO_V3_MEMORY_BUDGET}\nspeed_quarters=${AUTO_V3_SPEED_QUARTERS}\nmemory_quarters=${AUTO_V3_MEMORY_QUARTERS}\nconfig_flags=$<$<CONFIG:Release>:${CMAKE_CXX_FLAGS_RELEASE}>$<$<CONFIG:RelWithDebInfo>:${CMAKE_CXX_FLAGS_RELWITHDEBINFO}>\n")
+    CONTENT "compiler=${CMAKE_CXX_COMPILER_ID}\ncompiler_version=${CMAKE_CXX_COMPILER_VERSION}\nconfiguration=$<CONFIG>\nspeed_budget_bytes=${AUTO_V3_SPEED_BUDGET}\nmemory_budget_bytes=${AUTO_V3_MEMORY_BUDGET}\nspeed_quarters=${AUTO_V3_SPEED_QUARTERS}\nmemory_quarters=${AUTO_V3_MEMORY_QUARTERS}\nspeed_lookahead=${AUTO_V3_SPEED_LOOKAHEAD}\nmemory_lookahead=${AUTO_V3_MEMORY_LOOKAHEAD}\nconfig_flags=$<$<CONFIG:Release>:${CMAKE_CXX_FLAGS_RELEASE}>$<$<CONFIG:RelWithDebInfo>:${CMAKE_CXX_FLAGS_RELWITHDEBINFO}>\n")
 if(MASKETJSON_BUILD_FUZZERS)
     foreach(goal speed memory)
         add_library(AutoV3-${goal}-fuzz STATIC "${generated}/${goal}.cpp" $<TARGET_OBJECTS:AutoParserFuzz>)
@@ -69,7 +77,8 @@ if(MASKETJSON_BUILD_FUZZERS)
         target_include_directories(AutoV3-${goal}-fuzz PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}" "${PROJECT_SOURCE_DIR}/benchmarks/auto")
         target_compile_definitions(AutoV3-${goal}-fuzz PUBLIC JsonLexer=AutoLexer JsonParser=AutoParser
             AUTO_V3_SPEED_BYTES=${AUTO_V3_SPEED_BUDGET} AUTO_V3_MEMORY_BYTES=${AUTO_V3_MEMORY_BUDGET}
-            AUTO_V3_SPEED_QUARTERS=${AUTO_V3_SPEED_QUARTERS} AUTO_V3_MEMORY_QUARTERS=${AUTO_V3_MEMORY_QUARTERS})
+            AUTO_V3_SPEED_QUARTERS=${AUTO_V3_SPEED_QUARTERS} AUTO_V3_MEMORY_QUARTERS=${AUTO_V3_MEMORY_QUARTERS}
+            AUTO_V3_SPEED_LOOKAHEAD=${AUTO_V3_SPEED_LOOKAHEAD} AUTO_V3_MEMORY_LOOKAHEAD=${AUTO_V3_MEMORY_LOOKAHEAD})
         target_compile_options(AutoV3-${goal}-fuzz PRIVATE -fsanitize=fuzzer-no-link)
         add_executable(AutoV3Fuzz-${goal} "${PROJECT_SOURCE_DIR}/fuzz/ParserFuzz.cpp" ../auto/Compare.cpp $<TARGET_OBJECTS:AutoBaseline>)
         target_include_directories(AutoV3Fuzz-${goal} PRIVATE "${PROJECT_SOURCE_DIR}/fuzz")

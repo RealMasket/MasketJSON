@@ -27,6 +27,12 @@ void arithmetic() {
     const auto unpressured=choose(Goal::Memory,1000,maximum,true,false,100000,false,0,1048576);
     const auto pressured=choose(Goal::Memory,1000,maximum,true,true,100000,false,0,1048576);
     require(unpressured.lower==1250 && pressured.lower==1000*AUTO_V3_MEMORY_QUARTERS/4,"Pressure must be the only trigger");
+    for(size_t n=1;n<1024;++n)for(size_t moved=0;moved<n*5;++moved) {
+        require(copyPressure(Goal::Speed,moved,n,true)==(moved+n>n*1.5),"Projected speed pressure mismatch");
+        require(copyPressure(Goal::Memory,moved,n,true)==(moved+n>n*3),"Projected memory pressure mismatch");
+    }
+    require(copyPressure(Goal::Speed,maximum,maximum,true),"Projected speed large counter");
+    require(!copyPressure(Goal::Memory,maximum,maximum,true),"Projected pressure overflow");
     const auto tail=remainingBound(65535,2,false,maximum);
     require(tail.fits && tail.count==65538,"Dense near-end bound incorrect");
     require(!remainingBound(maximum,1,false,maximum).fits,"Tail bound overflow");

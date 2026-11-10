@@ -9,6 +9,10 @@ def validate(text,goal,names):
     for r in rows:
         if r['reason'] in ('initial','finished','aborted','allocation_failed'):continue
         n=int(r['tokens']);q=int(r['pressure_floor_quarters']);assert q in (6,7,8)
+        lookahead=int(r.get('pressure_lookahead','0'));assert lookahead in (0,1)
+        previous=int(r['moved_tokens'])-n
+        pressure=(previous>n//2 if goal=='speed' else previous>2*n) if lookahead else previous>(1.5 if goal=='speed' else 3)*n
+        assert (r['pressure_active']=='1')==pressure
         base=n+max(n//(2 if goal=='speed' else 4),1)
         floor=n+max(n*(q-4)//4,1) if r['pressure_active']=='1' else base
         expected=max(base,floor)

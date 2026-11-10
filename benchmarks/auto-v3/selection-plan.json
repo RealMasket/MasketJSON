@@ -1,0 +1,69 @@
+{
+  "base_revision": "29aae01ed1cd0782d66e10f9beaa187c6fc6d3e6",
+  "scope": "Private Auto v3; vary only growth floor while existing copy-pressure predicate is active.",
+  "known_inputs": 91,
+  "budgets": {
+    "speed_bytes": 4194304,
+    "memory_bytes": 1048576
+  },
+  "candidates": {
+    "control": {
+      "quarters": 6,
+      "lookahead": 0
+    },
+    "seven-fourths": {
+      "quarters": 7,
+      "lookahead": 0
+    },
+    "double": {
+      "quarters": 8,
+      "lookahead": 0
+    },
+    "projected-control": {
+      "quarters": 6,
+      "lookahead": 1
+    },
+    "projected-seven-fourths": {
+      "quarters": 7,
+      "lookahead": 1
+    },
+    "projected-double": {
+      "quarters": 8,
+      "lookahead": 1
+    }
+  },
+  "pressure": "Compare original historical predicate to projected predicate including the inevitable current-buffer relocation. Speed projected test: moved > floor(n/2); memory: moved > 2*n. Original thresholds 1.5*n and 3*n otherwise remain.",
+  "floor": "When pressure is active, max(existing normal floor, floor(n*quarters/4)); checked saturation. Byte ceiling remains soft; EOF bound may safely bypass floor.",
+  "selection": "One exploratory round x 3 samples x 2 operations on all 91 known inputs. Per goal filter by ALL joint CPU/heap gates. Among eligible choose geometric mean time/Balanced; within 3% of fastest choose lowest worst peak/oracle. If none eligible choose smallest maximum normalized gate violation, then geometric mean, and mark unqualified. Apply the same rule over all six combinations, recording eligibility and maximum normalized gate violation. No holdout used.",
+  "joint_targets": {
+    "non_tiny": "Balanced parse median >=1ms; report every input",
+    "speed": {
+      "max_time_oracle": 1.5,
+      "max_peak_oracle": 2,
+      "max_peak_balanced": 1.5
+    },
+    "memory": {
+      "max_time_balanced": 2,
+      "max_peak_oracle": 1.5
+    }
+  },
+  "final": "Six cyclic rounds x 5 samples x 3 operations; both fixed modes, frozen v2 and selected v3 goals. No target weakening or retuning after selection.",
+  "holdout": {
+    "inputs": 16,
+    "seed": 20261110,
+    "counts": [
+      197,
+      4093
+    ],
+    "generation": "Full generation only after sources, selected executables, budgets and parameters are frozen. All previous holdouts are now known data."
+  },
+  "structural": "Retain v2 byte-budget exceptions, no growth after proven final bound, <=5*n+4096 speed / <=8*n+4096 memory relocation and exact token/value/error agreement.",
+  "phase": "Second known-data phase, preregistered before lookahead measurements and before any full new holdout generation.",
+  "original_plan_sha256": "fdbeecfacab9bb6548bbc9fdd9b5a4f029935ab11e65fe1a56942aeb69184ba9",
+  "phase1_metadata": {
+    "control": "7ec3b538be9691c68db124e693298dbce72ce688f9d7f46d4dc1b120b86b3b60",
+    "seven-fourths": "4fdbbbd8c00aada7fb3231bd57195930df870d6e92f920fc7274dbd583cfc4dd",
+    "double": "f13600ce7ea4b001ea3c0df250a0c0e79433294082d73862467b17c05195cdbe"
+  },
+  "observation": "All pressure_active flags are zero for speed on dense-zeros-262144 in phase 1. Larger pressure floors cannot affect that schedule."
+}

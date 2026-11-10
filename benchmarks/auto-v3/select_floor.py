@@ -3,8 +3,9 @@ import csv,hashlib,json,math,statistics,sys
 from datetime import datetime,timezone
 from pathlib import Path
 root,destination=map(Path,sys.argv[1:]);assert not destination.exists()
-plan_path=Path(__file__).with_name('plan.json');plan=json.loads(plan_path.read_text());scores={}
-for label,q in plan['candidates'].items():
+plan_path=Path(__file__).with_name('selection-plan.json');plan=json.loads(plan_path.read_text());scores={}
+for label,config in plan['candidates'].items():
+    q=config['quarters']
     d=root/label;m=json.loads((d/'metadata.json').read_text());assert len(m['inputs'])==91
     times={p:{r['dataset']:float(r['median_us']) for r in csv.DictReader((d/f'{p}-1.csv').open()) if r['operation']=='parse'} for p in ('balanced','low-memory','speed','memory')}
     peaks={p:{r['dataset']:int(r['peak_live_bytes']) for r in csv.DictReader((d/f'{p}-memory.csv').open()) if r['stage']=='whole_parse'} for p in times}
@@ -16,7 +17,7 @@ for label,q in plan['candidates'].items():
         pb=max(peaks[goal][n]/peaks['balanced'][n] for n in non)
         regret=max(wt/1.5,wp/2,pb/1.5) if goal=='speed' else max(wb/2,wp/1.5)
         gm=math.exp(statistics.mean(math.log(times[goal][n]/times['balanced'][n]) for n in names))
-        scores[label,goal]=dict(quarters=q,budget_bytes=plan['budgets'][goal+'_bytes'],joint_eligible=regret<=1,worst_time_oracle=wt,worst_time_balanced=wb,worst_peak_oracle=wp,worst_peak_balanced=pb,normalized_gate_regret=regret,geomean_time_balanced=gm)
+        scores[label,goal]=dict(quarters=q,lookahead=config['lookahead'],budget_bytes=plan['budgets'][goal+'_bytes'],joint_eligible=regret<=1,worst_time_oracle=wt,worst_time_balanced=wb,worst_peak_oracle=wp,worst_peak_balanced=pb,normalized_gate_regret=regret,geomean_time_balanced=gm)
 chosen={}
 for goal in ('speed','memory'):
     eligible=[l for l in plan['candidates'] if scores[l,goal]['joint_eligible']]

@@ -293,7 +293,7 @@ python benchmarks/auto/run_auto.py --bin build-auto/benchmarks/auto/Release --in
 
 Use fresh result directories. Keep the machine idle and do not rebuild while
 measuring. The runner pins CPU affinity and rotates four policies across four
-rounds (5 samples Г— 3 operations by default), checks exact results against both
+rounds (5 samples Р“вЂ” 3 operations by default), checks exact results against both
 fixed production modes, validates journal bounds and matches copy counts with
 separate profiles. Freeze verifies unchanged controller sources and executable
 hashes before full held-out evaluation; do not retune using that split.
@@ -370,6 +370,71 @@ exact-count control measures a different allocation schedule, not a public mode.
 See [the diagnosis instructions](auto-v2/diagnosis/README.md) for build, test,
 provenance checks and report-only auditing. Original v2 acceptance thresholds
 remain unchanged; this known-input experiment is not a new holdout.
+
+## Auto v3: growth under copy pressure
+
+The [Auto v3 report](results/auto-v3-reservation.md) tests only the geometric floor
+used when existing copy pressure is active. The 1.5x control exactly reproduces
+all v2 heap observations on 91 now-known inputs; 1.75x and 2x are alternatives.
+Density and pressure thresholds, speculative budgets (speed 4 MiB / memory 1 MiB)
+and the remaining-byte final-capacity proof are unchanged. Byte budgets remain
+soft: a geometric floor may override them, and every actual exception is logged.
+
+The [pre-recorded plan](auto-v3/plan.json) is committed as `f4b9f04`. Calibration
+uses one exploratory round, 3 samples x 2 operations. Selection filters by both
+CPU and peak gates, then uses geometric mean time; among candidates within 3%
+of fastest it selects the lowest worst peak/oracle. If no candidate qualifies,
+the least normalized gate violation is retained but explicitly unqualified.
+
+```powershell
+cmake -S . -B build-auto-v3 -DBUILD_SHARED_LIBS=OFF -DMASKETJSON_BUILD_BENCHMARKS=ON -DMASKETJSON_BUILD_PROFILER=ON -DMASKETJSON_BUILD_AUTO_V3_EXPERIMENT=ON -DAUTO_V3_SPEED_QUARTERS=8 -DAUTO_V3_MEMORY_QUARTERS=8
+cmake --build build-auto-v3 --config Release --parallel 2
+ctest --test-dir build-auto-v3 -C Release -R AutoV3 --output-on-failure
+```
+
+Quarters 6/7/8 mean 1.5/1.75/2. The command above builds the double candidate;
+use the selected per-goal quarters in `results/auto-v3-msvc1951/selection.json`
+when reproducing the final variant. Python 3 and a static library are required.
+Sanitizer builds omit the profiler; journals, exact comparison and corpus checks
+remain enabled. CI imposes no wall-clock speed assertions.
+
+To calibrate, build each candidate pair and snapshot its AutoV3 executables plus
+build-info file before rebuilding. Copy the unchanged Balanced/LowMemory
+Time/Profile/Inspect executables from the frozen v2 experiment into each snapshot.
+Use all 47 original fixtures, the 12 LowMemory holdouts, 16 v1 holdouts and 16 v2
+holdouts (91 known documents total) from the preceding frozen-input directories.
+Then run `auto-v3/calibrate.py --bin SNAPSHOT --inputs DIRS --output ROOT/NAME
+--candidate NAME` for control, seven-fourths and double, followed by
+`auto-v3/select_floor.py ROOT selection.json`. Per-goal snapshot assembly preserves
+selected executables; the unused other-goal macro in each binary is irrelevant.
+Keep the v2 comparison binaries frozen at `fc03dae`.
+
+```powershell
+python benchmarks/auto-v3/run_final.py --bin selected-bin --v2-bin frozen-v2-bin --inputs known-data --output known-results --selection selection.json --stage known
+python benchmarks/auto-v3/freeze.py known-results selection.json freeze.json
+python benchmarks/auto-v3/generate_holdout.py new-evaluation-inputs
+python benchmarks/auto-v3/run_final.py --bin selected-bin --v2-bin frozen-v2-bin --inputs new-evaluation-inputs --output holdout-results --selection selection.json --freeze freeze.json --stage holdout
+```
+
+Use fresh result directories and an idle machine; do not build during timing.
+Final measurements use six cyclic rounds of 5 samples x 3 operations with five
+warm-ups. Freeze sources, parameters and all comparison binaries before generating
+the full 16-input evaluation (seed 20261110, counts 197/4093). Never retune using
+that evaluation; prior holdouts and the diagnosis inputs are already known data.
+
+Exact comparators and independent journals check token/value/diagnostic equality,
+rational-floor rounding and saturation, triggered pressure floors, justified byte
+exceptions, linear relocation and no growth after a proved final capacity. The
+small CI suite covers 107 known/new structures and invalid traces. Coverage
+fuzzers compare each goal with independent production parsing, up to 262144-byte
+inputs to reach speculative-budget transitions. Auto remains private.
+
+To reproduce the report, gather `calibration/`, `known/`, `holdout/`, selection and
+freeze under one root, then run `auto-v3/summarize.py ROOT REPORT.md`. Raw files
+retain LF endings for stable cross-file SHA-256 checks. Reported captured heap
+is simultaneous requested C++ allocation bytes, including old/new token buffers;
+it excludes caller input, stack/root Json, allocator metadata/rounding, direct
+malloc and profiler bookkeeping. It is not RSS or a hard runtime memory bound.
 
 ## References
 
