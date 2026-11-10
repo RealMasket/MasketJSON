@@ -76,3 +76,7 @@ benchmarks/auto-v2/*.json text eol=lf
 # Preserve exact raw diagnostic bytes referenced by metadata SHA-256.
 benchmarks/results/auto-v2-diagnosis-msvc1951/** -text whitespace=cr-at-eol
 benchmarks/auto-v2/diagnosis/*.py text eol=lf
+
+benchmarks/auto-v3/*.py text eol=lf
+benchmarks/auto-v3/*.json text eol=lf
+benchmarks/results/auto-v3-msvc1951/** text eol=lf
