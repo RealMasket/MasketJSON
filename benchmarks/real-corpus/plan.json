@@ -1,0 +1,52 @@
+{
+  "base_revision": "838a26e70cdd3d675408121e08e3e83b7cef7173",
+  "scope": "External public JSON snapshots and compiler transfer of frozen selected Auto v3; no tuning or public API changes.",
+  "policies": [
+    "balanced",
+    "v3-speed",
+    "low-memory",
+    "v3-memory"
+  ],
+  "toolchains": [
+    "MSVC 19.51",
+    "Clang-cl 23.1.5"
+  ],
+  "platform": "Same Windows x64 machine and Microsoft STL/CRT; isolate compiler rather than change OS/library.",
+  "rounds": 8,
+  "samples": 5,
+  "iterations": 3,
+  "warmups": 5,
+  "cpu": 0,
+  "order": "Eight toolchain/policy pairs in cyclic order; each pair occupies every absolute position once, each within-toolchain position twice.",
+  "gates": {
+    "non_tiny": "Balanced parse median >=1 ms per compiler",
+    "speed": {
+      "max_time_oracle": 1.5,
+      "max_peak_oracle": 2,
+      "max_peak_balanced": 1.5
+    },
+    "memory": {
+      "max_time_balanced": 2,
+      "max_peak_oracle": 1.5
+    }
+  },
+  "meaning": "External transfer evidence on five snapshots, not representative workload sampling or a runtime guarantee. No retuning, dropped inputs or target weakening after results.",
+  "selected": {
+    "speed": {
+      "budget_bytes": 4194304,
+      "quarters": 7,
+      "lookahead": 1
+    },
+    "memory": {
+      "budget_bytes": 1048576,
+      "quarters": 6,
+      "lookahead": 1
+    }
+  },
+  "data": "All five original files, no minification, editing or synthetic repetition. Include every input, even failed acceptance or a failed resource gate.",
+  "compiler_archive": {
+    "version": "llvmorg-23.1.5",
+    "url": "https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.5/clang%2Bllvm-23.1.5-x86_64-pc-windows-msvc.tar.zst",
+    "sha256": "b2be33385ddc86e83511417a060de927ae8b09d1f3017cc3cdce5c73cd5029d7"
+  }
+}

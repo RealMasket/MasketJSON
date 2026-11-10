@@ -29,6 +29,10 @@ jobs:
         run: cmake --build build-relocation --config Release --parallel 2
       - name: Check replay accounting and rejected schedules
         run: ctest --test-dir build-relocation -C Release --output-on-failure
+      - name: Fetch pinned original public JSON corpus
+        run: python benchmarks/real-corpus/fetch.py build-matrix/real-inputs
+      - name: Check external corpus values, profiles and decisions
+        run: python benchmarks/real-corpus/common.py --build build-matrix --inputs build-matrix/real-inputs --output build-matrix/real-smoke --profiles
       - name: Preserve Auto decision journals
         if: always()
         uses: actions/upload-artifact@v4
@@ -38,6 +42,7 @@ jobs:
             build-matrix/auto-smoke/*-decisions.csv
             build-matrix/auto-v2-smoke/*-decisions.csv
             build-matrix/auto-v3-smoke/*-decisions.csv
+            build-matrix/real-smoke/*.csv
             build-matrix/Testing/Temporary/
           if-no-files-found: ignore
           retention-days: 14
@@ -86,6 +91,10 @@ jobs:
         run: cmake --build build-sanitized --parallel 2
       - name: Test with sanitizers
         run: ctest --test-dir build-sanitized --output-on-failure
+      - name: Fetch pinned external corpus for sanitizer checks
+        run: python benchmarks/real-corpus/fetch.py build-sanitized/real-inputs
+      - name: Check external JSON under sanitizers
+        run: python benchmarks/real-corpus/common.py --build build-sanitized --inputs build-sanitized/real-inputs --output build-sanitized/real-smoke
       - name: Preserve sanitizer logs and reproducers
         if: always()
         uses: actions/upload-artifact@v4
@@ -99,6 +108,7 @@ jobs:
             build-sanitized/auto-smoke/*-decisions.csv
             build-sanitized/auto-v2-smoke/*-decisions.csv
             build-sanitized/auto-v3-smoke/*-decisions.csv
+            build-sanitized/real-smoke/*.csv
           if-no-files-found: ignore
           retention-days: 14
 

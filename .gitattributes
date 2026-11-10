@@ -80,3 +80,7 @@ benchmarks/auto-v2/diagnosis/*.py text eol=lf
 benchmarks/auto-v3/*.py text eol=lf
 benchmarks/auto-v3/*.json text eol=lf
 benchmarks/results/auto-v3-msvc1951/** text eol=lf
+
+benchmarks/real-corpus/*.py text eol=lf
+benchmarks/real-corpus/*.json text eol=lf
+benchmarks/results/real-corpus-windows/** text eol=lf
