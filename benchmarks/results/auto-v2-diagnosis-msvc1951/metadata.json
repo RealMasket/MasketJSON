@@ -1,0 +1,240 @@
+{
+  "created_utc": "2026-11-10T14:55:12.471014+00:00",
+  "base_revision": "fc03daef4b88daa900195cc2245969f6e8a1212e",
+  "cpu": "12th Gen Intel(R) Core(TM) i5-12600KF",
+  "os": "Windows-10-10.0.19045-SP0",
+  "logical_cpu": 0,
+  "configuration": "MSVC 19.51 Release, /O2 /Ob2 /DNDEBUG; original frozen parsers and standalone replay",
+  "rounds": 6,
+  "samples": 5,
+  "iterations": 3,
+  "round_orders": [
+    [
+      "balanced",
+      "v1-speed",
+      "v2-speed",
+      "low-memory",
+      "v1-memory",
+      "v2-memory"
+    ],
+    [
+      "v1-speed",
+      "v2-speed",
+      "low-memory",
+      "v1-memory",
+      "v2-memory",
+      "balanced"
+    ],
+    [
+      "v2-speed",
+      "low-memory",
+      "v1-memory",
+      "v2-memory",
+      "balanced",
+      "v1-speed"
+    ],
+    [
+      "low-memory",
+      "v1-memory",
+      "v2-memory",
+      "balanced",
+      "v1-speed",
+      "v2-speed"
+    ],
+    [
+      "v1-memory",
+      "v2-memory",
+      "balanced",
+      "v1-speed",
+      "v2-speed",
+      "low-memory"
+    ],
+    [
+      "v2-memory",
+      "balanced",
+      "v1-speed",
+      "v2-speed",
+      "low-memory",
+      "v1-memory"
+    ]
+  ],
+  "note": "Known-set diagnostic only; exact token count is offline information; replay times are not parser cost percentages.",
+  "frozen_metadata_sha256": "1dce44a3702f4c76984d3630f25379409863fa6dc68f58cf852c638ebe89ef87",
+  "files": {
+    "balanced-1.csv": "40dd8adef3e337142c95d6bb5ea87c2af761270def00bace70168be7a6e569d9",
+    "balanced-2.csv": "9ef694ec2d9e6277cf43c8f1df2efa0eb6da1d0adc76bdb49d545485244f370a",
+    "balanced-3.csv": "c0a351bcfa53d49b874b3ead1e275954d946aa6395a14a55ef15b267f812d3d1",
+    "balanced-4.csv": "964d8b9e0702bc46973fe776b8414deff757d6ae88a2298089d6de4927f45dfb",
+    "balanced-5.csv": "97f6eec8bb7ab98b27d992f78422261be6986039290959b2ecec848e5bb16236",
+    "balanced-6.csv": "5a7d8f4b8626210d869b061a0186f48b3046c1096d6f4de0369063a275f40fd1",
+    "balanced-memory.csv": "97e729a54fb7a90f5184b46b3fbff24b50aa9bc9d75292453f69ee40a40de138",
+    "low-memory-1.csv": "5eb98f8e8a9a3ffcb8aed2aaa451386fb42b69fdc1d9f7807343fd3225b0aad2",
+    "low-memory-2.csv": "ec54b3f25349c0b1eae677582b30bf187e3a527cb5324e3931a8a9fdbaef7930",
+    "low-memory-3.csv": "42c280c013611f486aa1d4f07c4d7b246fc7a9f941cafbc72d830a35f37a5b0e",
+    "low-memory-4.csv": "aafb496f7de726f7638b108b418d31beda2c5b28df6a200e464d23786d6c319a",
+    "low-memory-5.csv": "3efd7ab19176b5a68be7fb321a7884bb2036b019c90c9f4d50627ad450a92787",
+    "low-memory-6.csv": "fce60e3edcc967b91964eaca0e33af1ed4eb1bbc076ba0692b192077abfb3d37",
+    "low-memory-memory.csv": "7fd63437c723652be7a39fee54c416756765f62c24b9c183ab418f8bf668ecd4",
+    "memory-decisions.csv": "3923b0f7e4bb325b292f2c734c0ef474f2d583a166e154bd19128c5e7fdb7366",
+    "plans/alternating-262144.json.exact.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "plans/alternating-262144.json.memory.txt": "3c10e7833dbc1918eb357bcfacc380f475e75e0ab393c898650f17f3ce19a47c",
+    "plans/alternating-262144.json.speed.txt": "bcfcc8c9f2756384cdf699585eb21c413f536043a698b5058f0b6c810e003cf2",
+    "plans/alternating-32768.json.exact.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "plans/alternating-32768.json.memory.txt": "156f7438cd2e1367cb9b5e0165c9ef4ae6ca1a762efae57cf245c3d9ac3fa0a0",
+    "plans/alternating-32768.json.speed.txt": "303707ff890f80826e31d358af77621d91325ae00a5994d37c2770685e1e505b",
+    "plans/alternating-4096.json.exact.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "plans/alternating-4096.json.memory.txt": "560a9b04e8199df277b26f8fd9a9b3454492654c0feadcd07bdc3e5c3f64967b",
+    "plans/alternating-4096.json.speed.txt": "3ceabf66e2369d9cb954c472dad66f23822390d54799f0c5073f19e943cb4e61",
+    "plans/dense-zeros-262144.json.exact.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "plans/dense-zeros-262144.json.memory.txt": "1a6c9bb7951637b511e3d5edc1dd3bcf58fd906f9a08e987109289eb5c3bbe4a",
+    "plans/dense-zeros-262144.json.speed.txt": "1a21fa714371b896538e0ba48db1c0087c363cdc5cde2ef3c488c61ad362afec",
+    "plans/dense-zeros-32768.json.exact.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "plans/dense-zeros-32768.json.memory.txt": "39866163bb5def509c69c7918118d935dfcf64122b335c5eafd54739d585f08a",
+    "plans/dense-zeros-32768.json.speed.txt": "62a9b99949cd4b0d4d4cdc8a7d53082a9ded6cb99b51af15208087f7418e636b",
+    "plans/dense-zeros-4096.json.exact.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "plans/dense-zeros-4096.json.memory.txt": "b4c3e81f675b3bd60a307d5cc108c32067ff53d65aaf801411b2eac3cee03a43",
+    "plans/dense-zeros-4096.json.speed.txt": "f3dd6b6f16d9701913a9af791f369f1f0f1302d9d5e29e941dda518c5478dbaa",
+    "plans/held-tail-records-4099.json.exact.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "plans/held-tail-records-4099.json.memory.txt": "454cbc75cb9e9328620c1ea3deb2fa2b1244713846200e9a040638616561a72e",
+    "plans/held-tail-records-4099.json.speed.txt": "8a3cd5273be88ea627daafe0b296486fb20143ba6588bfe99c8ac11543e5d332",
+    "plans/whitespace-interleaved-16384.json.exact.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "plans/whitespace-interleaved-16384.json.memory.txt": "2ca179c3595102f884a30171b16647a76cb8360684d8a6a2a77ccbe714f8d81a",
+    "plans/whitespace-interleaved-16384.json.speed.txt": "4e968c6742f75f74ba329d7725384530653760dfb7861b0666035a49a38eeb0b",
+    "replay.csv": "4d83462b2c4fbcc83f427ad44e4857ec38a59fb366986d1fd39bc7c925c5266a",
+    "shapes.csv": "a7ff21615a8907bb1ad51e2a6529a4343c198073298cf3f4771f16ba520493bb",
+    "speed-decisions.csv": "37c5135569a5001d2d4fd4b380038637f4e01e9de00060f5bdff0cf4442f9997",
+    "v1-memory-1.csv": "db30179b8d6ae88df220859da3e123552be15216ecb71e3acb57ef0d72efdf56",
+    "v1-memory-2.csv": "67091c6dbb8682b3bc1d6d169a8d7f2585b45a312b5ef7925bcb1d6204a76a9c",
+    "v1-memory-3.csv": "e3d63ae6d7de31c1ee193efe7cee1184924c73c12a2d32d7dcc2b462f218de4e",
+    "v1-memory-4.csv": "029bbed9b949cf61a21528bae8cf71ed95c2c0712af334ff7f555bfd9c584c2a",
+    "v1-memory-5.csv": "c43d681bd93333800a8e5b91ac4a308dee8201b1399c760ecd901f8f06d3cd67",
+    "v1-memory-6.csv": "9111b2f5c8afedaeb997b2b50cc29a5df92005909c1a99283044f6617b2fac2b",
+    "v1-memory-memory.csv": "c04314b782bef994ca3e6e90b1887c6f5af7c6c51570cae7ab3c5ff208c063ed",
+    "v1-speed-1.csv": "45efca86f367b0efede5af855eb73783c19dd0b3a2c3f91e241d543d6f390e84",
+    "v1-speed-2.csv": "7896877e228cc7249f1eff7e1d3bc685a58ec093e59a98b905bc4a78dddac496",
+    "v1-speed-3.csv": "df5b3a7e9b7cf5b78abe7ce1f39195132b7a7d75c3bb3792ade1b48b1b32d82f",
+    "v1-speed-4.csv": "bb17027c3e2ff12e4c689766b4706a0a8675743cde972dd332a9558fda71a6e3",
+    "v1-speed-5.csv": "3b7134450db2a4cfc0f4f061a8f3085bbf3a8944d700582a8d3817985343655e",
+    "v1-speed-6.csv": "b80efe5a8355d36aa7646862877c5576676f07dcb5d89f543884f6494a740eb3",
+    "v1-speed-memory.csv": "286bca91eb89f07c52b3792eeab9a861fc93257a303807b3a7dc4c455c70ffb9",
+    "v2-memory-1.csv": "3780282a2f78ca40a74d9c46d8205a7eada77fb33b3031b1da96fcc06db57a36",
+    "v2-memory-2.csv": "75bbc54ab25f83052db7b897b3056854bd5d4acc8150867423e837b534584537",
+    "v2-memory-3.csv": "ad893b449b93243bde46f6173c96ab819987460d6e25f8c3880b2945a7bfeccc",
+    "v2-memory-4.csv": "a15410d7e076e1fbf500adb9b775f7b78b86ff47d75c3728ee79ef3170fe063d",
+    "v2-memory-5.csv": "11832c275de19174d976fcead5c60000e6453e0d0d046953f715f3b7e205465e",
+    "v2-memory-6.csv": "59e8f7111b020863009167a2fb2bee7495b22c17eeaddaec9cf74a183cdc34d8",
+    "v2-memory-memory.csv": "387ba058dc56a6d2af407e4b49c82b2d7b0667023cd912aeb9f6f6a340508abb",
+    "v2-speed-1.csv": "4117372a08c4f6df4105b848355fe4ccc15963de22eda2d2897025d06b40ec16",
+    "v2-speed-2.csv": "eacfa0c7f80ee1dd9a58d4680ab305976b39ed8db51f71d470c0c5234d30b819",
+    "v2-speed-3.csv": "f67783d54d18ab8dfe7ea0fd7ac12a25c13a339791f26831a30601adda3bea52",
+    "v2-speed-4.csv": "3cb16d0717b9a5ade28e885e56390785873f06b4a7155a7feff09421bc8fe52a",
+    "v2-speed-5.csv": "d2750ba38c8452839d4286dd68ee9a6da21d16d87ceaa33251a2ec031919b740",
+    "v2-speed-6.csv": "80bfcb584bc1f1757904c1e36bdee98af5e0587e7ae2a3aca2916a6270c1d0ba",
+    "v2-speed-memory.csv": "022d3cd99cc4edafffb4ef2f37d597e1db47be9862152caab8959c3bcc079cb4"
+  },
+  "binaries": {
+    "balanced": {
+      "Time": "73df6f44f4b9cd5fbce0eef1a6113f066600f844793686e0d69239cf6c7af2d3",
+      "Profile": "11bef6be9b7274f3067112ffc39876c82226c1e75f543c8712aba7e7613de693",
+      "Inspect": "8ffe9b757071cef9dfe0327f7239f81c24964265176c87ab1adc0c9f8e214db2"
+    },
+    "v1-speed": {
+      "Time": "85e24acbe020053face3829f3d69c4490b5dc7a0dd9ef35f6164873df67062da",
+      "Profile": "ab49f8d93e2abbd9e6faaede97cb59760a3619942701a826645697f41cf8c2e0",
+      "Inspect": "70584fb729a5125e15652b8bddb228cafdbbe6901fa05362c219291bb70000d0"
+    },
+    "v2-speed": {
+      "Time": "7cb2e2c746dafb28df68011245d6e90584f77aad5869802e7d55a0407d5ff27d",
+      "Profile": "d1cf6b38c56d779cd7681e156bd0b588b2e84a1bf7337c01bb0a4e207b31668c",
+      "Inspect": "fe81a57d895afc89b0fccd27ae12ce70af34ca45cbb2c07a073d76983139b58b",
+      "Trace": "13e948d6d4421854b7e5161fdc3116c3548a3bb29986d5ea7a85b50309cc2e5b",
+      "Verify": "db7c3b3a8e3d284e15d793205b71f2cac0e48758cdc17ff5cf7e1a57c2e0306b"
+    },
+    "low-memory": {
+      "Time": "e61e3340ad55723de804415cc6536c1fdac7e21da9dce800b746daf554e0e479",
+      "Profile": "dd63a013e556d417a15fa62124db0bd0c950c91081e3879783c24ac5a2bbaad1",
+      "Inspect": "394d8e851f6560985c132d39d690f08cb770a62136bca1bc0ec014fcab71722f"
+    },
+    "v1-memory": {
+      "Time": "0e4c159cf59541343b601fd91d08e15b90137ba90f6e761e4bd37835d3be85d6",
+      "Profile": "c0ecadf605920b0459b91d90eae83f0394cf9c54671914c154d538e8531e219e",
+      "Inspect": "321c83f7cc6569cb8b2e2343ccc625d7dfaca5129e89bd073aa1e5445ca075a4"
+    },
+    "v2-memory": {
+      "Time": "d5a0d4805a5c2f0e0e00dadba8163f969553b32ba3bfcb5f25b73ad49ea9eb7f",
+      "Profile": "d3558ae64a7da2412fe9db40629dbb6877948e7fa63fce9fe43042bed2da04a2",
+      "Inspect": "c71ad54593cf90d9148eac3264d4589692bd3d2f7aa295462781de92675a9f7c",
+      "Trace": "0f2e7452080d99b8f3359718aad5c33b345d5d0fa51e21646f19dde61b1a03a0",
+      "Verify": "ad38758fe6a22e7fa865ff4bf4ad15ff88e6f3761e3fbab13dadd622dae5f763"
+    }
+  },
+  "replay_sha256": "bbb6678ed27fb38febf8316e12337df5ffe2109c5d5736e5684f2b85601b31e1",
+  "inputs": [
+    {
+      "name": "dense-zeros-4096.json",
+      "bytes": 8193,
+      "sha256": "cb113f74dc19a08fcacd246b84ca69e1dff17209792ea3bd8d1b34397f5eca92"
+    },
+    {
+      "name": "dense-zeros-32768.json",
+      "bytes": 65537,
+      "sha256": "29ebda569a35b2dcbc0cf2e1253f734742378b391ccf610d303fa23f1dbffb2a"
+    },
+    {
+      "name": "dense-zeros-262144.json",
+      "bytes": 524289,
+      "sha256": "d65a30a253e5e2ae1f44f9ecdefc8fcdafbd21c1cc64afbb5046fcc1e765ac4b"
+    },
+    {
+      "name": "alternating-4096.json",
+      "bytes": 40973,
+      "sha256": "b9f73bcbf62bed3023c03ed100782a1565503215ec1a2dffd45078158dacd4ec"
+    },
+    {
+      "name": "alternating-32768.json",
+      "bytes": 327777,
+      "sha256": "ed8e870afb789e88cd7419d2547ebdb4dd90b186a8c9b399787f3c8394dbfcfb"
+    },
+    {
+      "name": "alternating-262144.json",
+      "bytes": 2622209,
+      "sha256": "60a218195d4405caff6dff382ca83215a6846472261aead88f93f9775aaa960f"
+    },
+    {
+      "name": "held-tail-records-4099.json",
+      "bytes": 3375357,
+      "sha256": "509ec44bf4386ef42c01f056fca2bf7135eeec82cb596f69a48b954047674d6c"
+    },
+    {
+      "name": "whitespace-interleaved-16384.json",
+      "bytes": 2178942,
+      "sha256": "49a13113bbe551bec0989d5afc1152e71770ee4639000a7721564fcc34004611"
+    }
+  ],
+  "sources": [
+    {
+      "file": "benchmarks/auto-v2/diagnosis/CMakeLists.txt",
+      "sha256": "a4ba625284dcaeafb35d1e6bb3481d358302d8664fe4136d988fccb1708dd3d9"
+    },
+    {
+      "file": "benchmarks/auto-v2/diagnosis/run_diagnosis.py",
+      "sha256": "5ec34a59f7bcdc078c6cd079ef17e9a403cbcb79bceafc8a03f0aad1cff3a70c"
+    },
+    {
+      "file": "benchmarks/auto-v2/diagnosis/TokenRelocation.cpp",
+      "sha256": "93a6a465fd88681ed2a260d9fc703e803813a537f88e05b0ca6efc686effb335"
+    },
+    {
+      "file": "benchmarks/BenchmarkUtils.cpp",
+      "sha256": "db230a04070829d9140bb260761e3d78349371a3ebb65c00724695d458a9593a"
+    },
+    {
+      "file": "benchmarks/BenchmarkUtils.hpp",
+      "sha256": "c8d14e94b775950fb12445e01b0109014ca30cf109150d53f4181f4618530236"
+    },
+    {
+      "file": "parser/Token.hpp",
+      "sha256": "c8985f42148273ccdcd4010a1fd6d2c4688a6e56bd42799fbe95a229e5bf5534"
+    }
+  ]
+}

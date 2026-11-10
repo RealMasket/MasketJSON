@@ -29,10 +29,10 @@ treated as available before parsing, or as free features for an automatic select
 
 | Preset / status | Objective | Mechanism |
 | --- | --- | --- |
-| Balanced — implemented | Existing behavior | Observed density, 1.5×…64× growth |
-| LowMemory — implemented | Limit speculative capacity | At growth request at most live token count + max(live token count, 256) slots; accept more copying |
-| Throughput — proposed | Reduce reallocations on known dense inputs | More eager reservation, possibly with a caller-supplied token-count hint |
-| Auto — proposed | Select/revise a strategy within explicit bounds | Online estimates with a conservative fallback when density changes |
+| Balanced вЂ” implemented | Existing behavior | Observed density, 1.5Г—вЂ¦64Г— growth |
+| LowMemory вЂ” implemented | Limit speculative capacity | At growth request at most live token count + max(live token count, 256) slots; accept more copying |
+| Throughput вЂ” proposed | Reduce reallocations on known dense inputs | More eager reservation, possibly with a caller-supplied token-count hint |
+| Auto вЂ” proposed | Select/revise a strategy within explicit bounds | Online estimates with a conservative fallback when density changes |
 
 These are objectives, not names for the fastest/lowest-memory row on one fixture.
 The matrix already shows that small initial reserve alone does not ensure a low
@@ -91,6 +91,18 @@ excludes several allocation classes. Cheap logical counters, offline DOM walks a
 instrumented heap measurements have different costs and meanings.
 
 ## Further validation and future modes
+
+The [dense-input follow-up](../benchmarks/results/auto-v2-dense-diagnosis.md)
+repeats measurements with unchanged frozen binaries. On the largest dense array,
+v2 parse time is 1.648 times Balanced for speed and 2.384 for memory. Buffer
+accounting records 42.122/82.808 MiB of logical relocation versus 0.762 MiB for
+Balanced. An isolated replay, with no lexer scan, density prediction or DOM,
+remains 2.278/3.625 times slower than reserving the exact known count once.
+This identifies expensive allocation schedules without assigning exact parser
+percentages to copying. Exact count is offline information, not a public preset.
+A next candidate can study stronger geometric growth after copy pressure, but
+must recheck sparse suffixes, simultaneous peak and slack as well as speed.
+
 
 The [Auto v2 experiment](../benchmarks/results/auto-v2-reservation.md) adds byte
 ceilings for speculative token slots and a remaining-byte bound near EOF. Minimum

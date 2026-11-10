@@ -293,7 +293,7 @@ python benchmarks/auto/run_auto.py --bin build-auto/benchmarks/auto/Release --in
 
 Use fresh result directories. Keep the machine idle and do not rebuild while
 measuring. The runner pins CPU affinity and rotates four policies across four
-rounds (5 samples × 3 operations by default), checks exact results against both
+rounds (5 samples Г— 3 operations by default), checks exact results against both
 fixed production modes, validates journal bounds and matches copy counts with
 separate profiles. Freeze verifies unchanged controller sources and executable
 hashes before full held-out evaluation; do not retune using that split.
@@ -359,6 +359,17 @@ V2 fixes both original heap failures and passes the new split, but exceeds CPU
 targets on the known dense array. It remains private and does not qualify for
 public promotion. Keep the failed results when comparing another candidate;
 the new split is now known data and cannot serve as an independent test again.
+
+## Dense-input follow-up
+
+The [Auto v2 diagnosis](results/auto-v2-dense-diagnosis.md) repeats full-parse and
+lexer measurements on eight known inputs with the original frozen executables.
+A standalone vector replay follows the observed v2 buffer-growth schedules,
+removing JSON scanning, density prediction and DOM construction. The offline
+exact-count control measures a different allocation schedule, not a public mode.
+See [the diagnosis instructions](auto-v2/diagnosis/README.md) for build, test,
+provenance checks and report-only auditing. Original v2 acceptance thresholds
+remain unchanged; this known-input experiment is not a new holdout.
 
 ## References
 

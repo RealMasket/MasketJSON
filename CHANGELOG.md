@@ -4,6 +4,10 @@
 
 ### Planned for 1.1.0
 
+- Diagnose dense-input Auto v2 costs using frozen parser/lexer measurements,
+  independent heap observations and isolated token-buffer schedule replay.
+  Preserve raw timing rounds, known-input provenance and an offline exact-count
+  control; add portable replay accounting checks without changing public modes.
 - Evaluate private Auto v2 byte budgets with geometric-growth exceptions and a
   remaining-byte token bound. Preserve calibration, frozen executables, repeated
   75-input measurements and an independent 16-input evaluation. Fix the original
@@ -47,7 +51,7 @@
   failures, Unicode paths, temporary cleanup, hard links, and installed DLL API.
 - Advance the development version to 1.1.0; the published 1.0.0 tag is unchanged.
 
-## 1.0.0 — 2026-11-06
+## 1.0.0 вЂ” 2026-11-06
 
 ### Correctness
 

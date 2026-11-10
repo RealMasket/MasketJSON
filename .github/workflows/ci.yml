@@ -23,6 +23,12 @@ jobs:
         run: cmake --build build-matrix --config Release --parallel 2
       - name: Check all strategies against production
         run: ctest --test-dir build-matrix -C Release -R "Auto|ReservationMatrix" --output-on-failure
+      - name: Configure isolated token relocation diagnosis
+        run: cmake -S benchmarks/auto-v2/diagnosis -B build-relocation -DCMAKE_BUILD_TYPE=Release
+      - name: Build isolated diagnosis
+        run: cmake --build build-relocation --config Release --parallel 2
+      - name: Check replay accounting and rejected schedules
+        run: ctest --test-dir build-relocation -C Release --output-on-failure
       - name: Preserve Auto decision journals
         if: always()
         uses: actions/upload-artifact@v4

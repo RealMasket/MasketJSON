@@ -1,0 +1,9 @@
+dataset,input_bytes,token_count,whitespace_bytes,string_tokens,raw_string_bytes,max_raw_string_bytes,escape_sequences,number_tokens,max_depth,max_array_width,max_object_width,first_4k_tokens,last_4k_tokens,token_fingerprint,dom_fingerprint
+"dense-zeros-4096.json",8193,8194,0,0,0,0,0,4096,1,4096,0,4096,4096,a48db4e423b599a8,59a59e5dd364927d
+"dense-zeros-32768.json",65537,65538,0,0,0,0,0,32768,1,32768,0,4096,4096,441c73a6cc4708f1,d35dadc0f119927d
+"dense-zeros-262144.json",524289,524290,0,0,0,0,0,262144,1,262144,0,4096,4096,4d4d4951fdc4c390,6007556fdec1927d
+"alternating-4096.json",40973,8202,0,4,32768,8192,0,4096,1,4100,0,2050,1,7ea8496595a34688,20a6fb66f7abbc6d
+"alternating-32768.json",327777,65602,0,32,262144,8192,0,32768,1,32800,0,2050,1,f095e251849c0e38,6e764e479e96f4fd
+"alternating-262144.json",2622209,524802,0,256,2097152,8192,0,262144,1,262400,0,2050,1,d7c002a69b5524b0,ef697c0894d5a67d
+"held-tail-records-4099.json",3375357,90180,3148032,16396,68573,8,0,4099,4,4099,2,1743,0,91d2a1dcfd0a1ef9,2c1430c27d712ce5
+"whitespace-interleaved-16384.json",2178942,32770,2146173,0,0,0,0,16384,1,16384,0,63,62,b17db2fc6a9e0a0b,e9ea01fabb8d927d

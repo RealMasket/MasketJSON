@@ -1,0 +1,17 @@
+dataset,bytes,operation,iterations,samples,median_us,min_us,max_us,configuration
+"dense-zeros-4096.json",8193,parse,3,5,542.7,518.133333333,586.6,Release
+"dense-zeros-4096.json",8193,lex_only,3,5,439,428.7,475.5,Release
+"dense-zeros-32768.json",65537,parse,3,5,4090.06666667,3362.2,5213.6,Release
+"dense-zeros-32768.json",65537,lex_only,3,5,2879.4,2520.7,6745.73333333,Release
+"dense-zeros-262144.json",524289,parse,3,5,32366.1666667,27742.5333333,38097.7666667,Release
+"dense-zeros-262144.json",524289,lex_only,3,5,23858.6,23168,30996.9,Release
+"alternating-4096.json",40973,parse,3,5,738.433333333,703.533333333,769.366666667,Release
+"alternating-4096.json",40973,lex_only,3,5,635.166666667,570.2,1150,Release
+"alternating-32768.json",327777,parse,3,5,4431.06666667,4040.13333333,4531.16666667,Release
+"alternating-32768.json",327777,lex_only,3,5,3511.46666667,3025.3,4338.3,Release
+"alternating-262144.json",2622209,parse,3,5,46289.4666667,36678.3,50885.6666667,Release
+"alternating-262144.json",2622209,lex_only,3,5,25088.0666667,23429.4666667,27118.8666667,Release
+"held-tail-records-4099.json",3375357,parse,3,5,10836.1,10097.4,11512.4666667,Release
+"held-tail-records-4099.json",3375357,lex_only,3,5,7627.43333333,7470.16666667,8109,Release
+"whitespace-interleaved-16384.json",2178942,parse,3,5,4142.06666667,4034.96666667,4298.26666667,Release
+"whitespace-interleaved-16384.json",2178942,lex_only,3,5,3707.3,3639.76666667,4180.56666667,Release
