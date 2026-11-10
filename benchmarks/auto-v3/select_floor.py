@@ -4,6 +4,9 @@ from datetime import datetime,timezone
 from pathlib import Path
 root,destination=map(Path,sys.argv[1:]);assert not destination.exists()
 plan_path=Path(__file__).with_name('selection-plan.json');plan=json.loads(plan_path.read_text());scores={}
+sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+assert plan['original_plan_sha256']==sha(plan_path.with_name('plan.json'))
+for label,h in plan['phase1_metadata'].items():assert sha(root/label/'metadata.json')==h
 for label,config in plan['candidates'].items():
     q=config['quarters']
     d=root/label;m=json.loads((d/'metadata.json').read_text());assert len(m['inputs'])==91

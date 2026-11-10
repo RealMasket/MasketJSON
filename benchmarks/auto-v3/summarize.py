@@ -6,6 +6,9 @@ from check_matrix import validate_memory
 from journal import validate
 root,report=map(Path,sys.argv[1:]);sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
 selection=json.loads((root/'selection.json').read_text());freeze=json.loads((root/'freeze.json').read_text())
+plan_path=Path(__file__).with_name('selection-plan.json');plan=json.loads(plan_path.read_text())
+assert selection['plan_sha256']==sha(plan_path) and plan['original_plan_sha256']==sha(plan_path.with_name('plan.json'))
+for label,h in plan['phase1_metadata'].items():assert sha(root/'calibration'/label/'metadata.json')==h
 assert freeze['selection_sha256']==sha(root/'selection.json') and freeze['known_metadata_sha256']==sha(root/'known/metadata.json')
 for label,h in selection['calibration_metadata'].items():assert sha(root/'calibration'/label/'metadata.json')==h
 data={}
@@ -44,7 +47,7 @@ def gm(v):return math.exp(statistics.mean(math.log(x) for x in v))
 
 lines=['# Auto v3: growth under copy pressure','','## Hypothesis and fixed experiment','',
     'The dense-input diagnosis found expensive allocation schedules without JSON scanning or density prediction.',
-    'V3 changes only the geometric floor when the existing copy-pressure predicate is active. Density thresholds, pressure thresholds,',
+    'Phase 1 changes only the geometric floor when the existing copy-pressure predicate is active. Density thresholds, pressure thresholds,',
     '4 MiB speed / 1 MiB memory speculative-byte budgets and remaining-byte final-capacity proof are unchanged.',
     'Candidates use floor(capacity * 1.5), floor(capacity * 1.75) or capacity * 2 under pressure; checked arithmetic saturates at max_size.',
     'Without pressure, the ordinary speed 1.5 / memory 1.25 minimum remains. Larger floors can exceed the soft byte ceiling, and every exception is logged.',
@@ -54,11 +57,11 @@ lines=['# Auto v3: growth under copy pressure','','## Hypothesis and fixed exper
     'The 1.5 control reproduces all 91 v2 heap/profile rows exactly for both goals and both production modes.',
     'One exploratory round of 3 samples x 2 operations selects each goal using all joint CPU/heap gates first, geometric mean time second,',
     'and lowest worst peak/oracle for candidates within 3% of the fastest. If no candidate passes, minimum normalized gate violation is explicitly unqualified.',
-    '', '| Candidate / goal | Pressure floor | GM time/Balanced | Worst time/oracle | Worst time/Balanced | Worst peak/oracle | Worst peak/Balanced | Joint eligible |',
-    '| --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |']
+    '', '| Candidate / goal | Pressure floor | Lookahead | GM time/Balanced | Worst time/oracle | Worst time/Balanced | Worst peak/oracle | Worst peak/Balanced | Joint eligible |',
+    '| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | --- |']
 for key,score in selection['scores'].items():
-    lines.append(f"| {key} | {score['quarters']/4:g} | {score['geomean_time_balanced']:.3f} | {score['worst_time_oracle']:.3f} | {score['worst_time_balanced']:.3f} | {score['worst_peak_oracle']:.3f} | {score['worst_peak_balanced']:.3f} | {score['joint_eligible']} |")
-lines += ['',f"Selected speed pressure floor: {selection['chosen']['speed']['quarters']/4:g}; memory: {selection['chosen']['memory']['quarters']/4:g}.",
+    lines.append(f"| {key} | {score['quarters']/4:g} | {score['lookahead']} | {score['geomean_time_balanced']:.3f} | {score['worst_time_oracle']:.3f} | {score['worst_time_balanced']:.3f} | {score['worst_peak_oracle']:.3f} | {score['worst_peak_balanced']:.3f} | {score['joint_eligible']} |")
+lines += ['',f"Selected speed pressure floor: {selection['chosen']['speed']['quarters']/4:g}; memory: {selection['chosen']['memory']['quarters']/4:g}. Lookahead speed/memory: {selection['chosen']['speed']['lookahead']}/{selection['chosen']['memory']['lookahead']}.",
     f"Policy sources, all comparison executables and the selected parameters were frozen at `{freeze['frozen_utc']}` after repeated known-set measurements.",
     'Only then were 16 full new inputs generated with seed 20261110 and counts 197/4093: buried trailing padding, escaped/UTF-8 values,',
     'late records, mixed-width floats, ragged objects, whitespace islands, leading padding and irregular stepped string/number regions.',

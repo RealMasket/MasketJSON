@@ -1,0 +1,187 @@
+{
+  "frozen_utc": "2026-11-10T15:52:25.693391+00:00",
+  "chosen": {
+    "speed": {
+      "candidate": "projected-seven-fourths",
+      "quarters": 7,
+      "lookahead": 1,
+      "budget_bytes": 4194304,
+      "joint_eligible": true,
+      "worst_time_oracle": 1.4700191513692997,
+      "worst_time_balanced": 1.4700191513692997,
+      "worst_peak_oracle": 1.4266644145985266,
+      "worst_peak_balanced": 1.3902038222499313,
+      "normalized_gate_regret": 0.9800127675795332,
+      "geomean_time_balanced": 1.0229722329074467
+    },
+    "memory": {
+      "candidate": "projected-control",
+      "quarters": 6,
+      "lookahead": 1,
+      "budget_bytes": 1048576,
+      "joint_eligible": true,
+      "worst_time_oracle": 1.9051430641072076,
+      "worst_time_balanced": 1.9051430641072076,
+      "worst_peak_oracle": 1.3498803406312065,
+      "worst_peak_balanced": 1.3498803406312065,
+      "normalized_gate_regret": 0.9525715320536038,
+      "geomean_time_balanced": 1.0909507018088513
+    }
+  },
+  "scores": {
+    "control/speed": {
+      "quarters": 6,
+      "lookahead": 0,
+      "budget_bytes": 4194304,
+      "joint_eligible": false,
+      "worst_time_oracle": 1.6530602997856245,
+      "worst_time_balanced": 1.6530602997856245,
+      "worst_peak_oracle": 1.4266644145985266,
+      "worst_peak_balanced": 1.3902038222499313,
+      "normalized_gate_regret": 1.102040199857083,
+      "geomean_time_balanced": 1.0277686524050504
+    },
+    "control/memory": {
+      "quarters": 6,
+      "lookahead": 0,
+      "budget_bytes": 1048576,
+      "joint_eligible": false,
+      "worst_time_oracle": 2.0764048380291062,
+      "worst_time_balanced": 2.0764048380291062,
+      "worst_peak_oracle": 1.3566544274998311,
+      "worst_peak_balanced": 1.3566544274998311,
+      "normalized_gate_regret": 1.0382024190145531,
+      "geomean_time_balanced": 1.116331546698622
+    },
+    "seven-fourths/speed": {
+      "quarters": 7,
+      "lookahead": 0,
+      "budget_bytes": 4194304,
+      "joint_eligible": false,
+      "worst_time_oracle": 1.7493456073203995,
+      "worst_time_balanced": 1.7493456073203995,
+      "worst_peak_oracle": 1.4266644145985266,
+      "worst_peak_balanced": 1.3902038222499313,
+      "normalized_gate_regret": 1.1662304048802663,
+      "geomean_time_balanced": 1.0544309952235498
+    },
+    "seven-fourths/memory": {
+      "quarters": 7,
+      "lookahead": 0,
+      "budget_bytes": 1048576,
+      "joint_eligible": false,
+      "worst_time_oracle": 2.567524886495023,
+      "worst_time_balanced": 2.567524886495023,
+      "worst_peak_oracle": 1.382487522500231,
+      "worst_peak_balanced": 1.382487522500231,
+      "normalized_gate_regret": 1.2837624432475114,
+      "geomean_time_balanced": 1.199153581867389
+    },
+    "double/speed": {
+      "quarters": 8,
+      "lookahead": 0,
+      "budget_bytes": 4194304,
+      "joint_eligible": false,
+      "worst_time_oracle": 1.620860192726964,
+      "worst_time_balanced": 1.620860192726964,
+      "worst_peak_oracle": 1.4266644145985266,
+      "worst_peak_balanced": 1.3902038222499313,
+      "normalized_gate_regret": 1.0805734618179759,
+      "geomean_time_balanced": 1.0274441005563042
+    },
+    "double/memory": {
+      "quarters": 8,
+      "lookahead": 0,
+      "budget_bytes": 1048576,
+      "joint_eligible": true,
+      "worst_time_oracle": 1.8963661578470463,
+      "worst_time_balanced": 1.8963661578470463,
+      "worst_peak_oracle": 1.382487522500231,
+      "worst_peak_balanced": 1.382487522500231,
+      "normalized_gate_regret": 0.9481830789235232,
+      "geomean_time_balanced": 1.1273270970565274
+    },
+    "projected-control/speed": {
+      "quarters": 6,
+      "lookahead": 1,
+      "budget_bytes": 4194304,
+      "joint_eligible": false,
+      "worst_time_oracle": 1.529232947981825,
+      "worst_time_balanced": 1.529232947981825,
+      "worst_peak_oracle": 1.4266644145985266,
+      "worst_peak_balanced": 1.3902038222499313,
+      "normalized_gate_regret": 1.0194886319878833,
+      "geomean_time_balanced": 1.0283631574792491
+    },
+    "projected-control/memory": {
+      "quarters": 6,
+      "lookahead": 1,
+      "budget_bytes": 1048576,
+      "joint_eligible": true,
+      "worst_time_oracle": 1.9051430641072076,
+      "worst_time_balanced": 1.9051430641072076,
+      "worst_peak_oracle": 1.3498803406312065,
+      "worst_peak_balanced": 1.3498803406312065,
+      "normalized_gate_regret": 0.9525715320536038,
+      "geomean_time_balanced": 1.0909507018088513
+    },
+    "projected-seven-fourths/speed": {
+      "quarters": 7,
+      "lookahead": 1,
+      "budget_bytes": 4194304,
+      "joint_eligible": true,
+      "worst_time_oracle": 1.4700191513692997,
+      "worst_time_balanced": 1.4700191513692997,
+      "worst_peak_oracle": 1.4266644145985266,
+      "worst_peak_balanced": 1.3902038222499313,
+      "normalized_gate_regret": 0.9800127675795332,
+      "geomean_time_balanced": 1.0229722329074467
+    },
+    "projected-seven-fourths/memory": {
+      "quarters": 7,
+      "lookahead": 1,
+      "budget_bytes": 1048576,
+      "joint_eligible": true,
+      "worst_time_oracle": 1.8807500811776168,
+      "worst_time_balanced": 1.8807500811776168,
+      "worst_peak_oracle": 1.3498803406312065,
+      "worst_peak_balanced": 1.3498803406312065,
+      "normalized_gate_regret": 0.9403750405888084,
+      "geomean_time_balanced": 1.132926698285193
+    },
+    "projected-double/speed": {
+      "quarters": 8,
+      "lookahead": 1,
+      "budget_bytes": 4194304,
+      "joint_eligible": true,
+      "worst_time_oracle": 1.4505135138921972,
+      "worst_time_balanced": 1.4505135138921972,
+      "worst_peak_oracle": 1.4266644145985266,
+      "worst_peak_balanced": 1.3902038222499313,
+      "normalized_gate_regret": 0.9670090092614648,
+      "geomean_time_balanced": 1.0181719598536043
+    },
+    "projected-double/memory": {
+      "quarters": 8,
+      "lookahead": 1,
+      "budget_bytes": 1048576,
+      "joint_eligible": false,
+      "worst_time_oracle": 2.2702786203797327,
+      "worst_time_balanced": 2.2702786203797327,
+      "worst_peak_oracle": 1.3498803406312065,
+      "worst_peak_balanced": 1.3498803406312065,
+      "normalized_gate_regret": 1.1351393101898664,
+      "geomean_time_balanced": 1.1348477684758178
+    }
+  },
+  "plan_sha256": "70dd7ee319bb9c8475f5deab64d6ae9a0f65a9f551144fa1f7cdd1db66d82ce5",
+  "calibration_metadata": {
+    "control": "7ec3b538be9691c68db124e693298dbce72ce688f9d7f46d4dc1b120b86b3b60",
+    "seven-fourths": "4fdbbbd8c00aada7fb3231bd57195930df870d6e92f920fc7274dbd583cfc4dd",
+    "double": "f13600ce7ea4b001ea3c0df250a0c0e79433294082d73862467b17c05195cdbe",
+    "projected-control": "c8d96996cf0ce9fdbe2acfef88caae0920e71613ca979c5c13a561e662b3ada9",
+    "projected-seven-fourths": "8fcbfeef8cb7fd6922389dcacad7f61e3d2e0d6268c9ef7bfb94fe501592d92c",
+    "projected-double": "ecde6f143e930837547a949cf2f4c4e3416eee62f382effaeaf7ffd29039ece5"
+  },
+  "note": "Exploratory single-round selection. Final repeated joint targets may still fail; no new-input observations used."
+}

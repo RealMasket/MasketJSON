@@ -293,7 +293,7 @@ python benchmarks/auto/run_auto.py --bin build-auto/benchmarks/auto/Release --in
 
 Use fresh result directories. Keep the machine idle and do not rebuild while
 measuring. The runner pins CPU affinity and rotates four policies across four
-rounds (5 samples Р“вЂ” 3 operations by default), checks exact results against both
+rounds (5 samples Р В РІР‚СљР Р†Р вЂљРІР‚Сњ 3 operations by default), checks exact results against both
 fixed production modes, validates journal bounds and matches copy counts with
 separate profiles. Freeze verifies unchanged controller sources and executable
 hashes before full held-out evaluation; do not retune using that split.
@@ -373,11 +373,16 @@ remain unchanged; this known-input experiment is not a new holdout.
 
 ## Auto v3: growth under copy pressure
 
-The [Auto v3 report](results/auto-v3-reservation.md) tests only the geometric floor
-used when existing copy pressure is active. The 1.5x control exactly reproduces
+The [Auto v3 report](results/auto-v3-reservation.md) first tests only the geometric
+floor used when existing copy pressure is active. The 1.5x control exactly reproduces
 all v2 heap observations on 91 now-known inputs; 1.75x and 2x are alternatives.
-Density and pressure thresholds, speculative budgets (speed 4 MiB / memory 1 MiB)
-and the remaining-byte final-capacity proof are unchanged. Byte budgets remain
+Phase 1 leaves density/pressure thresholds, speculative budgets (speed 4 MiB /
+memory 1 MiB) and the remaining-byte final-capacity proof unchanged. The speed
+predicate never activates on the problematic large dense array in this phase.
+A second [pre-recorded plan](auto-v3/selection-plan.json), committed at `f6604dc`
+before new measurements, therefore adds the inevitable pending relocation to
+the pressure calculation. It crosses both historical/projected predicates with
+all three floors, without generating or consulting the new full holdout. Byte budgets remain
 soft: a geometric floor may override them, and every actual exception is logged.
 
 The [pre-recorded plan](auto-v3/plan.json) is committed as `f4b9f04`. Calibration
@@ -387,14 +392,18 @@ of fastest it selects the lowest worst peak/oracle. If no candidate qualifies,
 the least normalized gate violation is retained but explicitly unqualified.
 
 ```powershell
-cmake -S . -B build-auto-v3 -DBUILD_SHARED_LIBS=OFF -DMASKETJSON_BUILD_BENCHMARKS=ON -DMASKETJSON_BUILD_PROFILER=ON -DMASKETJSON_BUILD_AUTO_V3_EXPERIMENT=ON -DAUTO_V3_SPEED_QUARTERS=8 -DAUTO_V3_MEMORY_QUARTERS=8
+cmake -S . -B build-auto-v3 -DBUILD_SHARED_LIBS=OFF -DMASKETJSON_BUILD_BENCHMARKS=ON -DMASKETJSON_BUILD_PROFILER=ON -DMASKETJSON_BUILD_AUTO_V3_EXPERIMENT=ON -DAUTO_V3_SPEED_QUARTERS=7 -DAUTO_V3_MEMORY_QUARTERS=6 -DAUTO_V3_SPEED_LOOKAHEAD=1 -DAUTO_V3_MEMORY_LOOKAHEAD=1
 cmake --build build-auto-v3 --config Release --parallel 2
 ctest --test-dir build-auto-v3 -C Release -R AutoV3 --output-on-failure
 ```
 
-Quarters 6/7/8 mean 1.5/1.75/2. The command above builds the double candidate;
-use the selected per-goal quarters in `results/auto-v3-msvc1951/selection.json`
-when reproducing the final variant. Python 3 and a static library are required.
+Quarters 6/7/8 mean 1.5/1.75/2. The command above builds the selected variant;
+verify the selected per-goal quarters in `results/auto-v3-msvc1951/selection.json`
+when reproducing the final variant. Also set `AUTO_V3_SPEED_LOOKAHEAD` and
+`AUTO_V3_MEMORY_LOOKAHEAD` from the selected lookahead fields (0 historical,
+1 projected). The projected integer tests are moved > floor(n/2) for speed and
+moved > 2*n for memory, avoiding overflow when accounting for the n tokens
+about to move. Python 3 and a static library are required.
 Sanitizer builds omit the profiler; journals, exact comparison and corpus checks
 remain enabled. CI imposes no wall-clock speed assertions.
 
@@ -404,7 +413,7 @@ Time/Profile/Inspect executables from the frozen v2 experiment into each snapsho
 Use all 47 original fixtures, the 12 LowMemory holdouts, 16 v1 holdouts and 16 v2
 holdouts (91 known documents total) from the preceding frozen-input directories.
 Then run `auto-v3/calibrate.py --bin SNAPSHOT --inputs DIRS --output ROOT/NAME
---candidate NAME` for control, seven-fourths and double, followed by
+--candidate NAME` for control, seven-fourths, double and their projected- prefixed counterparts, followed by
 `auto-v3/select_floor.py ROOT selection.json`. Per-goal snapshot assembly preserves
 selected executables; the unused other-goal macro in each binary is irrelevant.
 Keep the v2 comparison binaries frozen at `fc03dae`.

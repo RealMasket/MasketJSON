@@ -4,6 +4,10 @@
 
 ### Planned for 1.1.0
 
+- Evaluate private Auto v3 growth under historical/projected copy pressure,
+  preserving six candidate observations on 91 known documents. Select per-goal
+  floors with unchanged joint CPU/heap gates, freeze before 16 new inputs, and
+  retain exact comparisons, decision journals, sanitizer and fuzz coverage.
 - Diagnose dense-input Auto v2 costs using frozen parser/lexer measurements,
   independent heap observations and isolated token-buffer schedule replay.
   Preserve raw timing rounds, known-input provenance and an offline exact-count
@@ -51,7 +55,7 @@
   failures, Unicode paths, temporary cleanup, hard links, and installed DLL API.
 - Advance the development version to 1.1.0; the published 1.0.0 tag is unchanged.
 
-## 1.0.0 вЂ” 2026-11-06
+## 1.0.0 РІР‚вЂќ 2026-11-06
 
 ### Correctness
 

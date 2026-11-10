@@ -1,0 +1,435 @@
+{
+  "format": "UTF-8 without BOM, LF; content-addressed snapshots of every source recorded in calibration metadata",
+  "references": [
+    {
+      "candidate": "control",
+      "file": "benchmarks/auto-v3/AutoReservationV3.hpp",
+      "sha256": "fe75e64bfe63fca75087ff9855998b92236a3e9f177eaeb3f7e015de1e2998ca"
+    },
+    {
+      "candidate": "control",
+      "file": "benchmarks/auto-v3/calibrate.py",
+      "sha256": "0bb3d48c7939ba368e335877ee6b514f1d8cdc1c22b896d7ea9cd4cd8bd803cf"
+    },
+    {
+      "candidate": "control",
+      "file": "benchmarks/auto-v3/check_v3.py",
+      "sha256": "887dbfe56690d85e15b9cdd5861a24c290553fb61484c3ac0d072b01713f8c77"
+    },
+    {
+      "candidate": "control",
+      "file": "benchmarks/auto-v3/CMakeLists.txt",
+      "sha256": "c1e4881a4c3ddfd8c990bf9405c4af51801fbca4a79a7c0e715b9b0faca7fdd1"
+    },
+    {
+      "candidate": "control",
+      "file": "benchmarks/auto-v3/freeze.py",
+      "sha256": "1fbade1415ccecb624c1a9135d2fd78e9dc2196ef0a7012e47354bfa7f432bb3"
+    },
+    {
+      "candidate": "control",
+      "file": "benchmarks/auto-v3/generate_holdout.py",
+      "sha256": "a358f54469fc251cb716a6c885f7971c18c45971ea6054b08b10646368586b9a"
+    },
+    {
+      "candidate": "control",
+      "file": "benchmarks/auto-v3/generate_lexer.py",
+      "sha256": "07098739a011199f0f9b776ea0b8191389e035132c49f19d3b2159127e8ea667"
+    },
+    {
+      "candidate": "control",
+      "file": "benchmarks/auto-v3/journal.py",
+      "sha256": "11e5d8ca1d11bddfe892e67e4d1aef51757c4a2ba6c0a3c6d215a8bf66d8168a"
+    },
+    {
+      "candidate": "control",
+      "file": "benchmarks/auto-v3/plan.json",
+      "sha256": "2d22dc5e4a9b9a5341952c86cfaf08fc9f5dbe8b13afbb44e7bef86e78c66913"
+    },
+    {
+      "candidate": "control",
+      "file": "benchmarks/auto-v3/run_final.py",
+      "sha256": "4a2209a95188f2649172ca97bffc6c2bb9c4bcf07077e973167d3e5e5810dc20"
+    },
+    {
+      "candidate": "control",
+      "file": "benchmarks/auto-v3/select_floor.py",
+      "sha256": "b7f7709cad3c2f0012f94936cff6b58f61d1161faf70f00ab6a9d1d228034afd"
+    },
+    {
+      "candidate": "control",
+      "file": "benchmarks/auto-v3/Trace.cpp",
+      "sha256": "890a4f70cf0311806b593f1b90c875e55db6a3b9a0ee08db2b9705d51de2574f"
+    },
+    {
+      "candidate": "control",
+      "file": "benchmarks/auto-v3/Verify.cpp",
+      "sha256": "9867fbbc39e23f0a3df3d481561fc043a331f1ecdb53796acf5ddc8fb33934e0"
+    },
+    {
+      "candidate": "double",
+      "file": "benchmarks/auto-v3/AutoReservationV3.hpp",
+      "sha256": "fe75e64bfe63fca75087ff9855998b92236a3e9f177eaeb3f7e015de1e2998ca"
+    },
+    {
+      "candidate": "double",
+      "file": "benchmarks/auto-v3/calibrate.py",
+      "sha256": "0bb3d48c7939ba368e335877ee6b514f1d8cdc1c22b896d7ea9cd4cd8bd803cf"
+    },
+    {
+      "candidate": "double",
+      "file": "benchmarks/auto-v3/check_v3.py",
+      "sha256": "887dbfe56690d85e15b9cdd5861a24c290553fb61484c3ac0d072b01713f8c77"
+    },
+    {
+      "candidate": "double",
+      "file": "benchmarks/auto-v3/CMakeLists.txt",
+      "sha256": "c1e4881a4c3ddfd8c990bf9405c4af51801fbca4a79a7c0e715b9b0faca7fdd1"
+    },
+    {
+      "candidate": "double",
+      "file": "benchmarks/auto-v3/freeze.py",
+      "sha256": "1fbade1415ccecb624c1a9135d2fd78e9dc2196ef0a7012e47354bfa7f432bb3"
+    },
+    {
+      "candidate": "double",
+      "file": "benchmarks/auto-v3/generate_holdout.py",
+      "sha256": "a358f54469fc251cb716a6c885f7971c18c45971ea6054b08b10646368586b9a"
+    },
+    {
+      "candidate": "double",
+      "file": "benchmarks/auto-v3/generate_lexer.py",
+      "sha256": "07098739a011199f0f9b776ea0b8191389e035132c49f19d3b2159127e8ea667"
+    },
+    {
+      "candidate": "double",
+      "file": "benchmarks/auto-v3/journal.py",
+      "sha256": "11e5d8ca1d11bddfe892e67e4d1aef51757c4a2ba6c0a3c6d215a8bf66d8168a"
+    },
+    {
+      "candidate": "double",
+      "file": "benchmarks/auto-v3/plan.json",
+      "sha256": "2d22dc5e4a9b9a5341952c86cfaf08fc9f5dbe8b13afbb44e7bef86e78c66913"
+    },
+    {
+      "candidate": "double",
+      "file": "benchmarks/auto-v3/run_final.py",
+      "sha256": "4a2209a95188f2649172ca97bffc6c2bb9c4bcf07077e973167d3e5e5810dc20"
+    },
+    {
+      "candidate": "double",
+      "file": "benchmarks/auto-v3/select_floor.py",
+      "sha256": "b7f7709cad3c2f0012f94936cff6b58f61d1161faf70f00ab6a9d1d228034afd"
+    },
+    {
+      "candidate": "double",
+      "file": "benchmarks/auto-v3/summarize.py",
+      "sha256": "7efea83c427e2ba3ba9294c7308f85599eec0e3293d2b86e38216593a0d81e04"
+    },
+    {
+      "candidate": "double",
+      "file": "benchmarks/auto-v3/Trace.cpp",
+      "sha256": "890a4f70cf0311806b593f1b90c875e55db6a3b9a0ee08db2b9705d51de2574f"
+    },
+    {
+      "candidate": "double",
+      "file": "benchmarks/auto-v3/Verify.cpp",
+      "sha256": "9867fbbc39e23f0a3df3d481561fc043a331f1ecdb53796acf5ddc8fb33934e0"
+    },
+    {
+      "candidate": "projected-control",
+      "file": "benchmarks/auto-v3/AutoReservationV3.hpp",
+      "sha256": "2b93d6d4fa5fb788a27544fce31c732d1f291bc442794750ea0049fe54d294ff"
+    },
+    {
+      "candidate": "projected-control",
+      "file": "benchmarks/auto-v3/calibrate.py",
+      "sha256": "0bb3d48c7939ba368e335877ee6b514f1d8cdc1c22b896d7ea9cd4cd8bd803cf"
+    },
+    {
+      "candidate": "projected-control",
+      "file": "benchmarks/auto-v3/check_v3.py",
+      "sha256": "887dbfe56690d85e15b9cdd5861a24c290553fb61484c3ac0d072b01713f8c77"
+    },
+    {
+      "candidate": "projected-control",
+      "file": "benchmarks/auto-v3/CMakeLists.txt",
+      "sha256": "6420691a7b5093d55794006acf69de9d84e3704c7634d94530dc91299654c5c6"
+    },
+    {
+      "candidate": "projected-control",
+      "file": "benchmarks/auto-v3/freeze.py",
+      "sha256": "43e13aecf5d8fdc4ec1f7e14ff08df11b1b14b3daea4d9fe918da34edb9f9bf2"
+    },
+    {
+      "candidate": "projected-control",
+      "file": "benchmarks/auto-v3/generate_holdout.py",
+      "sha256": "a358f54469fc251cb716a6c885f7971c18c45971ea6054b08b10646368586b9a"
+    },
+    {
+      "candidate": "projected-control",
+      "file": "benchmarks/auto-v3/generate_lexer.py",
+      "sha256": "07098739a011199f0f9b776ea0b8191389e035132c49f19d3b2159127e8ea667"
+    },
+    {
+      "candidate": "projected-control",
+      "file": "benchmarks/auto-v3/journal.py",
+      "sha256": "a87e56e43383ac742d1bb17226afe6830fde305e401bbb65b6a2cbb5a5d55460"
+    },
+    {
+      "candidate": "projected-control",
+      "file": "benchmarks/auto-v3/plan.json",
+      "sha256": "2d22dc5e4a9b9a5341952c86cfaf08fc9f5dbe8b13afbb44e7bef86e78c66913"
+    },
+    {
+      "candidate": "projected-control",
+      "file": "benchmarks/auto-v3/run_final.py",
+      "sha256": "3cc9851052a7de1e99fea362ff34d183c7410677cd8ec40ce409c9cdb8353602"
+    },
+    {
+      "candidate": "projected-control",
+      "file": "benchmarks/auto-v3/select_floor.py",
+      "sha256": "679f0a100e884079bab27fb78da9f987f73c18c720ff2839ac6219aaeed3eca4"
+    },
+    {
+      "candidate": "projected-control",
+      "file": "benchmarks/auto-v3/selection-plan.json",
+      "sha256": "b9d6bf930cfabafdfe49251e9c3f80e080837e06303ec650543d000f42da835a"
+    },
+    {
+      "candidate": "projected-control",
+      "file": "benchmarks/auto-v3/summarize.py",
+      "sha256": "dbb6227d924e78c5e552153cbd2267baa055627764ca42e0d307a3750343bc19"
+    },
+    {
+      "candidate": "projected-control",
+      "file": "benchmarks/auto-v3/Trace.cpp",
+      "sha256": "5c41d804638c8a728f9d457d59801fed29a60e034fffba8097c97d6de082ff4d"
+    },
+    {
+      "candidate": "projected-control",
+      "file": "benchmarks/auto-v3/Verify.cpp",
+      "sha256": "c7598cc8a58b8a9cf4d8c3547eb764d503f890d45220479bc5e81c57d0d60df0"
+    },
+    {
+      "candidate": "projected-double",
+      "file": "benchmarks/auto-v3/AutoReservationV3.hpp",
+      "sha256": "2b93d6d4fa5fb788a27544fce31c732d1f291bc442794750ea0049fe54d294ff"
+    },
+    {
+      "candidate": "projected-double",
+      "file": "benchmarks/auto-v3/calibrate.py",
+      "sha256": "0bb3d48c7939ba368e335877ee6b514f1d8cdc1c22b896d7ea9cd4cd8bd803cf"
+    },
+    {
+      "candidate": "projected-double",
+      "file": "benchmarks/auto-v3/check_v3.py",
+      "sha256": "887dbfe56690d85e15b9cdd5861a24c290553fb61484c3ac0d072b01713f8c77"
+    },
+    {
+      "candidate": "projected-double",
+      "file": "benchmarks/auto-v3/CMakeLists.txt",
+      "sha256": "6420691a7b5093d55794006acf69de9d84e3704c7634d94530dc91299654c5c6"
+    },
+    {
+      "candidate": "projected-double",
+      "file": "benchmarks/auto-v3/freeze.py",
+      "sha256": "43e13aecf5d8fdc4ec1f7e14ff08df11b1b14b3daea4d9fe918da34edb9f9bf2"
+    },
+    {
+      "candidate": "projected-double",
+      "file": "benchmarks/auto-v3/generate_holdout.py",
+      "sha256": "a358f54469fc251cb716a6c885f7971c18c45971ea6054b08b10646368586b9a"
+    },
+    {
+      "candidate": "projected-double",
+      "file": "benchmarks/auto-v3/generate_lexer.py",
+      "sha256": "07098739a011199f0f9b776ea0b8191389e035132c49f19d3b2159127e8ea667"
+    },
+    {
+      "candidate": "projected-double",
+      "file": "benchmarks/auto-v3/journal.py",
+      "sha256": "a87e56e43383ac742d1bb17226afe6830fde305e401bbb65b6a2cbb5a5d55460"
+    },
+    {
+      "candidate": "projected-double",
+      "file": "benchmarks/auto-v3/plan.json",
+      "sha256": "2d22dc5e4a9b9a5341952c86cfaf08fc9f5dbe8b13afbb44e7bef86e78c66913"
+    },
+    {
+      "candidate": "projected-double",
+      "file": "benchmarks/auto-v3/run_final.py",
+      "sha256": "3cc9851052a7de1e99fea362ff34d183c7410677cd8ec40ce409c9cdb8353602"
+    },
+    {
+      "candidate": "projected-double",
+      "file": "benchmarks/auto-v3/select_floor.py",
+      "sha256": "7771eb49df1d39e123722091daecfe9ec66b7cecdb849e5e35c4a9487b8f93a2"
+    },
+    {
+      "candidate": "projected-double",
+      "file": "benchmarks/auto-v3/selection-plan.json",
+      "sha256": "70dd7ee319bb9c8475f5deab64d6ae9a0f65a9f551144fa1f7cdd1db66d82ce5"
+    },
+    {
+      "candidate": "projected-double",
+      "file": "benchmarks/auto-v3/summarize.py",
+      "sha256": "533c9476671aaf8f45cf98b70f7a2c738a32397cc22fc795ce046e256bc69d62"
+    },
+    {
+      "candidate": "projected-double",
+      "file": "benchmarks/auto-v3/Trace.cpp",
+      "sha256": "5c41d804638c8a728f9d457d59801fed29a60e034fffba8097c97d6de082ff4d"
+    },
+    {
+      "candidate": "projected-double",
+      "file": "benchmarks/auto-v3/Verify.cpp",
+      "sha256": "c7598cc8a58b8a9cf4d8c3547eb764d503f890d45220479bc5e81c57d0d60df0"
+    },
+    {
+      "candidate": "projected-seven-fourths",
+      "file": "benchmarks/auto-v3/AutoReservationV3.hpp",
+      "sha256": "2b93d6d4fa5fb788a27544fce31c732d1f291bc442794750ea0049fe54d294ff"
+    },
+    {
+      "candidate": "projected-seven-fourths",
+      "file": "benchmarks/auto-v3/calibrate.py",
+      "sha256": "0bb3d48c7939ba368e335877ee6b514f1d8cdc1c22b896d7ea9cd4cd8bd803cf"
+    },
+    {
+      "candidate": "projected-seven-fourths",
+      "file": "benchmarks/auto-v3/check_v3.py",
+      "sha256": "887dbfe56690d85e15b9cdd5861a24c290553fb61484c3ac0d072b01713f8c77"
+    },
+    {
+      "candidate": "projected-seven-fourths",
+      "file": "benchmarks/auto-v3/CMakeLists.txt",
+      "sha256": "6420691a7b5093d55794006acf69de9d84e3704c7634d94530dc91299654c5c6"
+    },
+    {
+      "candidate": "projected-seven-fourths",
+      "file": "benchmarks/auto-v3/freeze.py",
+      "sha256": "43e13aecf5d8fdc4ec1f7e14ff08df11b1b14b3daea4d9fe918da34edb9f9bf2"
+    },
+    {
+      "candidate": "projected-seven-fourths",
+      "file": "benchmarks/auto-v3/generate_holdout.py",
+      "sha256": "a358f54469fc251cb716a6c885f7971c18c45971ea6054b08b10646368586b9a"
+    },
+    {
+      "candidate": "projected-seven-fourths",
+      "file": "benchmarks/auto-v3/generate_lexer.py",
+      "sha256": "07098739a011199f0f9b776ea0b8191389e035132c49f19d3b2159127e8ea667"
+    },
+    {
+      "candidate": "projected-seven-fourths",
+      "file": "benchmarks/auto-v3/journal.py",
+      "sha256": "a87e56e43383ac742d1bb17226afe6830fde305e401bbb65b6a2cbb5a5d55460"
+    },
+    {
+      "candidate": "projected-seven-fourths",
+      "file": "benchmarks/auto-v3/plan.json",
+      "sha256": "2d22dc5e4a9b9a5341952c86cfaf08fc9f5dbe8b13afbb44e7bef86e78c66913"
+    },
+    {
+      "candidate": "projected-seven-fourths",
+      "file": "benchmarks/auto-v3/run_final.py",
+      "sha256": "3cc9851052a7de1e99fea362ff34d183c7410677cd8ec40ce409c9cdb8353602"
+    },
+    {
+      "candidate": "projected-seven-fourths",
+      "file": "benchmarks/auto-v3/select_floor.py",
+      "sha256": "679f0a100e884079bab27fb78da9f987f73c18c720ff2839ac6219aaeed3eca4"
+    },
+    {
+      "candidate": "projected-seven-fourths",
+      "file": "benchmarks/auto-v3/selection-plan.json",
+      "sha256": "b9d6bf930cfabafdfe49251e9c3f80e080837e06303ec650543d000f42da835a"
+    },
+    {
+      "candidate": "projected-seven-fourths",
+      "file": "benchmarks/auto-v3/summarize.py",
+      "sha256": "dbb6227d924e78c5e552153cbd2267baa055627764ca42e0d307a3750343bc19"
+    },
+    {
+      "candidate": "projected-seven-fourths",
+      "file": "benchmarks/auto-v3/Trace.cpp",
+      "sha256": "5c41d804638c8a728f9d457d59801fed29a60e034fffba8097c97d6de082ff4d"
+    },
+    {
+      "candidate": "projected-seven-fourths",
+      "file": "benchmarks/auto-v3/Verify.cpp",
+      "sha256": "c7598cc8a58b8a9cf4d8c3547eb764d503f890d45220479bc5e81c57d0d60df0"
+    },
+    {
+      "candidate": "seven-fourths",
+      "file": "benchmarks/auto-v3/AutoReservationV3.hpp",
+      "sha256": "fe75e64bfe63fca75087ff9855998b92236a3e9f177eaeb3f7e015de1e2998ca"
+    },
+    {
+      "candidate": "seven-fourths",
+      "file": "benchmarks/auto-v3/calibrate.py",
+      "sha256": "0bb3d48c7939ba368e335877ee6b514f1d8cdc1c22b896d7ea9cd4cd8bd803cf"
+    },
+    {
+      "candidate": "seven-fourths",
+      "file": "benchmarks/auto-v3/check_v3.py",
+      "sha256": "887dbfe56690d85e15b9cdd5861a24c290553fb61484c3ac0d072b01713f8c77"
+    },
+    {
+      "candidate": "seven-fourths",
+      "file": "benchmarks/auto-v3/CMakeLists.txt",
+      "sha256": "c1e4881a4c3ddfd8c990bf9405c4af51801fbca4a79a7c0e715b9b0faca7fdd1"
+    },
+    {
+      "candidate": "seven-fourths",
+      "file": "benchmarks/auto-v3/freeze.py",
+      "sha256": "1fbade1415ccecb624c1a9135d2fd78e9dc2196ef0a7012e47354bfa7f432bb3"
+    },
+    {
+      "candidate": "seven-fourths",
+      "file": "benchmarks/auto-v3/generate_holdout.py",
+      "sha256": "a358f54469fc251cb716a6c885f7971c18c45971ea6054b08b10646368586b9a"
+    },
+    {
+      "candidate": "seven-fourths",
+      "file": "benchmarks/auto-v3/generate_lexer.py",
+      "sha256": "07098739a011199f0f9b776ea0b8191389e035132c49f19d3b2159127e8ea667"
+    },
+    {
+      "candidate": "seven-fourths",
+      "file": "benchmarks/auto-v3/journal.py",
+      "sha256": "11e5d8ca1d11bddfe892e67e4d1aef51757c4a2ba6c0a3c6d215a8bf66d8168a"
+    },
+    {
+      "candidate": "seven-fourths",
+      "file": "benchmarks/auto-v3/plan.json",
+      "sha256": "2d22dc5e4a9b9a5341952c86cfaf08fc9f5dbe8b13afbb44e7bef86e78c66913"
+    },
+    {
+      "candidate": "seven-fourths",
+      "file": "benchmarks/auto-v3/run_final.py",
+      "sha256": "4a2209a95188f2649172ca97bffc6c2bb9c4bcf07077e973167d3e5e5810dc20"
+    },
+    {
+      "candidate": "seven-fourths",
+      "file": "benchmarks/auto-v3/select_floor.py",
+      "sha256": "b7f7709cad3c2f0012f94936cff6b58f61d1161faf70f00ab6a9d1d228034afd"
+    },
+    {
+      "candidate": "seven-fourths",
+      "file": "benchmarks/auto-v3/summarize.py",
+      "sha256": "7efea83c427e2ba3ba9294c7308f85599eec0e3293d2b86e38216593a0d81e04"
+    },
+    {
+      "candidate": "seven-fourths",
+      "file": "benchmarks/auto-v3/Trace.cpp",
+      "sha256": "890a4f70cf0311806b593f1b90c875e55db6a3b9a0ee08db2b9705d51de2574f"
+    },
+    {
+      "candidate": "seven-fourths",
+      "file": "benchmarks/auto-v3/Verify.cpp",
+      "sha256": "9867fbbc39e23f0a3df3d481561fc043a331f1ecdb53796acf5ddc8fb33934e0"
+    }
+  ]
+}
