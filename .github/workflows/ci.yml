@@ -18,7 +18,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Configure experimental reservation matrix
-        run: cmake -S . -B build-matrix -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=OFF -DMASKETJSON_BUILD_BENCHMARKS=ON -DMASKETJSON_BUILD_PROFILER=ON -DMASKETJSON_BUILD_RESERVATION_MATRIX=ON -DMASKETJSON_BUILD_AUTO_EXPERIMENT=ON -DMASKETJSON_BUILD_AUTO_V2_EXPERIMENT=ON -DAUTO_V2_SPEED_BUDGET=4194304 -DAUTO_V2_MEMORY_BUDGET=1048576 -DMASKETJSON_BUILD_AUTO_V3_EXPERIMENT=ON -DAUTO_V3_SPEED_QUARTERS=7 -DAUTO_V3_MEMORY_QUARTERS=6 -DAUTO_V3_SPEED_LOOKAHEAD=1 -DAUTO_V3_MEMORY_LOOKAHEAD=1
+        run: cmake -S . -B build-matrix -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=OFF -DMASKETJSON_BUILD_BENCHMARKS=ON -DMASKETJSON_BUILD_PROFILER=ON -DMASKETJSON_BUILD_RESERVATION_MATRIX=ON -DMASKETJSON_BUILD_AUTO_EXPERIMENT=ON -DMASKETJSON_BUILD_AUTO_V2_EXPERIMENT=ON -DAUTO_V2_SPEED_BUDGET=4194304 -DAUTO_V2_MEMORY_BUDGET=1048576 -DMASKETJSON_BUILD_AUTO_V3_EXPERIMENT=ON -DAUTO_V3_SPEED_QUARTERS=7 -DAUTO_V3_MEMORY_QUARTERS=6 -DAUTO_V3_SPEED_LOOKAHEAD=1 -DAUTO_V3_MEMORY_LOOKAHEAD=1 -DMASKETJSON_BUILD_TAIL_EXPERIMENT=ON
       - name: Build
         run: cmake --build build-matrix --config Release --parallel 2
       - name: Check all strategies against production
@@ -35,6 +35,8 @@ jobs:
         run: python benchmarks/real-corpus/common.py --build build-matrix --inputs build-matrix/real-inputs --output build-matrix/real-smoke --profiles
       - name: Check Canada token-buffer overlap
         run: python benchmarks/real-corpus/check_canada_growth.py build-matrix/real-smoke/speed-decisions.csv
+      - name: Check bounded tail probe
+        run: python benchmarks/auto-tail/check.py --build build-matrix --output build-matrix/tail-smoke --canada build-matrix/real-inputs/canada.json
       - name: Preserve Auto decision journals
         if: always()
         uses: actions/upload-artifact@v4
@@ -45,6 +47,7 @@ jobs:
             build-matrix/auto-v2-smoke/*-decisions.csv
             build-matrix/auto-v3-smoke/*-decisions.csv
             build-matrix/real-smoke/*.csv
+            build-matrix/tail-smoke/decisions.csv
             build-matrix/Testing/Temporary/
           if-no-files-found: ignore
           retention-days: 14
@@ -88,7 +91,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Configure ASan and UBSan
-        run: cmake -S . -B build-sanitized -DCMAKE_BUILD_TYPE=RelWithDebInfo -DBUILD_SHARED_LIBS=OFF -DMASKETJSON_ENABLE_SANITIZERS=ON -DMASKETJSON_BUILD_BENCHMARKS=ON -DMASKETJSON_BUILD_AUTO_EXPERIMENT=ON -DMASKETJSON_BUILD_AUTO_V2_EXPERIMENT=ON -DAUTO_V2_SPEED_BUDGET=4194304 -DAUTO_V2_MEMORY_BUDGET=1048576 -DMASKETJSON_BUILD_AUTO_V3_EXPERIMENT=ON -DAUTO_V3_SPEED_QUARTERS=7 -DAUTO_V3_MEMORY_QUARTERS=6 -DAUTO_V3_SPEED_LOOKAHEAD=1 -DAUTO_V3_MEMORY_LOOKAHEAD=1
+        run: cmake -S . -B build-sanitized -DCMAKE_BUILD_TYPE=RelWithDebInfo -DBUILD_SHARED_LIBS=OFF -DMASKETJSON_ENABLE_SANITIZERS=ON -DMASKETJSON_BUILD_BENCHMARKS=ON -DMASKETJSON_BUILD_AUTO_EXPERIMENT=ON -DMASKETJSON_BUILD_AUTO_V2_EXPERIMENT=ON -DAUTO_V2_SPEED_BUDGET=4194304 -DAUTO_V2_MEMORY_BUDGET=1048576 -DMASKETJSON_BUILD_AUTO_V3_EXPERIMENT=ON -DAUTO_V3_SPEED_QUARTERS=7 -DAUTO_V3_MEMORY_QUARTERS=6 -DAUTO_V3_SPEED_LOOKAHEAD=1 -DAUTO_V3_MEMORY_LOOKAHEAD=1 -DMASKETJSON_BUILD_TAIL_EXPERIMENT=ON
       - name: Build
         run: cmake --build build-sanitized --parallel 2
       - name: Test with sanitizers
@@ -99,6 +102,8 @@ jobs:
         run: python benchmarks/real-corpus/common.py --build build-sanitized --inputs build-sanitized/real-inputs --output build-sanitized/real-smoke
       - name: Check Canada token-buffer overlap
         run: python benchmarks/real-corpus/check_canada_growth.py build-sanitized/real-smoke/speed-decisions.csv
+      - name: Check bounded tail probe
+        run: python benchmarks/auto-tail/check.py --build build-sanitized --output build-sanitized/tail-smoke --canada build-sanitized/real-inputs/canada.json
       - name: Preserve sanitizer logs and reproducers
         if: always()
         uses: actions/upload-artifact@v4
@@ -113,6 +118,7 @@ jobs:
             build-sanitized/auto-v2-smoke/*-decisions.csv
             build-sanitized/auto-v3-smoke/*-decisions.csv
             build-sanitized/real-smoke/*.csv
+            build-sanitized/tail-smoke/decisions.csv
           if-no-files-found: ignore
           retention-days: 14
 

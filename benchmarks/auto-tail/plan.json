@@ -1,0 +1,48 @@
+{
+  "base_revision": "910604a23acb23b183c6199c9adbc7bf1e28d6a7",
+  "candidate": {
+    "speed_floor": 1.5,
+    "suffix_byte_limit": 262144,
+    "token_limit": "ordinary floor minus stored count minus pending token, including EOF",
+    "trigger": "v3 pressure raised the floor and applied its remaining-byte bound above the ordinary floor",
+    "fallback": "original v3 request on token limit or lexical error"
+  },
+  "modes": ["balanced", "low-memory", "v3-speed", "tail"],
+  "compilers": ["MSVC 19.51", "Clang-cl 23.1.5"],
+  "rounds": 8,
+  "samples": 5,
+  "iterations": 3,
+  "logical_cpu": 0,
+  "order": "Rotate all eight compiler/mode pairs, one slot per round",
+  "known": [
+    "canada.json",
+    "dense-zeros-262144.json",
+    "alternating-262144.json",
+    "held-tail-records-4099.json",
+    "probe-fits.json",
+    "probe-limit.json"
+  ],
+  "evaluation": {
+    "seed": 20261111,
+    "synthetic": ["new-line.json", "new-rings.json", "new-dense-coordinates.json"],
+    "natural_earth_revision": "ca96624a56bd078437bca8184e78163e5039ad19",
+    "external": {
+      "new-countries.json": {
+        "path": "geojson/ne_50m_admin_0_countries.geojson",
+        "bytes": 3083490,
+        "blob_sha1": "9d99f26dc470fcdbd08b062c813005acbdf73ccb"
+      },
+      "new-lakes.json": {
+        "path": "geojson/ne_50m_lakes.geojson",
+        "bytes": 876018,
+        "blob_sha1": "5ddced58279ea13ae5023929f135bb7ecfd12d95"
+      }
+    }
+  },
+  "gates": {
+    "non_tiny_balanced_us": 1000,
+    "time_vs_best_fixed": 1.5,
+    "peak_vs_best_fixed": 2,
+    "peak_vs_balanced": 1.5
+  }
+}

@@ -87,3 +87,7 @@ benchmarks/results/real-corpus-windows/** text eol=lf
 
 # Content-addressed snapshots retain pre-existing source whitespace.
 benchmarks/results/real-corpus-windows/sources/*.txt -whitespace
+
+benchmarks/auto-tail/*.py text eol=lf
+benchmarks/auto-tail/*.json text eol=lf
+benchmarks/results/auto-tail-windows/** text eol=lf
