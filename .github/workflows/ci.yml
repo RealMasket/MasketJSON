@@ -33,6 +33,8 @@ jobs:
         run: python benchmarks/real-corpus/fetch.py build-matrix/real-inputs
       - name: Check external corpus values, profiles and decisions
         run: python benchmarks/real-corpus/common.py --build build-matrix --inputs build-matrix/real-inputs --output build-matrix/real-smoke --profiles
+      - name: Check Canada token-buffer overlap
+        run: python benchmarks/real-corpus/check_canada_growth.py build-matrix/real-smoke/speed-decisions.csv
       - name: Preserve Auto decision journals
         if: always()
         uses: actions/upload-artifact@v4
@@ -95,6 +97,8 @@ jobs:
         run: python benchmarks/real-corpus/fetch.py build-sanitized/real-inputs
       - name: Check external JSON under sanitizers
         run: python benchmarks/real-corpus/common.py --build build-sanitized --inputs build-sanitized/real-inputs --output build-sanitized/real-smoke
+      - name: Check Canada token-buffer overlap
+        run: python benchmarks/real-corpus/check_canada_growth.py build-sanitized/real-smoke/speed-decisions.csv
       - name: Preserve sanitizer logs and reproducers
         if: always()
         uses: actions/upload-artifact@v4

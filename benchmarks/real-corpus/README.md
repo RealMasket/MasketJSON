@@ -85,5 +85,14 @@ remain available. CI fetches the same originals on Windows/Linux and runs
 `common.py --build BUILD --inputs DATA --output RESULTS --profiles`; omit profiles
 with sanitizers. It checks correctness and accounting without timing assertions.
 
+The Canada speed regression runs on the generated journal. It checks the final
+token count and the largest simultaneous request for old and new token slots.
+The recorded peak and replay are documented with the fixture.
+[Canada expansion analysis](../results/canada-growth.md)
+
+```powershell
+python benchmarks/real-corpus/check_canada_growth.py RESULTS/speed-decisions.csv
+```
+
 Auto remains private pending representative workload data and wider evidence.
 A passing five-file snapshot study is not a hard latency or memory guarantee.
