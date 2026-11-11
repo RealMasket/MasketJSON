@@ -1,0 +1,368 @@
+{
+  "cpu": "12th Gen Intel(R) Core(TM) i5-12600KF",
+  "os": "Windows-10-10.0.19045-SP0",
+  "python": "3.13.2",
+  "freeze_sha256": "bf6932a160939e88c3ff049791e893b4d01d7ea3016c4eddb24be204d6a1ceaf",
+  "inputs": [
+    {
+      "name": "canada.json",
+      "split": "known",
+      "bytes": 2251051,
+      "sha256": "f83b3b354030d5dd58740c68ac4fecef64cb730a0d12a90362a7f23077f50d78",
+      "source": "Previously measured or focused fixture"
+    },
+    {
+      "name": "dense-zeros-262144.json",
+      "split": "known",
+      "bytes": 524289,
+      "sha256": "d65a30a253e5e2ae1f44f9ecdefc8fcdafbd21c1cc64afbb5046fcc1e765ac4b",
+      "source": "Previously measured or focused fixture"
+    },
+    {
+      "name": "alternating-262144.json",
+      "split": "known",
+      "bytes": 2622209,
+      "sha256": "60a218195d4405caff6dff382ca83215a6846472261aead88f93f9775aaa960f",
+      "source": "Previously measured or focused fixture"
+    },
+    {
+      "name": "held-tail-records-4099.json",
+      "split": "known",
+      "bytes": 3375357,
+      "sha256": "509ec44bf4386ef42c01f056fca2bf7135eeec82cb596f69a48b954047674d6c",
+      "source": "Previously measured or focused fixture"
+    },
+    {
+      "name": "probe-fits.json",
+      "split": "known",
+      "bytes": 266008,
+      "sha256": "e479de46f5306ccea9ba9fd347a02b6db1df6a73bf903e3f3b5ce8942c31cc47",
+      "source": "Previously measured or focused fixture"
+    },
+    {
+      "name": "probe-limit.json",
+      "split": "known",
+      "bytes": 270001,
+      "sha256": "3c87f2ea0d93719003cb9004cd3c28c76b4126dbe4c37faac7c3b155bc710702",
+      "source": "Previously measured or focused fixture"
+    },
+    {
+      "name": "new-line.json",
+      "split": "new",
+      "bytes": 1375139,
+      "sha256": "2ffa6941a95522f31a4f1861718dac96a7a626649848084605aeb194577ab9b7",
+      "source": "Generated geometry, seed 20261111"
+    },
+    {
+      "name": "new-rings.json",
+      "split": "new",
+      "bytes": 1348030,
+      "sha256": "a590f9a60cb1887dc2e16d6e1f435715044863ca2510e46191a020f78c3a6e3d",
+      "source": "Generated geometry, seed 20261111"
+    },
+    {
+      "name": "new-dense-coordinates.json",
+      "split": "new",
+      "bytes": 833071,
+      "sha256": "cf31e6d27d0805f1366a8e289b10d54db211fd642d8b33045e6ae2024e433d35",
+      "source": "Generated geometry, seed 20261111"
+    },
+    {
+      "name": "new-countries.json",
+      "split": "new",
+      "bytes": 3083490,
+      "sha256": "3e458fc036ad0a66411f2c1e6cac49c5d7bfb81cb1123bc513b22511a2b7fdeb",
+      "source": "https://github.com/nvkelso/natural-earth-vector/blob/ca96624a56bd078437bca8184e78163e5039ad19/geojson/ne_50m_admin_0_countries.geojson"
+    },
+    {
+      "name": "new-lakes.json",
+      "split": "new",
+      "bytes": 876018,
+      "sha256": "d350b75978b26fe839b797c2c529b2fb8f47fb3983c03f4964e36d5df9378a52",
+      "source": "https://github.com/nvkelso/natural-earth-vector/blob/ca96624a56bd078437bca8184e78163e5039ad19/geojson/ne_50m_lakes.geojson"
+    }
+  ],
+  "round_order": [
+    [
+      [
+        "msvc",
+        "balanced"
+      ],
+      [
+        "clang",
+        "balanced"
+      ],
+      [
+        "msvc",
+        "low-memory"
+      ],
+      [
+        "clang",
+        "low-memory"
+      ],
+      [
+        "msvc",
+        "v3-speed"
+      ],
+      [
+        "clang",
+        "v3-speed"
+      ],
+      [
+        "msvc",
+        "tail"
+      ],
+      [
+        "clang",
+        "tail"
+      ]
+    ],
+    [
+      [
+        "clang",
+        "balanced"
+      ],
+      [
+        "msvc",
+        "low-memory"
+      ],
+      [
+        "clang",
+        "low-memory"
+      ],
+      [
+        "msvc",
+        "v3-speed"
+      ],
+      [
+        "clang",
+        "v3-speed"
+      ],
+      [
+        "msvc",
+        "tail"
+      ],
+      [
+        "clang",
+        "tail"
+      ],
+      [
+        "msvc",
+        "balanced"
+      ]
+    ],
+    [
+      [
+        "msvc",
+        "low-memory"
+      ],
+      [
+        "clang",
+        "low-memory"
+      ],
+      [
+        "msvc",
+        "v3-speed"
+      ],
+      [
+        "clang",
+        "v3-speed"
+      ],
+      [
+        "msvc",
+        "tail"
+      ],
+      [
+        "clang",
+        "tail"
+      ],
+      [
+        "msvc",
+        "balanced"
+      ],
+      [
+        "clang",
+        "balanced"
+      ]
+    ],
+    [
+      [
+        "clang",
+        "low-memory"
+      ],
+      [
+        "msvc",
+        "v3-speed"
+      ],
+      [
+        "clang",
+        "v3-speed"
+      ],
+      [
+        "msvc",
+        "tail"
+      ],
+      [
+        "clang",
+        "tail"
+      ],
+      [
+        "msvc",
+        "balanced"
+      ],
+      [
+        "clang",
+        "balanced"
+      ],
+      [
+        "msvc",
+        "low-memory"
+      ]
+    ],
+    [
+      [
+        "msvc",
+        "v3-speed"
+      ],
+      [
+        "clang",
+        "v3-speed"
+      ],
+      [
+        "msvc",
+        "tail"
+      ],
+      [
+        "clang",
+        "tail"
+      ],
+      [
+        "msvc",
+        "balanced"
+      ],
+      [
+        "clang",
+        "balanced"
+      ],
+      [
+        "msvc",
+        "low-memory"
+      ],
+      [
+        "clang",
+        "low-memory"
+      ]
+    ],
+    [
+      [
+        "clang",
+        "v3-speed"
+      ],
+      [
+        "msvc",
+        "tail"
+      ],
+      [
+        "clang",
+        "tail"
+      ],
+      [
+        "msvc",
+        "balanced"
+      ],
+      [
+        "clang",
+        "balanced"
+      ],
+      [
+        "msvc",
+        "low-memory"
+      ],
+      [
+        "clang",
+        "low-memory"
+      ],
+      [
+        "msvc",
+        "v3-speed"
+      ]
+    ],
+    [
+      [
+        "msvc",
+        "tail"
+      ],
+      [
+        "clang",
+        "tail"
+      ],
+      [
+        "msvc",
+        "balanced"
+      ],
+      [
+        "clang",
+        "balanced"
+      ],
+      [
+        "msvc",
+        "low-memory"
+      ],
+      [
+        "clang",
+        "low-memory"
+      ],
+      [
+        "msvc",
+        "v3-speed"
+      ],
+      [
+        "clang",
+        "v3-speed"
+      ]
+    ],
+    [
+      [
+        "clang",
+        "tail"
+      ],
+      [
+        "msvc",
+        "balanced"
+      ],
+      [
+        "clang",
+        "balanced"
+      ],
+      [
+        "msvc",
+        "low-memory"
+      ],
+      [
+        "clang",
+        "low-memory"
+      ],
+      [
+        "msvc",
+        "v3-speed"
+      ],
+      [
+        "clang",
+        "v3-speed"
+      ],
+      [
+        "msvc",
+        "tail"
+      ]
+    ]
+  ],
+  "files": {
+    "clang-tail-decisions.csv": "f25417acb67820019553ba75629949c0f6440ee77ec7e1472b09ebded86fb8ee",
+    "clang-v3-speed-decisions.csv": "800836467cdc0a5f9cc0c4e559939efdcac19a9c3da372860e339571ff0cca04",
+    "memory.csv": "6d53fb34018b9ee92a5c7452c69eed90cdc5ffe666e567042afd8cdba55a312a",
+    "msvc-tail-decisions.csv": "f25417acb67820019553ba75629949c0f6440ee77ec7e1472b09ebded86fb8ee",
+    "msvc-v3-speed-decisions.csv": "800836467cdc0a5f9cc0c4e559939efdcac19a9c3da372860e339571ff0cca04",
+    "shapes.csv": "3002b9bf32b2c7e501e0677d14e4ecf6c887ca47dfe8508d7c071bea8a5ae5e8",
+    "timings.csv": "5085d54365db46cd8a88a82f40738d3f7b5480694a17032edb2005cb0a77d38a"
+  }
+}

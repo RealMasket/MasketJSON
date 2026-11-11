@@ -470,6 +470,12 @@ not a representative production sample or evidence for universal auto selection.
 Windows/Linux CI downloads the same originals and checks semantics, profiles and
 journals; sanitizer checks omit allocation interception and timing assertions.
 
+## Bounded tail count
+
+The [tail probe report](results/auto-tail.md) compares the experimental
+lexer count with Auto v3 on Canada, dense arrays, and fresh geometry.
+See the [build and reproduction commands](auto-tail/README.md).
+
 ## References
 
 - [Boost.JSON 1.88 documentation](https://www.boost.org/doc/libs/1_88_0/libs/json/doc/html/index.html)

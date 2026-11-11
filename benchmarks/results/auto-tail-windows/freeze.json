@@ -1,0 +1,54 @@
+{
+  "source_revision": "45349b351b4e14ed321879913fa4d735a86b241a",
+  "plan_sha256": "59a29c5332f6b9faa2a0240adca22c3356611764cd167f2a56c327b83a76059b",
+  "binary_sha256": {
+    "msvc/balanced/Time": "d285c4ffba553fff218cf9c7101ea8d2fd0a5ae935f19d9f7ae2f337583ad1e2",
+    "msvc/balanced/Profile": "554db812d76a07d7d03d60ad53a8b399f25113b5c3acba1651ca79fe9cf9b7a6",
+    "msvc/balanced/Inspect": "fd6f091dd77951b037c45b125dcf4c9d24349d8be3e1cf7b66798e2f95f47e08",
+    "clang/balanced/Time": "819425521f255ae674c74f56a45201ca51e789d4eacd3b5033f18c2ecbdff202",
+    "clang/balanced/Profile": "f831baf1dd8f39a5b4975dfa8a3ac7c89df64adcf2ba3aba7ed0280741e70590",
+    "clang/balanced/Inspect": "a0276364cd10e364b0c4b6fad7edcb41fca919b1e347c4a494e86d9f7cd462cd",
+    "msvc/low-memory/Time": "27573b5db63803f3fa6e3acc92eb3942c0787fa78cd9ccc49d7eedbcc39df61e",
+    "msvc/low-memory/Profile": "7ff5ca1fbdd15d33f7a734dbdb9c1a4b70e08d80822fef043cd2f42381ee3c31",
+    "msvc/low-memory/Inspect": "74f432c4d6b5ba57548a98cd8d37357edc7338956b1db2bd66d1cdf60bf7be60",
+    "clang/low-memory/Time": "3c57640c933cb1fbb90f003d9787e57d876ba8e65d46bb00f83f852f2d38486a",
+    "clang/low-memory/Profile": "cba7cd61b721b7d859671d04165b39dc516271798dccb03b94114d8b76f139da",
+    "clang/low-memory/Inspect": "1fc0fdf661646f243eaa918003a666a37e855d3847967d328ace2ef31ffbbbc4",
+    "msvc/v3-speed/Time": "58ca0c622631bdcdae39357a9216cacbf13b672c153a2641019210957fce4e3a",
+    "msvc/v3-speed/Profile": "afe1daf2ae8762be18b6f5feb0aa6394ba91c0f8e4e88794a3a7b16f6c727b88",
+    "msvc/v3-speed/Inspect": "f30f231e22db313f20cd13cd9c10e8342a8bf144a928293f279203e8d2166711",
+    "msvc/v3-speed/Trace": "f813aa163e10fce1e7646a350dfcd47804c5afec5737b25d2ab6120d671535a6",
+    "msvc/v3-speed/Verify": "a03c4b80c4f49178c0a8feb8f379b0dc33617fa2532f5bfa2cbeb972e196682f",
+    "clang/v3-speed/Time": "bc6e30a4db3711b7820081b95c3c5813fe0034af2a53da250424735cd5c61ba7",
+    "clang/v3-speed/Profile": "9b12e418949e5b7e9e4c04c18d52adcc33e3a462a10f865d404115482cb5e60f",
+    "clang/v3-speed/Inspect": "9a8134ccaee64e6bc4bb78d89033b560dc086dfa971f3066d1293b33c761fff5",
+    "clang/v3-speed/Trace": "efc7086fac104dc7d690ba61a58b0b2390e565d29efe70ea6e0becb91221e04d",
+    "clang/v3-speed/Verify": "a78121e8ea285e1ca5761961b94c28c1a242bbc7fdb40d31b22c57ccbc5480af",
+    "msvc/tail/Time": "31d5f34866b43cacc0cc5a06a255eaf08e6782020ef221469c232c497a6ec56d",
+    "msvc/tail/Profile": "064de90e327d0773d3af36fb8466f17af8ae7ee68c278aac285b1346378bd5ec",
+    "msvc/tail/Inspect": "dd1ab46978e0fd0c39a3eb2b9ab347f459af665d01c86fd0886c02de9ab50605",
+    "msvc/tail/Trace": "d7b0e5795ba4aa56102356bb4a9dca2deeb69220d3840bf9f7d3a36562ff5e64",
+    "msvc/tail/Verify": "a27e7428edb109064d8318a444b793fe97064c1bfba43e64caa5bf3c9fc8ef49",
+    "clang/tail/Time": "06b848cc82aa77b589a14f9b8dafdd8e20e489231f26ae92b412f7b45b986d53",
+    "clang/tail/Profile": "43c7105f29a8ef2e1d6207806f67f08d72c977fa0938217c2c1c4cbab943915c",
+    "clang/tail/Inspect": "1b26e26cfe5253777dd18ff8a6175d2d6e568f1b6e58759135b3787a0e8c6be0",
+    "clang/tail/Trace": "c280e3b81f44dc767e255cf47567d601bf87484dd769f3116d2e406725def73e",
+    "clang/tail/Verify": "dbae4b81a993162e3a5769adbec974dae6e15fcff128748a198442ebf1903d0a"
+  },
+  "build_info": {
+    "msvc": "compiler=MSVC\ncompiler_version=19.51.36257.0\nconfiguration=Release\nspeed_budget_bytes=4194304\nmemory_budget_bytes=1048576\nspeed_quarters=7\nmemory_quarters=6\nspeed_lookahead=1\nmemory_lookahead=1\nconfig_flags=/O2 /Ob2 /DNDEBUG\n",
+    "clang": "compiler=Clang\ncompiler_version=23.1.5\nconfiguration=Release\nspeed_budget_bytes=4194304\nmemory_budget_bytes=1048576\nspeed_quarters=7\nmemory_quarters=6\nspeed_lookahead=1\nmemory_lookahead=1\nconfig_flags=/O2 /Ob2 /DNDEBUG\n"
+  },
+  "generated_sha256": {
+    "msvc": {
+      "tail.cpp": "e7fa432c2d359c9ea60aa734c46288eabf50ce12ec73a657d11d712f9d46f135",
+      "AutoReservationWithTail.hpp": "3949a2c7a4d98d497fde373302fa4ede1b435bd0e821f49d98752f3e0ef1925c",
+      "trace.cpp": "ff153d59682516bf4eed6c7d4d515f15c45a29dfc8fa2fa7edb81067133edda4"
+    },
+    "clang": {
+      "tail.cpp": "e7fa432c2d359c9ea60aa734c46288eabf50ce12ec73a657d11d712f9d46f135",
+      "AutoReservationWithTail.hpp": "3949a2c7a4d98d497fde373302fa4ede1b435bd0e821f49d98752f3e0ef1925c",
+      "trace.cpp": "ff153d59682516bf4eed6c7d4d515f15c45a29dfc8fa2fa7edb81067133edda4"
+    }
+  }
+}
