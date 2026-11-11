@@ -29,10 +29,10 @@ treated as available before parsing, or as free features for an automatic select
 
 | Preset / status | Objective | Mechanism |
 | --- | --- | --- |
-| Balanced Р В Р’В Р вЂ™Р’В Р В Р’В Р Р†Р вЂљР’В Р В Р’В Р вЂ™Р’В Р В Р вЂ Р В РІР‚С™Р РЋРІвЂћСћР В Р’В Р В РІР‚В Р В Р’В Р Р†Р вЂљРЎв„ўР В Р Р‹Р РЋРЎв„ў implemented | Existing behavior | Observed density, 1.5Р В Р’В Р вЂ™Р’В Р В Р вЂ Р В РІР‚С™Р РЋРЎв„ўР В Р’В Р В РІР‚В Р В Р’В Р Р†Р вЂљРЎв„ўР В Р вЂ Р В РІР‚С™Р РЋРЎС™Р В Р’В Р вЂ™Р’В Р В Р’В Р Р†Р вЂљР’В Р В Р’В Р вЂ™Р’В Р В Р вЂ Р В РІР‚С™Р РЋРІвЂћСћР В Р’В Р Р†Р вЂљРІвЂћСћР В РІР‚в„ўР вЂ™Р’В¦64Р В Р’В Р вЂ™Р’В Р В Р вЂ Р В РІР‚С™Р РЋРЎв„ўР В Р’В Р В РІР‚В Р В Р’В Р Р†Р вЂљРЎв„ўР В Р вЂ Р В РІР‚С™Р РЋРЎС™ growth |
-| LowMemory Р В Р’В Р вЂ™Р’В Р В Р’В Р Р†Р вЂљР’В Р В Р’В Р вЂ™Р’В Р В Р вЂ Р В РІР‚С™Р РЋРІвЂћСћР В Р’В Р В РІР‚В Р В Р’В Р Р†Р вЂљРЎв„ўР В Р Р‹Р РЋРЎв„ў implemented | Limit speculative capacity | At growth request at most live token count + max(live token count, 256) slots; accept more copying |
-| Throughput Р В Р’В Р вЂ™Р’В Р В Р’В Р Р†Р вЂљР’В Р В Р’В Р вЂ™Р’В Р В Р вЂ Р В РІР‚С™Р РЋРІвЂћСћР В Р’В Р В РІР‚В Р В Р’В Р Р†Р вЂљРЎв„ўР В Р Р‹Р РЋРЎв„ў proposed | Reduce reallocations on known dense inputs | More eager reservation, possibly with a caller-supplied token-count hint |
-| Auto Р В Р’В Р вЂ™Р’В Р В Р’В Р Р†Р вЂљР’В Р В Р’В Р вЂ™Р’В Р В Р вЂ Р В РІР‚С™Р РЋРІвЂћСћР В Р’В Р В РІР‚В Р В Р’В Р Р†Р вЂљРЎв„ўР В Р Р‹Р РЋРЎв„ў proposed | Select/revise a strategy within explicit bounds | Online estimates with a conservative fallback when density changes |
+| Balanced Р В Р вЂ Р В РІР‚С™Р Р†Р вЂљРЎСљ implemented | Existing behavior | Observed density, 1.5Р В РІР‚СљР Р†Р вЂљРІР‚СњР В Р вЂ Р В РІР‚С™Р вЂ™Р’В¦64Р В РІР‚СљР Р†Р вЂљРІР‚Сњ growth |
+| LowMemory Р В Р вЂ Р В РІР‚С™Р Р†Р вЂљРЎСљ implemented | Limit speculative capacity | At growth request at most live token count + max(live token count, 256) slots; accept more copying |
+| Throughput Р В Р вЂ Р В РІР‚С™Р Р†Р вЂљРЎСљ proposed | Reduce reallocations on known dense inputs | More eager reservation, possibly with a caller-supplied token-count hint |
+| Auto Р В Р вЂ Р В РІР‚С™Р Р†Р вЂљРЎСљ proposed | Select/revise a strategy within explicit bounds | Online estimates with a conservative fallback when density changes |
 
 These are objectives, not names for the fastest/lowest-memory row on one fixture.
 The matrix already shows that small initial reserve alone does not ensure a low
